@@ -3,6 +3,7 @@
 """The Official CONLL 2016 Shared Task Scorer
 
 """
+from __future__ import print_function
 import argparse
 import json
 
@@ -17,15 +18,15 @@ def evaluate(gold_list, predicted_list):
     arg1_cm, arg2_cm, rel_arg_cm = evaluate_argument_extractor(gold_list, predicted_list)
     sense_cm = evaluate_sense(gold_list, predicted_list)
 
-    print 'Explicit connectives         : Precision %1.4f Recall %1.4f F1 %1.4f' % connective_cm.get_prf('yes')
-    print 'Arg 1 extractor              : Precision %1.4f Recall %1.4f F1 %1.4f' % arg1_cm.get_prf('yes')
-    print 'Arg 2 extractor              : Precision %1.4f Recall %1.4f F1 %1.4f' % arg2_cm.get_prf('yes')
-    print 'Arg1 Arg2 extractor combined : Precision %1.4f Recall %1.4f F1 %1.4f' % rel_arg_cm.get_prf('yes')
-    print 'Sense classification--------------'
+    print('Explicit connectives         : Precision %1.4f Recall %1.4f F1 %1.4f' % connective_cm.get_prf('yes'))
+    print('Arg 1 extractor              : Precision %1.4f Recall %1.4f F1 %1.4f' % arg1_cm.get_prf('yes'))
+    print('Arg 2 extractor              : Precision %1.4f Recall %1.4f F1 %1.4f' % arg2_cm.get_prf('yes'))
+    print('Arg1 Arg2 extractor combined : Precision %1.4f Recall %1.4f F1 %1.4f' % rel_arg_cm.get_prf('yes'))
+    print('Sense classification--------------')
     sense_cm.print_summary()
-    print 'Overall parser performance --------------'
+    print('Overall parser performance --------------')
     precision, recall, f1 = sense_cm.compute_micro_average_f1()
-    print 'Precision %1.4f Recall %1.4f F1 %1.4f' % (precision, recall, f1)
+    print('Precision %1.4f Recall %1.4f F1 %1.4f' % (precision, recall, f1))
     return connective_cm, arg1_cm, arg2_cm, rel_arg_cm, sense_cm, precision, recall, f1
 
 
@@ -57,7 +58,7 @@ def evaluate_connectives(gold_list, predicted_list):
     explicit_predicted_list = [(x['DocID'], x['Connective']['TokenList']) \
             for x in predicted_list if x['Type'] == 'Explicit']
     connective_cm = compute_binary_eval_metric(
-            explicit_gold_list, explicit_predicted_list, connective_head_matching)    
+            explicit_gold_list, explicit_predicted_list, connective_head_matching)
     return connective_cm
 
 def spans_exact_matching(gold_doc_id_spans, predicted_doc_id_spans):
@@ -134,7 +135,7 @@ def connective_head_matching(gold_raw_connective, predicted_raw_connective):
 def evaluate_sense(gold_list, predicted_list):
     """Evaluate sense classifier
 
-    The label ConfusionMatrix.NEGATIVE_CLASS is for the relations 
+    The label ConfusionMatrix.NEGATIVE_CLASS is for the relations
     that are missed by the system
     because the arguments don't match any of the gold relations.
     """
@@ -242,22 +243,21 @@ def main():
     args = parser.parse_args()
     gold_list = [json.loads(x) for x in open(args.gold)]
     predicted_list = [json.loads(x) for x in open(args.predicted)]
-    print '\n================================================'
-    print 'Evaluation for all discourse relations'
+    print('\n================================================')
+    print('Evaluation for all discourse relations')
     evaluate(gold_list, predicted_list)
 
-    print '\n================================================'
-    print 'Evaluation for explicit discourse relations only'
+    print('\n================================================')
+    print('Evaluation for explicit discourse relations only')
     explicit_gold_list = [x for x in gold_list if x['Type'] == 'Explicit']
     explicit_predicted_list = [x for x in predicted_list if x['Type'] == 'Explicit']
     evaluate(explicit_gold_list, explicit_predicted_list)
 
-    print '\n================================================'
-    print 'Evaluation for non-explicit discourse relations only (Implicit, EntRel, AltLex)'
+    print('\n================================================')
+    print('Evaluation for non-explicit discourse relations only (Implicit, EntRel, AltLex)')
     non_explicit_gold_list = [x for x in gold_list if x['Type'] != 'Explicit']
     non_explicit_predicted_list = [x for x in predicted_list if x['Type'] != 'Explicit']
     evaluate(non_explicit_gold_list, non_explicit_predicted_list)
 
 if __name__ == '__main__':
     main()
-

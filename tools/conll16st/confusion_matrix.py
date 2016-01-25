@@ -90,7 +90,7 @@ class ConfusionMatrix(object):
         f1 = numpy.zeros(self.alphabet.size())
 
         # compute precision, recall, and f1
-        for i in xrange(self.alphabet.size()):
+        for i in range(self.alphabet.size()):
             precision[i], recall[i], f1[i] = self.get_prf_for_i(i)
 
         return (precision, recall, f1)
@@ -102,7 +102,7 @@ class ConfusionMatrix(object):
 
     def compute_micro_average_f1(self):
         total_correct = 0.0
-        for i in xrange(self.alphabet.size()):
+        for i in range(self.alphabet.size()):
             total_correct += self.matrix[i,i]
         negative_index = self.alphabet.get_index(self.NEGATIVE_CLASS)
         total_predicted = numpy.sum([x for i, x in enumerate(self.matrix.sum(1))\
@@ -137,23 +137,23 @@ class ConfusionMatrix(object):
     def print_matrix(self):
         num_classes = self.alphabet.size()
         #header for the confusion matrix
-        header = [' '] + [self.alphabet.get_label(i) for i in xrange(num_classes)]
+        header = [' '] + [self.alphabet.get_label(i) for i in range(num_classes)]
         rows = []
         #putting labels to the first column of rhw matrix
-        for i in xrange(num_classes):
-            row = [self.alphabet.get_label(i)] + [str(self.matrix[i,j]) for j in xrange(num_classes)]
+        for i in range(num_classes):
+            row = [self.alphabet.get_label(i)] + [str(self.matrix[i,j]) for j in range(num_classes)]
             rows.append(row)
-        print "row = predicted, column = truth"
-        print matrix_to_string(rows, header)
+        print("row = predicted, column = truth")
+        print(matrix_to_string(rows, header))
 
     def print_summary(self):
 
         precision = numpy.zeros(self.alphabet.size())
         recall = numpy.zeros(self.alphabet.size())
         f1 = numpy.zeros(self.alphabet.size())
-        
+
         max_len = 0
-        for i in xrange(self.alphabet.size()):
+        for i in range(self.alphabet.size()):
             label = self.alphabet.get_label(i)
             if label != self.NEGATIVE_CLASS and len(label) > max_len:
                 max_len = len(label)
@@ -161,7 +161,7 @@ class ConfusionMatrix(object):
         lines = []
         correct = 0.0
         # compute precision, recall, and f1
-        for i in xrange(self.alphabet.size()):
+        for i in range(self.alphabet.size()):
             precision[i], recall[i], f1[i] = self.get_prf_for_i(i)
             correct += self.matrix[i,i]
             label = self.alphabet.get_label(i)
@@ -174,13 +174,13 @@ class ConfusionMatrix(object):
         lines.append('*Micro-Average%s precision %1.4f\trecall %1.4f\tF1 %1.4f' %\
             (space, numpy.mean(precision), numpy.mean(recall), numpy.mean(f1)))
         lines.sort()
-        print '\n'.join(lines)
+        print('\n'.join(lines))
 
     def print_out(self):
         """Printing out confusion matrix along with Macro-F1 score"""
         self.print_matrix()
         self.print_summary()
-    
+
 
 def matrix_to_string(matrix, header=None):
     """
@@ -276,7 +276,7 @@ class Alphabet(object):
         """Get index from label"""
         if not self.has_label(label):
             if self.growing:
-                self.add(label) 
+                self.add(label)
             else:
                 return -1
         return self._label_to_index[label]
@@ -315,11 +315,9 @@ class Alphabet(object):
         alphabet = cls()
         alphabet._label_to_index = alphabet_dictionary['_label_to_index']
         alphabet._index_to_label = {}
-        for label, index in alphabet._label_to_index.items():
+        for label, index in list(alphabet._label_to_index.items()):
             alphabet._index_to_label[index] = label
         # making sure that the dimension agrees
         assert(len(alphabet._index_to_label) == len(alphabet._label_to_index))
         alphabet.num_labels = len(alphabet._index_to_label)
         return alphabet
-
-

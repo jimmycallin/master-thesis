@@ -6,6 +6,7 @@ It verifies that each line is
 1) a well-formed json and readable by json.loads
 2) a relation json looks similar to the one given in the training set
 """
+from __future__ import print_function
 import argparse
 import json
 import sys
@@ -47,14 +48,14 @@ def validate_file(file_name, language):
     all_correct = True
     for i, line in enumerate(lines):
         try:
-            print 'Validating line %s' % (i+1)
+            print('Validating line {}'.format(i+1))
             relation = json.loads(line)
             check_type(relation)
             check_sense(relation, language)
             check_args(relation)
             check_connective(relation)
         except (ValueError, TypeError) as e:
-            sys.stderr.write('\tLine %s %s\n' % ((i+1), e))
+            sys.stderr.write('\tLine {} {}\n'.format((i+1), e))
             all_correct = False
     return all_correct
 
@@ -67,16 +68,16 @@ def validate_relation_list(relation_list, language):
             check_args(relation)
             check_connective(relation)
         except (ValueError, TypeError) as e:
-            sys.stderr.write('Relation %s %s\n' % (i, e))
+            sys.stderr.write('Relation {} {}\n'.format(i, e))
             all_correct = False
     return all_correct
- 
+
 def check_type(relation):
     if 'Type' not in relation:
         raise ValueError('Field \'Type\' is required but not found')
     relation_type = relation['Type']
     if relation_type not in RELATION_TYPES:
-        raise ValueError('Invalid type of %s' % relation_type)
+        raise ValueError('Invalid type of {}'.format(relation_type))
     if relation_type == 'NoRel':
         raise ValueError('NoRel should be removed as it is treated as a negative example')
 
@@ -88,17 +89,17 @@ def check_sense(relation, language):
     if not isinstance(senses, list):
         raise TypeError('Sense field must be a list of one element')
     if len(senses) > 1:
-        raise TypeError('Sense field must be a list of one element. Got %s' % len(senses))
+        raise TypeError('Sense field must be a list of one element. Got {}'.format(len(senses)))
     sense = senses[0]
     if language == 'en':
         valid_senses = EN_SENSES
     elif language == 'zh':
         valid_senses = ZH_SENSES
     else:
-        print 'Invalid language option'
+        print('Invalid language option')
         return
     if sense not in valid_senses:
-        raise ValueError('Invalid sense of %s' % sense)
+        raise ValueError('Invalid sense of {}'.format(sense))
 
 def check_args(relation):
     if 'Arg1' not in relation:
@@ -145,7 +146,7 @@ def identify_valid_senses(g_relation_list):
     else:
         return ZH_SENSES
 
-    
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('System output format validator')
     parser.add_argument('language', choices=['en','zh'], help='language of the output')

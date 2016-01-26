@@ -1,0 +1,8 @@
+\contentsline {chapter}{Preface}{4}{chapter*.1}
+\contentsline {chapter}{\chapternumberline {1}Background}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Discourse}{5}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Parsing}{5}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Shallow Discourse Parsing}{5}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Explicit vs implicit discourse connectives}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}The CoNLL-2016 Shared Task on Shallow Discourse Parsing}{6}{section.1.3}
+\contentsline {chapter}{\chapternumberline {2}Data}{7}{chapter.2}

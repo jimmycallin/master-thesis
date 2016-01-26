@@ -1,0 +1,37 @@
+
+\chapter{Background}
+
+\section{Discourse}
+
+\subsection{Parsing}
+
+\subsection{Shallow Discourse Parsing}
+
+\emph{[Continue explaination of why D-LTAG is better, refer to Webber (2004) and Prasad et al (2008).]}
+
+A subset of Penn Treebank has been annotated with a set of discourse connectives, giving us a resource to work with to learn more about the computability of these connectives. This is a good start.
+
+Penn Discourse Treebank follows the lexically grounded predicate-argument approach as proposed in Webber (2004). It covers the subset containing Wall Street Journal articles from the Penn Treebank, making up approximately one million tokens. When a connective explicitly appears, it will be syntactically connected to the \emph{Arg2} argument of the discourse structure. \emph{Arg1} is the other one. Due to \emph{Arg2} being syntactically bounded to connective, it is easy to automatically classify \emph{Arg2}. \emph{Arg1} is more difficult, and Lin et al (2012) solves this by
+
+PDTB annotates each structure with types of discourse relations according to a three level hierarchy, where the first level is made up of four classes: temporal, contingency, comparison, expansion. Each class has a second level of in total 16 types to provide a more fine-grained classification. Due to the third level being considered too fine-grained, it is ignored in this work.
+
+\section{Explicit vs implicit discourse connectives}
+
+\input{figures/sense_hierarchy}
+
+I want to go to New York, but I already booked a flight.  (--> I am not going to New York.)
+
+I want to go to New York, so I already booked a flight. (--> I am going to New York.)
+
+
+- Implicit
+
+- EntRel, AltRel?
+
+
+Discourse parsing will find its usefulness when current methods reach their potential given the current method of only looking within the immediate local context. When structure starts to become more important, as is already the case for e.g. QA systems but also in machine translation where pronouns may depend upon antecedents beyond the local context. Furthermore, experiments have been made where discourse structure measures coherence of text. See Lin, Ng, Kan (2011) Recognizing implicit discourse relations in the penn discourse treebank. Also summarization.
+
+
+\section{The CoNLL-2016 Shared Task on Shallow Discourse Parsing}
+
+The shared task for the Twentieth Conference on Computational Natural Language Learning (CoNLL-2016) continues upon the work of last year's shared task on shallow discourse parsing. It is as a part of this task we worked on the thesis.

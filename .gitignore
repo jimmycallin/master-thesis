@@ -1,5 +1,10 @@
+# Project specific
+tools/conll16st/tutorial/conll16st-en-01-12-16-trial/
+resources
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
+*.py.bak
 *.py[cod]
 *$py.class
 

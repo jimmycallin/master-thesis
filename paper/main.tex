@@ -1,6 +1,11 @@
 \documentclass[master,times]{stpthesis}
 % or [master]
 \usepackage[utf8]{inputenc}
+
+% Custom packages
+\usepackage{gb4e}
+\noautomath
+\usepackage{todonotes}
 \usepackage{outlines}
 \usepackage{booktabs}
 % (Babel not needed if only English is used)
@@ -8,7 +13,10 @@
 
 % For the bibliography
 \usepackage[round]{natbib}
+
 \bibliographystyle{plainnat}
+
+
 
 \begin{document}
 \author{Jimmy Callin}
@@ -30,6 +38,7 @@
 
 \mainmatter*
 
+\input{introduction}
 \input{background}
 \input{data}
 

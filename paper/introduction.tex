@@ -1,3 +1,33 @@
 \chapter{Introduction}
 
-Most work in computational linguistics currently makes simplified assumptions regarding the atomicity of sentences. They rarely exploit resources from previous sentences or document level information -- at best we have some explicit domain knowledge regarding their current context. This is not surprising. Discourse level analysis is a difficult feat and so far competing theories have been lacking in several properties:
+Despite the progress in Natural Language Processing (NLP), one assumption remains steadfast: sentences are to be seen as atomical units. Machine Translation systems rarely look outside of its local context for translation clues, sentiment analysis modules have trouble dealing with juxtapositions, and information extraction systems often limit extracted units of fact to the immediate sentence. While this  obviously is a faulty assumption, it has been difficult to release this constraint from the equations; the increasing recall has rarely been worth the much faster decreasing precision.
+
+Lately, it has come to the attention that we might have started to reach a convergence for certain tasks if we do not start to look into the role of sentences in their environment. This is what \emph{discourse parsing} is trying to achieve, by revealing an inherent structure between sentences within documents. That is, how does one text unit relate to the another text unit? Take for instance:
+
+\begin{exe}
+\ex \emph{Boeing would make cost-of-living adjustments projected to be 5 for each year of the contract} \underline{though} \textbf{the union has called the offer insulting}.\label{exemple:boeing}
+\end{exe}
+
+The connective unit \emph{though} in Example \ref{exemple:boeing} can be analyzed as a sort of binding block between the italized unit and the bolded, working as a \emph{contrastive comparison} between them. This is an example of a \emph{sense} of a discourse relation which labels each relation according to a given sense taxonomy. That said, not all connective units are necessarily as explicit:
+
+\begin{exe}
+\ex \emph{No wonder}. \textbf{We were coming down straight into their canal.}\label{exemple:nowonder}
+\end{exe}
+
+Here, despite the lack of a connective unit the two sentences clearly share a connection. The bolded sentence explains the previous one as \emph{the reason} for the lack of wonder. We will expand upon the difference between implicit and explicit relations in section \ref{sec:implexpl}, as well as how we can possibly classify the sense of a relation.
+
+\section{The CoNLL-2016 Shared Task on Shallow Discourse Parsing}
+
+At CoNLL 2015 they introduced a new shared task on \emph{Shallow Discourse Parsing}. In this task, a system is fed a piece of newswire text as input and returns discourse relations similar to our previous examples. Such a system needs to locate both explicit or implicit discourse connectives, identify the spans of its two relations, and finally predict the sense of the discourse connective.
+
+The shared task for the Twentieth Conference on Computational Natural Language Learning (CoNLL-2016) continues upon the work of last year's shared task while introducing Chinese as an alternative evaluation language. A new component is the introduction of sense classification where correct argument dependencies and connective are already given, leaving out the sense of the discourse connective. The purpose of this is to allow more focus to be put into solely studying the properties of discourse connectives without having to worry about the pure parsing. In this work, we are first and foremost interested in the sense classification task.
+
+\section{Purpose}
+
+The purpose of this thesis is to improve upon the current sense classification in the context of English shallow discourse parsing, as provided by CoNLL 2016. We will explore the following research questions:
+
+\begin{itemize}
+    \item How does explicit and implicit relations differ qualitatively?
+    \item How can we use continuous semantic representations to increase performance in such a task?
+    \item What can we learn from other work in natural language inference?
+\end{itemize}

@@ -1,6 +1,20 @@
 \chapter{Data}
 
-The first and only work to date which has used the D-LTAG for annotation is the work of \emph{Penn Discourse Treebank} (PDTB), ...
+For training we will be using the Penn Discourse Treebank (PDTB). PDTB follows the lexically grounded predicate-argument approach as proposed in Webber (2004). It covers the subset containing Wall Street Journal articles from the Penn Treebank, making up approximately one million tokens. When a connective explicitly appears, it will be syntactically connected to the \emph{Arg2} argument of the discourse structure. \emph{Arg1} is the other one. Due to \emph{Arg2} being syntactically bounded to connective, it is easy to automatically classify \emph{Arg2}.
 
+PDTB annotates each structure with types of discourse relations according to a three level hierarchy as seen in Table \ref{tbl:sense-hierarchy}, where the first level is made up of four classes: TEMPORAL, CONTINGENCY, COMPARISON, EXPANSION. Each class has a non-obligatory second level of in total 16 types to provide a more fine-grained classification. Due to the third level being considered too fine-grained, it is ignored in this work.
 
+Furthermore, we have some additional resources at our disposal:
+
+\begin{itemize}
+    \item Brown clusters from the RCV1 corpus.
+    \item MPQA subjectivity lexicon.
+    \item Skip-gram Neural Word Embeddings trained on 100 billion words from the Google News dataset.
+    \item VerbNet 3.2.
+\end{itemize}
+
+\begin{table}
 \input{tables/sense_frequency}
+\label{tbl:sense_frequency}
+\caption{Frequency of sense labels in training data. Right now connective\_token is simply the frequency. I should change this name. Ratio is the frequency ratio.}
+\end{table}

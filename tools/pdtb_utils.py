@@ -3,6 +3,7 @@ from sys import path
 import json
 path.append("..")
 from config import config
+from conll16st import conn_head_mapper
 
 class DiscourseRelation():
     def __init__(self, dict_relation):
@@ -16,7 +17,6 @@ class DiscourseRelation():
 
     def senses(self, max_level=2):
         return [".".join(s.split(".")[:max_level]) for s in self.raw['Sense']]
-
 
     def relation_type(self):
         return self.raw['Type']
@@ -43,7 +43,16 @@ class DiscourseRelation():
     #### CONNECTIVES ####
 
     def connective_token(self):
-        return self.raw['Connective']['RawText']
+        token = self.raw['Connective']['RawText']
+        if token == "":
+            return None
+        else:
+            return token
+
+    def connective_head(self):
+        mapper = conn_head_mapper.ConnHeadMapper()
+        head, indices = mapper.map_raw_connective(self.connective_token())
+        return head
 
     def connective_character_offsets(self):
         if self.is_explicit():

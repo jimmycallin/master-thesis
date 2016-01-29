@@ -2,6 +2,14 @@
 tools/conll16st/tutorial/conll16st-en-01-12-16-trial/
 resources
 
+# LaTeX
+*.aux
+*.fbd_latexmk
+*.fls
+*.out
+*.toc
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py.bak

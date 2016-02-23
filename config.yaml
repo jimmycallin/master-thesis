@@ -1,0 +1,78 @@
+# Author
+author: Jimmy Callin
+email: jimmy.callin@gmail.com
+
+base_dir: /Users/jimmy/dev/edu/master-thesis/
+
+train: training_data
+test: dev_data
+store_test_results: results/cnn.txt
+
+# stored_model_path: None
+
+# Model
+model:
+    name: CNN
+    sgd_learning_rate: 0.01
+    store_path: models/cnn.bin
+
+
+feature_extraction:
+    max_words_in_sentence: 20
+    extractors:
+        -
+            name: word2vec
+            path: resources/GoogleNews-vectors-negative300.bin
+
+
+# Resources
+resources:
+    training_data:
+        name: conll16st-en-01-12-16-train
+        path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-train/relations.json
+    dev_data:
+        name: conll16st-en-01-12-16-dev
+        path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations.json
+
+# Logging
+logging:
+    version: 1
+    formatters:
+        default:
+            format: '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+    handlers:
+        console:
+            class: logging.StreamHandler
+            stream: ext://sys.stdout
+            formatter: default
+            level: DEBUG
+        file:
+            class: logging.FileHandler
+            filename: main.log
+            formatter: default
+            level: DEBUG
+    root:
+        handlers: [console, file]
+        level: DEBUG
+
+# Deployment process
+deploy:
+# Download these files to their location
+    download:
+        -
+            name: brown_clusters
+            from:
+                - http://metaoptimize.s3.amazonaws.com/brown-clusters-ACL2010/README.txt
+                - http://metaoptimize.s3.amazonaws.com/brown-clusters-ACL2010/brown-rcv1.clean.tokenized-CoNLL03.txt-c100-freq1.txt
+                - http://metaoptimize.s3.amazonaws.com/brown-clusters-ACL2010/brown-rcv1.clean.tokenized-CoNLL03.txt-c320-freq1.txt
+                - http://metaoptimize.s3.amazonaws.com/brown-clusters-ACL2010/brown-rcv1.clean.tokenized-CoNLL03.txt-c1000-freq1.txt
+                - http://metaoptimize.s3.amazonaws.com/brown-clusters-ACL2010/brown-rcv1.clean.tokenized-CoNLL03.txt-c3200-freq1.txt
+            to: resources/brown_clusters
+    # Make sure these files are where they should be with correct SHA
+    # These are not possible to download from urls,
+    # and therefore has to be done manually
+    check_exists:
+        -
+            name: word2vec
+            path: resources/GoogleNews-vectors-negative300.bin
+            shasum: df6bee5cbaa95ec7fa389bf666d14d4a9ff91484

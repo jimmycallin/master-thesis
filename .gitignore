@@ -1,6 +1,10 @@
 # Project specific
 tools/conll16st/tutorial/conll16st-en-01-12-16-trial/
-resources
+resources/
+overens/
+.ipynb_checkpoints/
+notes/
+notebooks/Playground.ipynb
 
 # LaTeX
 *.aux

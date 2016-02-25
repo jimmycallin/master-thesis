@@ -28,3 +28,7 @@ def get_en_model():
                            matcher=False,
                            load_vectors=False)
     return en_model
+
+
+def tokenize(sentence):
+    return [word.strip().lower() for word in sentence]

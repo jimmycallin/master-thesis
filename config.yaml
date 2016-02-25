@@ -4,21 +4,39 @@ email: jimmy.callin@gmail.com
 
 base_dir: /Users/jimmy/dev/edu/master-thesis/
 
+development_mode: true
+
 train: training_data
 test: dev_data
 store_test_results: results/cnn.txt
-
+model_name: nn_baseline
 # stored_model_path: None
 
 # Model
 model:
-    name: CNN
-    sgd_learning_rate: 0.01
-    store_path: models/cnn.bin
+    name: logistic_regression
+    batch_size: 500
+    epochs: 10
+    #store_path: models/logreg.bin
 
+
+models:
+    nn_baseline:
+        batch_size: 10
+        hack_max_len: 25
+        hidden_dim: 100
+        num_epochs: 1
+        optimizer: GradientDescentOptimizer
+        learning_rate: 0.01
+        dont_train_embeddings: true
+
+
+
+
+# Each extractor has a name from main.extractor_handlers, which points to a class
+# where any additional params are used to initiate the extractor class.
 
 feature_extraction:
-    max_words_in_sentence: 20
     extractors:
         -
             name: word2vec
@@ -30,13 +48,16 @@ resources:
     training_data:
         name: conll16st-en-01-12-16-train
         path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-train/relations.json
+        max_words_in_sentence: 20
     dev_data:
         name: conll16st-en-01-12-16-dev
         path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations.json
+        max_words_in_sentence: 20
 
 # Logging
 logging:
     version: 1
+    disable_existing_loggers: false
     formatters:
         default:
             format: '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'

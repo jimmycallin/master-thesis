@@ -16,7 +16,10 @@ class DiscourseRelation():
         return self.raw['DocID']
 
     def senses(self, max_level=2):
-        return [".".join(s.split(".")[:max_level]) for s in self.raw['Sense']]
+        """
+        Removing duplicate senses, if there are any
+        """
+        return sorted(set([".".join(s.split(".")[:max_level]) for s in self.raw['Sense']]))
 
     def relation_type(self):
         return self.raw['Type']
@@ -51,8 +54,12 @@ class DiscourseRelation():
 
     def connective_head(self):
         mapper = conn_head_mapper.ConnHeadMapper()
-        head, indices = mapper.map_raw_connective(self.connective_token())
-        return head
+        token = self.connective_token()
+        if token is None:
+            return None
+        else:
+            head, _ = mapper.map_raw_connective(token)
+            return head
 
     def connective_character_offsets(self):
         if self.is_explicit():
@@ -80,16 +87,15 @@ class DiscourseRelation():
 
     def __repr__(self):
         return "{}, {}: {}/{}".format(self.relation_id(), self.relation_type(),
-                                  self.connective_token(), self.senses())
+                                      self.connective_token(), self.senses())
 
 
     def __str__(self):
         return "{} <-ARG1- {}: {}/{} -ARG2-> {}".format(self.arg1_text(),
-                                                    self.relation_type(),
-                                                    self.connective_token(),
-                                                    self.senses(),
-                                                    self.arg2_text())
-
+                                                        self.relation_type(),
+                                                        self.connective_token(),
+                                                        self.senses(),
+                                                        self.arg2_text())
 
 
 def get_relations(relations_path):
@@ -97,9 +103,9 @@ def get_relations(relations_path):
         for line in f:
             yield DiscourseRelation(json.loads(line.strip()))
 
+
 def get_train_relations():
-    relations_path = join(config['base_dir'],
-                          config['train_dir'], 'relations.json')
+    relations_path = config['resources']['training_data']['path']
     yield from get_relations(relations_path)
 
 

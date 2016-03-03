@@ -119,7 +119,7 @@ def connective_head_matching(gold_raw_connective, predicted_raw_connective):
     gold_docID, gold_token_address_list, gold_tokens = gold_raw_connective
     predicted_docID, predicted_token_list = predicted_raw_connective
     if gold_docID != predicted_docID:
-        return False
+        raise ValueError("gold_docID != predicted_docID")
 
     gold_token_indices = [x[2] for x in gold_token_address_list]
 

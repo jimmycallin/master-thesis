@@ -2,24 +2,27 @@
 Main starting point.
 Better docs coming.
 """
-
 from utils.misc_utils import get_config, get_logger
 from utils.resources import PDTBRelations
-from utils.extractors import Word2Vec
+from utils.extractors import Word2Vec, OneHot, RandomVectors
 from utils.models import CNN, RNN, LogisticRegression
-import numpy as np
 from sys import argv
-from joblib.memory import Memory
-import logging
 
-MEMORY = Memory(cachedir='/tmp', verbose=logging.DEBUG)
+import numpy as np
+np.random.seed(0)  # pylint: disable=E1101
+
+# from joblib.memory import Memory Fix caches later
+# MEMORY = Memory(cachedir='/tmp', verbose=logging.DEBUG)
 
 RESOURCE_HANDLERS = {
     'conll16st-en-01-12-16-train': PDTBRelations,
+    'conll16st-en-01-12-16-dev': PDTBRelations,
 }
 
 EXTRACTOR_HANDLERS = {
-    'word2vec': Word2Vec
+    'word2vec': Word2Vec,
+    'onehot': OneHot,
+    'random_vectors': RandomVectors
 }
 
 MODEL_HANDLERS = {
@@ -35,7 +38,8 @@ def load_resource(resource_config):
     logger.debug("Loading {} from {}".format(resource_config['name'],
                                              resource_config['path']))
     resource_handler = RESOURCE_HANDLERS[resource_config['name']]
-    resource = resource_handler(resource_config['path'], resource_config['max_words_in_sentence'])
+    resource_config = {x:y for x,y in resource_config.items() if x != 'name'}
+    resource = resource_handler(**resource_config)
     return resource
 
 
@@ -72,47 +76,36 @@ def get_model(model_name):
     return model
 
 
-def store_results(results, config):
-    """
-    Don't forget to use the official scoring script here.
-    """
-    report = """TEST RESULTS
-    ...
-    """
-    logger.info(report)
-    with open(config['store_results'], 'a') as w:
-        for line in report.split("\n"):
-            w.write(line + "\n")
-    logger.info("Stored test results in {}".format(config['store_test_results']))
-
-
 def run(config):
     logger.info("Setting up...")
     # Load resources
+
     if config['train']:
-        training_data = load_resource(config['resources']['training_data'])
+        training_data = load_resource(config['resources'][config['train']])
         logger.debug("Training data classes: {}".format(training_data.y_indices))
         extracted_features, correct = extract_features(config['feature_extraction'],
                                                        training_data)
-        model_class = get_model(config['model'].pop('name'))
+        model_class = get_model(config['model'])
         model = model_class(n_words=extracted_features.shape[1],
                             n_features=extracted_features.shape[2],
                             n_classes=len(training_data.y_indices),
-                            **config['model'])
+                            **config['models'][config['model']])
+
         model.train(extracted_features, correct)
-        if 'store_path' in config['model']:
-            pass
-            #model.store(config['model']['store_path'])
-    else:
-        model = load_stored_model(config['stored_model_path'])
+        logger.info("Finished training!")
 
     if config['test']:
-        test_data = load_resource(config['resources']['test_data'])
-        results = model.test(test_data)
-        store_results(results, config)
-
-
-    logger.info("Finished!")
+        test_data = load_resource(config['resources'][config['test']])
+        extracted_features, correct = extract_features(config['feature_extraction'],
+                                                       test_data)
+        model_class = get_model(config['model'])
+        model = model_class(n_words=extracted_features.shape[1],
+                            n_features=extracted_features.shape[2],
+                            n_classes=len(test_data.y_indices),
+                            **config['models'][config['model']])
+        results = model.test(extracted_features, correct)
+        test_data.store_results(results)
+        logger.info("Finished testing!")
 
 
 if __name__ == '__main__':

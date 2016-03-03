@@ -1,15 +1,15 @@
 import numpy as np
-from .misc_utils import get_logger
+import abc
+from .misc_utils import get_logger  # pylint: disable=E0401
+import hashlib
 
 logger = get_logger(__name__)
 
-class Extractor():
+class Extractor(metaclass=abc.ABCMeta):
     """
     Base class with expected functions for any Extractor subclass.
     """
-    def __init__(self, **kwargs):
-        self.n_features = None
-
+    @abc.abstractmethod
     def extract_features(self, sentences):
         raise NotImplementedError("This must be subclassed.")
 
@@ -18,6 +18,26 @@ class EmptyData():
         self.vocab = {}
         self.vector_size = 300
 
+
+class RandomVectors(Extractor):
+    def __init__(self, dimensionality, **kwargs):
+        self.vocab = {}
+        self.n_features = dimensionality
+
+    def extract_features(self, sentence):
+        feats = np.array([self[w] for w in sentence])
+        assert feats.shape == (len(sentence), self.n_features)
+        return feats
+
+    def __getitem__(self, w):
+        if w not in self.vocab:
+            # Setting hashing state ensures we have the same random vector for each word between runs
+            hsh = hashlib.md5()
+            hsh.update(w.encode())
+            seed = int(hsh.hexdigest(), 16) % 4294967295  # highest number allowed by seed
+            state = np.random.RandomState(seed)  # pylint: disable=E1101
+            self.vocab[w] = state.randn(self.n_features)  # pylint: disable=E1101
+        return self.vocab[w]
 
 class Word2Vec(Extractor):
     """
@@ -29,15 +49,11 @@ class Word2Vec(Extractor):
         Loads word vectors for words in vocab
         """
         self.path = path
-        if 'random_vectors_only' in kwargs and kwargs['random_vectors_only']:
-            self.data = EmptyData()
-        else:
-            self.data = self._load_from_binary_format(self.path)
+        self.data = self._load_from_binary_format(self.path)
 
-        self.embedding_size = self.data.vector_size
         self.n_embeddings = len(self.data.vocab)
-        self.n_features = self.embedding_size
-        self.oov = np.random.randn(self.embedding_size)
+        self.n_features = self.data.vector_size
+        self.random_vectors = RandomVectors(self.n_features)
 
     def extract_features(self, sentence):
         """
@@ -45,10 +61,10 @@ class Word2Vec(Extractor):
         If the sentence is too long, we cut it off at the end.
         If it is too short, we add zero vectors to it.
         Returns features according to:
-            words x embedding_size
+            words x n_features
         """
         feats = np.array([self[w] for w in sentence])
-        assert feats.shape == (len(sentence), self.embedding_size)
+        assert feats.shape == (len(sentence), self.n_features)
         return feats
 
 
@@ -59,8 +75,35 @@ class Word2Vec(Extractor):
         logger.debug("Word2Vec matrix loaded")
         return data
 
-    def __getitem__(self, s):
-        if s in self.data.vocab:
-            return self.data[s]
+    def __getitem__(self, w):
+        if w in self.data.vocab:
+            return self.data[w]
         else:
-            return self.oov
+            return self.random_vectors[w]
+
+
+class OneHot(Extractor):
+    def __init__(self, vocab_indices_path, **kwargs):
+        self.vocab = self._read_vocab_indices(vocab_indices_path)
+        self.n_features = len(self.vocab) + 1 # last one for oov
+
+    def _read_vocab_indices(self, vocab_indices_path):
+        vocab = {}
+        with open(vocab_indices_path) as f:
+            for i, line in enumerate(f):
+                if line.strip() in vocab:
+                    raise ValueError("{} appears twice in vocab".format(line))
+                vocab[line.strip()] = i
+        return vocab
+
+    def get(self, word):
+        if word in self.vocab:
+            return self.vocab[word]
+        else:
+            return len(self.vocab) # oov
+
+    def extract_features(self, sentence):
+        indices = [self.get(w) for w in sentence]
+        feat_matrix = np.zeros([1, self.n_features])
+        feat_matrix[0, indices] = 1
+        return feat_matrix

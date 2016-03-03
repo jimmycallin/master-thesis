@@ -21,11 +21,25 @@ class DiscourseRelation():
         """
         return sorted(set([".".join(s.split(".")[:max_level]) for s in self.raw['Sense']]))
 
+    def set_senses(self, senses):
+        assert isinstance(senses, list), "Senses is of instance {}".format(type(senses))
+        self.raw['Sense'] = senses
+
     def relation_type(self):
         return self.raw['Type']
 
+    def set_relation_type(self, rel_type):
+        assert rel_type in {'Implicit', 'Explicit'}
+        self.raw['Type'] = rel_type
+
     def is_explicit(self):
-        return self.relation_type == 'Explicit'
+        return self.relation_type == 'Explicit' or self.relation_type != ''
+
+    def split_up_senses(self):
+        for sense in self.senses():
+            new_rel = DiscourseRelation(self.raw.copy())
+            new_rel.set_senses([sense])
+            yield new_rel
 
     #### ARG1 ####
 
@@ -96,24 +110,3 @@ class DiscourseRelation():
                                                         self.connective_token(),
                                                         self.senses(),
                                                         self.arg2_text())
-
-
-def get_relations(relations_path):
-    with open(relations_path) as f:
-        for line in f:
-            yield DiscourseRelation(json.loads(line.strip()))
-
-
-def get_train_relations():
-    relations_path = config['resources']['training_data']['path']
-    yield from get_relations(relations_path)
-
-
-def get_test_relations():
-    relations_path = join(config['base_dir'],
-                          config['test_dir'], 'relations.json')
-    yield from get_relations(relations_path)
-
-if __name__ == '__main__':
-    for disc_relation in get_train_relations():
-        print(disc_relation)

@@ -25,23 +25,23 @@ if not exists('resources'):
 # Download missing files
 print("Downloading all files...")
 for download in config['download']:
-        makedirs(download['to'], exist_ok=True)
-        for url in download['from']:
-            file_name = url.split("/")[-1]
-            full_path = join(download['to'], file_name)
-            if exists(full_path):
-                print("{} already exists, skipping".format(full_path))
-                continue
-            print("Downloading {} to {}".format(file_name, full_path))
-            with open(full_path, "wb") as f:
-                response = requests.get(url, stream=True)
-                for block in response.iter_content(1024):
-                    f.write(block)
-            print("{} downloaded".format(file_name))
-            if str.endswith(file_name, ".tar.gz"):
-                print("Extracting...")
-                with tarfile.open(full_path) as tf:
-                    tf.extractall(path)
+    makedirs(download['to'], exist_ok=True)
+    for url in download['from']:
+        file_name = url.split("/")[-1]
+        full_path = join(download['to'], file_name)
+        if exists(full_path):
+            print("{} already exists, skipping".format(full_path))
+            continue
+        print("Downloading {} to {}".format(file_name, full_path))
+        with open(full_path, "wb") as f:
+            response = requests.get(url, stream=True)
+            for block in response.iter_content(1024):
+                f.write(block)
+        print("{} downloaded".format(file_name))
+        if str.endswith(file_name, ".tar.gz"):
+            print("Extracting...")
+            with tarfile.open(full_path) as tf:
+                tf.extractall()
 
 # Check file_exists
 print("Checking if all necessary files exists...")

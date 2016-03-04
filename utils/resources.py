@@ -91,7 +91,7 @@ class PDTBRelations(Resource):
                 yield self.y_indices[rel.senses(max_level=self.max_hierarchical_level)]
 
 
-    def store_results(self, results):
+    def store_results(self, results, gold_file_path):
         """
         Don't forget to use the official scoring script here.
         """
@@ -99,18 +99,26 @@ class PDTBRelations(Resource):
         # Load test file
         # Output json object with results
         # Deal with multiple instances somehow
-        rels = []
+        predicted_rels = []
         for text_result, rel in zip(text_results, self.instances):
             if rel.is_explicit():
                 rel_type = 'Explicit'
             else:
                 rel_type = 'Implicit'
-            rels.append(rel.to_output_format(text_result, rel_type))  # turn string representation into list instance first
+            predicted_rels.append(rel.to_output_format(text_result, rel_type))  # turn string representation into list instance first
 
         # Store test file
         import json
         with open('test.json', 'w') as w:
-            for rel in rels:
+            for rel in predicted_rels:
                 w.write(json.dumps(rel) + '\n')
         logger.info("Stored test file at test.json")
+
+        with open(gold_file_path) as file_:
+            gold_rels = [json.loads(line) for line in file_]
+        from .conll16st.scorer import evaluate_sense
+        sense_cm = evaluate_sense(gold_rels, predicted_rels)
+        print('Sense classification--------------')
+        sense_cm.print_summary()
+
         # Compare with gold standard

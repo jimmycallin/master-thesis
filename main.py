@@ -106,7 +106,7 @@ def run(config):
                             n_classes=len(test_data.y_indices),
                             **config['models'][config['model']])
         results = model.test(extracted_features)
-        test_data.store_results(results)
+        test_data.store_results(results, 'resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations.json')
         logger.info("Finished testing!")
 
 

@@ -47,6 +47,10 @@ def load_stored_model(model_path):
     logger.info("Loading stored model from {}".format(model_path))
     raise NotImplementedError()
 
+
+def get_answers(instances):
+    return list(instances.get_correct())
+
 # Turn this on when you don't want to recompute features all the time
 # @MEMORY.cache
 def extract_features(feat_config, instances):
@@ -55,7 +59,6 @@ def extract_features(feat_config, instances):
     Returns with dimensionality:
     sentences x words x n_features
     """
-    y = list(instances.get_correct())
     extractors = []
     extract_config = {x:y for x, y in feat_config.items() if x != 'extractors'}
     # Sorting just makes sure they always end up in the same order,
@@ -68,7 +71,7 @@ def extract_features(feat_config, instances):
         extractor = EXTRACTOR_HANDLERS[params['name']](**params)
         extractors.append(extractor)
 
-    return instances.get_feature_tensor(extractors), y
+    return instances.get_feature_tensor(extractors)
 
 
 def get_model(model_name):
@@ -83,8 +86,8 @@ def run(config):
     if config['train']:
         training_data = load_resource(config['resources'][config['train']])
         logger.debug("Training data classes: {}".format(training_data.y_indices))
-        extracted_features, correct = extract_features(config['feature_extraction'],
-                                                       training_data)
+        correct = get_answers(training_data)
+        extracted_features = extract_features(config['feature_extraction'], training_data)
         model_class = get_model(config['model'])
         model = model_class(n_words=extracted_features.shape[1],
                             n_features=extracted_features.shape[2],
@@ -96,14 +99,13 @@ def run(config):
 
     if config['test']:
         test_data = load_resource(config['resources'][config['test']])
-        extracted_features, correct = extract_features(config['feature_extraction'],
-                                                       test_data)
+        extracted_features = extract_features(config['feature_extraction'], test_data)
         model_class = get_model(config['model'])
         model = model_class(n_words=extracted_features.shape[1],
                             n_features=extracted_features.shape[2],
                             n_classes=len(test_data.y_indices),
                             **config['models'][config['model']])
-        results = model.test(extracted_features, correct)
+        results = model.test(extracted_features)
         test_data.store_results(results)
         logger.info("Finished testing!")
 

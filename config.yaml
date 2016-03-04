@@ -13,6 +13,7 @@ model: logistic_regression
 
 # Model
 
+
 models:
     logistic_regression:
         epochs: 100
@@ -42,17 +43,45 @@ resources:
     training_data:
         name: conll16st-en-01-12-16-train
         path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-train/relations.json
-        max_hierarchical_level: 1
+        max_hierarchical_level: 3
         max_words_in_sentence: 20
-        classes: ["['Temporal']", "['Expansion']", "['Contingency']", "['Comparison']", "['EntRel']"]
+        classes: ["Temporal.Asynchronous.Precedence",
+                  "Temporal.Asynchronous.Succession",
+                  "Temporal.Synchrony",
+                  "Contingency.Cause.Reason",
+                  "Contingency.Cause.Result",
+                  "Contingency.Condition",
+                  "Comparison.Contrast",
+                  "Comparison.Concession",
+                  "Expansion.Conjunction",
+                  "Expansion.Instantiation",
+                  "Expansion.Restatement",
+                  "Expansion.Alternative",
+                  "Expansion.Alternative.Chosen alternative",
+                  "Expansion.Exception",
+                  "EntRel"]
         separate_dual_classes: true
     dev_data:
         name: conll16st-en-01-12-16-dev
-        path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations.json
-        max_hierarchical_level: 1
+        path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations-no-senses.json
+        max_hierarchical_level: 3
         max_words_in_sentence: 20
-        classes: ["['Temporal']", "['Expansion']", "['Contingency']", "['Comparison']", "['EntRel']"]
-        separate_dual_classes: true
+        classes: ["Temporal.Asynchronous.Precedence",
+                  "Temporal.Asynchronous.Succession",
+                  "Temporal.Synchrony",
+                  "Contingency.Cause.Reason",
+                  "Contingency.Cause.Result",
+                  "Contingency.Condition",
+                  "Comparison.Contrast",
+                  "Comparison.Concession",
+                  "Expansion.Conjunction",
+                  "Expansion.Instantiation",
+                  "Expansion.Restatement",
+                  "Expansion.Alternative",
+                  "Expansion.Alternative.Chosen alternative",
+                  "Expansion.Exception",
+                  "EntRel"]
+        separate_dual_classes: false
 
 # Logging
 logging:

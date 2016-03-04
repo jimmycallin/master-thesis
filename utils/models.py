@@ -175,9 +175,8 @@ class LogisticRegression(Model):
         logger.info("Training session done.")
 
 
-    def test(self, feature_tensor, correct):
+    def test(self, feature_tensor):
         with self.graph.as_default():
-            correct = np.array(correct)
             cbow = self.massage_tensor(self.train_x)
             p_y_given_x = tf.matmul(cbow, self.weights)
             predicted_classes = tf.argmax(p_y_given_x, 1)

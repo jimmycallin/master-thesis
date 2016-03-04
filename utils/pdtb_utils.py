@@ -35,8 +35,20 @@ class DiscourseRelation():
     def is_explicit(self):
         return self.relation_type == 'Explicit' or self.relation_type != ''
 
-    def split_up_senses(self):
-        for sense in self.senses():
+    def to_output_format(self, sense, rel_type):
+        output = {'Arg1': {'TokenList': self.arg1_token_document_offsets(),
+                           'RawText': self.arg1_text()},
+                  'Arg2': {'TokenList': self.arg2_token_document_offsets(),
+                           'RawText': self.arg2_text()},
+                  'Connective': {'TokenList': [],
+                                 'RawText': self.connective_token()},
+                  'DocID': self.doc_id(),
+                  'Sense': [sense],
+                  'Type': rel_type}
+        return output
+
+    def split_up_senses(self, max_level):
+        for sense in self.senses(max_level=max_level):
             new_rel = DiscourseRelation(self.raw.copy())
             new_rel.set_senses([sense])
             yield new_rel
@@ -49,6 +61,9 @@ class DiscourseRelation():
     def arg1_character_offsets(self):
         return self.raw['Arg1']['CharacterSpanList']
 
+    def arg1_token_document_offsets(self):
+        return [token[2] for token in self.raw['Arg1']['TokenList']]
+
     #### ARG2 ####
 
     def arg2_text(self):
@@ -56,6 +71,9 @@ class DiscourseRelation():
 
     def arg2_character_offsets(self):
         return self.raw['Arg2']['CharacterSpanList']
+
+    def arg2_token_document_offsets(self):
+        return [token[2] for token in self.raw['Arg2']['TokenList']]
 
     #### CONNECTIVES ####
 
@@ -76,26 +94,17 @@ class DiscourseRelation():
             return head
 
     def connective_character_offsets(self):
-        if self.is_explicit():
-            return self.raw['Connective']['CharacterSpanList']['TokenList'][:2]
-        else:
-            return []
+        return [token[:2] for token in self.raw['Connective']['TokenList']]
 
     def connective_token_document_offset(self):
-        if self.is_explicit():
-            return self.raw['Connective']['CharacterSpanList']['TokenList'][2]
-        else:
-            return None
+        return [token[2] for token in self.raw['Connective']['TokenList']]
 
     def connective_sentence_offset(self):
-        if self.is_explicit():
-            return self.raw['Connective']['CharacterSpanList']['TokenList'][3]
-        else:
-            return None
+        return [token[3] for token in self.raw['Connective']['TokenList']]
 
     def connective_token_sentence_offset(self):
         if self.is_explicit():
-            return self.raw['Connective']['CharacterSpanList']['TokenList'][4]
+            return self.raw['Connective']['TokenList'][4]
         else:
             return None
 

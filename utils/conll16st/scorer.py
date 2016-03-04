@@ -119,7 +119,7 @@ def connective_head_matching(gold_raw_connective, predicted_raw_connective):
     gold_docID, gold_token_address_list, gold_tokens = gold_raw_connective
     predicted_docID, predicted_token_list = predicted_raw_connective
     if gold_docID != predicted_docID:
-        raise ValueError("gold_docID != predicted_docID")
+        return False
 
     gold_token_indices = [x[2] for x in gold_token_address_list]
 
@@ -160,6 +160,7 @@ def evaluate_sense(gold_list, predicted_list):
             else:
                 if not sense_cm.alphabet.has_label(predicted_sense):
                     predicted_sense = ConfusionMatrix.NEGATIVE_CLASS
+                print("Predicted {} gold {}".format(predicted_sense, gold_relation['Sense']))
                 sense_cm.add(predicted_sense, gold_relation['Sense'][0])
         else:
             sense_cm.add(ConfusionMatrix.NEGATIVE_CLASS, gold_relation['Sense'][0])
@@ -232,6 +233,7 @@ def _link_gold_predicted(gold_list, predicted_list, matching_fn):
             if matching_fn(gold_span, predicted_span):
                 gold_to_predicted_map[gi] = predicted_list[pi]
                 predicted_to_gold_map[pi] = gold_list[gi]
+
     return gold_to_predicted_map, predicted_to_gold_map
 
 

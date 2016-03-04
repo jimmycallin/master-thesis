@@ -76,7 +76,7 @@ def evaluate_arg_tokenwise(relation_pairs, position):
 def evaluate_arg_partial_match(relation_pairs, position, partial_match_cutoff):
     """Evaluate the argument based on partial matching criterion
 
-    We evaluate the argument as a whole. 
+    We evaluate the argument as a whole.
     """
     assert position == 1 or position == 2
     total_correct = 0.0

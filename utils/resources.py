@@ -11,9 +11,9 @@ class Resource(metaclass=abc.ABCMeta):
     def __init__(self, path, max_words_in_sentence, classes):
         self.path = path
         self.max_words_in_sentence = max_words_in_sentence
-        self.instances = list(self._load_instances(path))
         self.classes = sorted(classes)
         self.y_indices = {x: y for y, x in enumerate(self.classes)}
+        self.instances = list(self._load_instances(path))
 
     @abc.abstractmethod
     def _load_instances(self, path):
@@ -31,9 +31,18 @@ class PDTBRelations(Resource):
             for line in file_:
                 rel = DiscourseRelation(json.loads(line.strip()))
                 if self.separate_dual_classes:
-                    for splitted in rel.split_up_senses():
+                    for splitted in rel.split_up_senses(max_level=self.max_hierarchical_level):
+                        if len(splitted.senses()) > 1:
+                            raise ValueError("n_senses > 1")
+                        if len(splitted.senses()) == 1 and splitted.senses(max_level=self.max_hierarchical_level)[0] not in self.y_indices:
+                            logger.debug("Sense class {} not in class list, skipping {}".format(splitted.senses(max_level=self.max_hierarchical_level)[0], splitted.relation_id()))
+                            continue
                         yield splitted
                 else:
+                    all_classes_exist = all(r in self.y_indices for r in rel.senses(max_level=self.max_hierarchical_level))
+                    if not all_classes_exist:
+                        logger.debug("Sense {} classes not in class list, skipping {}".format(rel.senses(max_level=self.max_hierarchical_level), rel.relation_id()))
+                        continue
                     yield rel
 
     def massage_sentence(self, sentence):
@@ -76,7 +85,10 @@ class PDTBRelations(Resource):
         """
 
         for rel in self.instances:
-            yield self.y_indices[str(rel.senses(max_level=self.max_hierarchical_level))]
+            if self.separate_dual_classes:
+                yield self.y_indices[rel.senses(max_level=self.max_hierarchical_level)[0]]
+            else:
+                yield self.y_indices[rel.senses(max_level=self.max_hierarchical_level)]
 
 
     def store_results(self, results):
@@ -85,33 +97,20 @@ class PDTBRelations(Resource):
         """
         text_results = [self.classes[res] for res in results]
         # Load test file
-        # Insert results to test file
+        # Output json object with results
         # Deal with multiple instances somehow
+        rels = []
         for text_result, rel in zip(text_results, self.instances):
-            rel.set_senses(eval(text_result))  # turn string representation into list instance first
             if rel.is_explicit():
-                rel.set_relation_type('Explicit')
+                rel_type = 'Explicit'
             else:
-                rel.set_relation_type('Implicit')
-
-        # Merge instances
-        from collections import defaultdict
-        instances = defaultdict(list)
-        for rel in self.instances:
-            instances[rel.relation_id()].append(rel)
-
-        merged = []
-        for rel_id in sorted(instances.keys()):
-            rels = instances[rel_id]
-            senses = [sense for rel in rels for sense in rel.senses()]
-            merged_rel = DiscourseRelation(rels[0].raw.copy())
-            merged_rel.set_senses(senses)
-            merged.append(merged_rel)
+                rel_type = 'Implicit'
+            rels.append(rel.to_output_format(text_result, rel_type))  # turn string representation into list instance first
 
         # Store test file
         import json
         with open('test.json', 'w') as w:
-            for rel in merged:
-                w.write(json.dumps(rel.raw) + '\n')
+            for rel in rels:
+                w.write(json.dumps(rel) + '\n')
         logger.info("Stored test file at test.json")
         # Compare with gold standard

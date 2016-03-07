@@ -6,6 +6,7 @@ import logging
 import logging.config
 import yaml
 from spacy import English
+from time import time
 
 def get_config(path):
     """
@@ -50,3 +51,12 @@ def tokenize(sentence):
     """
     en_model = get_en_model()
     return [w.lower_ for w in en_model(sentence)]
+
+class timer():
+    def __enter__(self):
+        self.start_time = time()
+        return self
+
+    def __exit__(self, type_, value, traceback):
+        self.elapsed_time = time() - self.start_time
+        return

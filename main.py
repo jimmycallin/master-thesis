@@ -2,10 +2,11 @@
 Main starting point.
 Better docs coming.
 """
-from utils.misc_utils import get_config, get_logger
+from utils.misc_utils import get_config, get_logger, timer
 from utils.resources import PDTBRelations
 from utils.extractors import Word2Vec, OneHot, RandomVectors
 from utils.models import CNN, RNN, LogisticRegression
+from utils.eval_utils import Project
 from sys import argv
 
 import numpy as np
@@ -79,7 +80,7 @@ def get_model(model_name):
     return model
 
 
-def run(config):
+def run_experiment(config):
     logger.info("Setting up...")
     # Load resources
 
@@ -89,25 +90,32 @@ def run(config):
         correct = get_answers(training_data)
         extracted_features = extract_features(config['feature_extraction'], training_data)
         model_class = get_model(config['model'])
-        model = model_class(n_words=extracted_features.shape[1],
-                            n_features=extracted_features.shape[2],
-                            n_classes=len(training_data.y_indices),
-                            **config['models'][config['model']])
+        with timer() as train_time:
+            model = model_class(n_words=extracted_features.shape[1],
+                                n_features=extracted_features.shape[2],
+                                n_classes=len(training_data.y_indices),
+                                **config['models'][config['model']])
 
-        model.train(extracted_features, correct)
+            model.train(extracted_features, correct)
+
         logger.info("Finished training!")
 
     if config['test']:
         test_data = load_resource(config['resources'][config['test']])
         extracted_features = extract_features(config['feature_extraction'], test_data)
         model_class = get_model(config['model'])
-        model = model_class(n_words=extracted_features.shape[1],
-                            n_features=extracted_features.shape[2],
-                            n_classes=len(test_data.y_indices),
-                            **config['models'][config['model']])
-        results = model.test(extracted_features)
-        test_data.store_results(results, 'resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations.json')
+        with timer() as test_time:
+            model = model_class(n_words=extracted_features.shape[1],
+                                n_features=extracted_features.shape[2],
+                                n_classes=len(test_data.y_indices),
+                                **config['models'][config['model']])
+            predicted = model.test(extracted_features)
+
+        gold = np.array(list(test_data.get_correct()))
+        test_data.store_results(predicted, 'resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations.json')
+        results = test_data.get_results_dict(predicted)
         logger.info("Finished testing!")
+        return results, train_time.elapsed_time, test_time.elapsed_time
 
 
 if __name__ == '__main__':
@@ -116,4 +124,17 @@ if __name__ == '__main__':
     else:
         config_ = get_config(argv[1])
     logger = get_logger(__name__, config=config_['logging'])
-    run(config_)
+
+    project = Project(project_name=config_['project_name'],
+                      project_dir=config_['base_dir'],
+                      config=config_,  # Base configuration for project
+                      logger=logger,  # Store logger output along with experiments
+                      force_clean_repo=True)  # Crash program if git status doesn't return clean repo
+
+    with project.new_experiment(config_) as experiment:  # This connects us to the experiment database, starts execution timer, etc.
+        results, train_time, test_time = run_experiment(config_)
+        experiment.log(results=results,
+                       train_time=train_time,
+                       test_time=test_time) # A dict object of e.g. accuracy, F1 score, etc.
+
+        logger.info("Stored model configuration, commit ID, execution time, and test results at {}".format(project.project_store_path))

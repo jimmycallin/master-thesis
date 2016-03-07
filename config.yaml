@@ -1,4 +1,5 @@
 # Author
+project_name: masters_thesis
 author: Jimmy Callin
 email: jimmy.callin@gmail.com
 
@@ -6,7 +7,7 @@ base_dir: /Users/jimmy/dev/edu/master-thesis/
 
 development_mode: false
 
-train: false
+train: training_data
 test: dev_data
 store_test_results: results/cnn.txt
 model: logistic_regression
@@ -16,7 +17,7 @@ model: logistic_regression
 
 models:
     logistic_regression:
-        epochs: 100
+        epochs: 1
         batch_size: 1000
         store_path: models/logreg.ckpt
 
@@ -63,7 +64,7 @@ resources:
         separate_dual_classes: true
     dev_data:
         name: conll16st-en-01-12-16-dev
-        path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations-no-senses.json
+        path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations.json
         max_hierarchical_level: 3
         max_words_in_sentence: 20
         classes: ["Temporal.Asynchronous.Precedence",

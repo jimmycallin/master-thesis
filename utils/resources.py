@@ -79,17 +79,42 @@ class PDTBRelations(Resource):
                 "Tensor shape mismatch. Is {}, should be {}".format(feature_tensor.shape, assert_shape)
         return feature_tensor
 
-    def get_correct(self):
+    def get_correct(self, indices=True):
         """
         Returns answer indices.
         """
 
         for rel in self.instances:
+            senses = rel.senses(max_level=self.max_hierarchical_level)
             if self.separate_dual_classes:
-                yield self.y_indices[rel.senses(max_level=self.max_hierarchical_level)[0]]
+                if indices:
+                    yield self.y_indices[senses[0]]
+                else:
+                    yield senses[0]
             else:
-                yield self.y_indices[rel.senses(max_level=self.max_hierarchical_level)]
+                ys = [self.y_indices[sense] for sense in senses]
+                if indices:
+                    yield ys
+                else:
+                    yield senses
 
+
+    def calculate_accuracy(self, predicted):
+        equal = 0
+        gold = list(self.get_correct(indices=True))
+        assert len(predicted) == len(gold)
+        for p, g in zip(predicted, gold):
+            assert isinstance(g, list)
+            if p in g:
+                equal += 1
+        return equal / len(predicted)
+
+
+    def get_results_dict(self, predicted):
+        res = {'predicted': [self.classes[i] for i in predicted],
+               'gold': list(self.get_correct(indices=False)),
+               'accuracy': self.calculate_accuracy(list(predicted))}
+        return res
 
     def store_results(self, results, gold_file_path):
         """

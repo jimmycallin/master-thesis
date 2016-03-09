@@ -1,5 +1,4 @@
 from os.path import join
-import json
 from .misc_utils import get_config
 from .conll16st import conn_head_mapper
 
@@ -15,7 +14,7 @@ class DiscourseRelation():
     def doc_id(self):
         return self.raw['DocID']
 
-    def senses(self, max_level=2):
+    def senses(self, max_level=3):
         """
         Removing duplicate senses, if there are any
         """
@@ -44,7 +43,8 @@ class DiscourseRelation():
                                  'RawText': self.connective_token()},
                   'DocID': self.doc_id(),
                   'Sense': [sense],
-                  'Type': rel_type}
+                  'Type': rel_type,
+                  'ID': self.relation_id()}
         return output
 
     def split_up_senses(self, max_level):

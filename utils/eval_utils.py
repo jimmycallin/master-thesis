@@ -43,7 +43,8 @@ class Project():
         return join(self.project_dir, 'results', self.project_name)
 
     def new_experiment(self, config):
-        return Experiment(len(self.experiments), self, self.config)
+        new_key = sorted(self.experiments.keys(), reverse=True)[0] + 1
+        return Experiment(new_key, self, self.config)
 
     def store_experiment(self, experiment, **kwargs):
         commit_id = git.Repo(os.getcwd()).commit().hexsha

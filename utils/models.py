@@ -126,9 +126,6 @@ class LogisticRegression(Model):
         saver.save(session, store_path)
         logger.debug("Stored model at {}".format(store_path))
 
-    def massage_tensor(self, tensor):
-        return tf.reduce_mean(tensor, reduction_indices=1, name='cbow')
-
     def massage_answers(self, correct):
         labels_dense = np.array(correct)
         num_labels = labels_dense.shape[0]
@@ -152,8 +149,9 @@ class LogisticRegression(Model):
             logger.debug("Setting up training. feature_tensor has shape {},\
                           correct_onehot has shape {}".format(feature_tensor.shape,
                                                               correct_onehot.shape))
-            cbow = self.massage_tensor(self.train_x)
-            p_y_given_x = tf.matmul(cbow, self.weights, name='p_y_given_x')
+
+            squeezed = tf.squeeze(self.train_x, squeeze_dims=[1]) # Assume 3-dim tensor, need to be 2-dim
+            p_y_given_x = tf.matmul(squeezed, self.weights, name='p_y_given_x')
             cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(p_y_given_x, self.train_y))
             train_op = tf.train.GradientDescentOptimizer(0.05).minimize(cost)
 
@@ -165,7 +163,8 @@ class LogisticRegression(Model):
                 init = tf.initialize_all_variables()
                 sess.run(init)
                 logger.info("Starting training session...")
-                for _ in range(self.epochs):
+                for epoch_i in range(self.epochs):
+                    logger.debug("Epoch: {}".format(epoch_i))
                     for start, end in zip(start_i, end_i):
                         logger.debug("Batch {}-{}".format(start, end))
                         sess.run(train_op, feed_dict={self.train_x: feature_tensor[start:end],
@@ -177,8 +176,8 @@ class LogisticRegression(Model):
 
     def test(self, feature_tensor):
         with self.graph.as_default():
-            cbow = self.massage_tensor(self.train_x)
-            p_y_given_x = tf.matmul(cbow, self.weights)
+            squeezed = tf.squeeze(self.train_x, squeeze_dims=[1]) # Assume 3-dim tensor, need to be 2-dim
+            p_y_given_x = tf.matmul(squeezed, self.weights)
             predicted_classes = tf.argmax(p_y_given_x, 1)
             with tf.Session() as sess:
                 self.restore(self.store_path, sess)

@@ -8,12 +8,13 @@ import numpy as np
 logger = get_logger(__name__)
 
 class Resource(metaclass=abc.ABCMeta):
-    def __init__(self, path, max_words_in_sentence, classes):
+    def __init__(self, path, max_words_in_sentence, classes, padding):
         self.path = path
         self.max_words_in_sentence = max_words_in_sentence
         self.classes = sorted(classes)
         self.y_indices = {x: y for y, x in enumerate(self.classes)}
         self.instances = list(self._load_instances(path))
+        self.padding = padding
 
     @abc.abstractmethod
     def _load_instances(self, path):
@@ -21,10 +22,10 @@ class Resource(metaclass=abc.ABCMeta):
 
 
 class PDTBRelations(Resource):
-    def __init__(self, path, max_words_in_sentence, max_hierarchical_level, classes, separate_dual_classes):
+    def __init__(self, path, max_words_in_sentence, max_hierarchical_level, classes, separate_dual_classes, padding):
         self.max_hierarchical_level = max_hierarchical_level
         self.separate_dual_classes = separate_dual_classes
-        super(PDTBRelations, self).__init__(path, max_words_in_sentence, classes)
+        super(PDTBRelations, self).__init__(path, max_words_in_sentence, classes, padding)
 
     def _load_instances(self, path):
         with open(path) as file_:
@@ -46,35 +47,40 @@ class PDTBRelations(Resource):
                     yield rel
 
     def massage_sentence(self, sentence):
-        tokenized = tokenize(sentence)[:self.max_words_in_sentence]
-        padded = tokenized + ['PADDING'] * (self.max_words_in_sentence - len(tokenized))
-        return padded
+        if sentence is None:
+            tokenized = "NONE"
+        else:
+            tokenized = tokenize(sentence)
+            
+        if self.max_words_in_sentence:
+            tokenized = tokenized[:self.max_words_in_sentence]
+        if self.padding:
+            tokenized = tokenized + ['PADDING'] * (self.max_words_in_sentence - len(tokenized))
+        return tokenized
 
     def get_feature_tensor(self, extractors):
         rels_feats = []
         n_instances = 0
+        last_features_for_instance = None
         for rel in self.instances:
             n_instances += 1
-            arg1, arg2 = [self.massage_sentence(s) for s in [rel.arg1_text(),
-                                                             rel.arg2_text()]]
-            connective = [str(rel.connective_head()).strip().lower()]
             feats = []
             total_features_per_instance = 0
             for extractor in extractors:
-                # These return matrices of shape (max_words, n_features)
+                # These return matrices of shape (1, n_features)
                 # We concatenate them on axis 1
-                arg1_feats = extractor.extract_features(arg1)
-                arg2_feats = extractor.extract_features(arg2)
-                connective_feats = extractor.extract_features(connective)
-                feats.append(np.concatenate([arg1_feats, arg2_feats, connective_feats], axis=0))
+                arg_rawtext = getattr(rel, extractor.argument)()
+                arg_tokenized = self.massage_sentence(arg_rawtext)
+                arg_feats = extractor.extract_features(arg_tokenized)
+                feats.append(arg_feats)
                 total_features_per_instance += extractor.n_features
-
+            if last_features_for_instance is not None:
+                # Making sure we have equal number of features per instance
+                assert total_features_per_instance == last_features_for_instance
             rels_feats.append(np.concatenate(feats, axis=1))
 
         feature_tensor = np.array(rels_feats)
-        assert_shape = (n_instances,
-                        self.max_words_in_sentence * 2 + 1,
-                        total_features_per_instance)
+        assert_shape = (n_instances, 1, total_features_per_instance)
         assert feature_tensor.shape == assert_shape, \
                 "Tensor shape mismatch. Is {}, should be {}".format(feature_tensor.shape, assert_shape)
         return feature_tensor

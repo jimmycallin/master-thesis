@@ -4,8 +4,8 @@ Better docs coming.
 """
 from utils.misc_utils import get_config, get_logger, timer
 from utils.resources import PDTBRelations
-from utils.extractors import Word2Vec, OneHot, RandomVectors
-from utils.models import CNN, RNN, LogisticRegression
+from utils.extractors import Word2Vec, OneHot, RandomVectors, CBOW, BagOfWords, RandomCBOW
+from utils.models import CNN, SVM, LogisticRegression
 from utils.eval_utils import Project
 from sys import argv
 
@@ -23,12 +23,15 @@ RESOURCE_HANDLERS = {
 EXTRACTOR_HANDLERS = {
     'word2vec': Word2Vec,
     'onehot': OneHot,
-    'random_vectors': RandomVectors
+    'random_vectors': RandomVectors,
+    'random_cbow': RandomCBOW,
+    'cbow': CBOW,
+    'bag_of_words': BagOfWords,
 }
 
 MODEL_HANDLERS = {
     'cnn': CNN,
-    'nn_baseline': RNN,
+    'svm': SVM,
     'logistic_regression': LogisticRegression
 }
 
@@ -54,21 +57,16 @@ def get_answers(instances):
 
 # Turn this on when you don't want to recompute features all the time
 # @MEMORY.cache
-def extract_features(feat_config, instances):
+def extract_features(extract_config, instances):
     """
     Data should be of type PDTBRelations for now. I should generalize this.
     Returns with dimensionality:
     sentences x words x n_features
     """
     extractors = []
-    extract_config = {x:y for x, y in feat_config.items() if x != 'extractors'}
     # Sorting just makes sure they always end up in the same order,
     # Python's random hashing could mess this up
-    for params in sorted(feat_config['extractors'], key=lambda v: v['name']):
-        if params['name'] == 'word2vec' and config_['development_mode']:
-            params['random_vectors_only'] = True
-
-        params = {**params, **extract_config}  # combine extractor specific feats with globals
+    for params in sorted(extract_config, key=lambda v: v['name']):
         extractor = EXTRACTOR_HANDLERS[params['name']](**params)
         extractors.append(extractor)
 
@@ -88,13 +86,12 @@ def run_experiment(config):
         training_data = load_resource(config['resources'][config['train']])
         logger.debug("Training data classes: {}".format(training_data.y_indices))
         correct = get_answers(training_data)
-        extracted_features = extract_features(config['feature_extraction'], training_data)
-        model_class = get_model(config['model'])
+        extracted_features = extract_features(config['extractors'], training_data)
+        model_class = get_model(config['model']['name'])
         with timer() as train_time:
-            model = model_class(n_words=extracted_features.shape[1],
-                                n_features=extracted_features.shape[2],
+            model = model_class(n_features=extracted_features.shape[2],
                                 n_classes=len(training_data.y_indices),
-                                **config['models'][config['model']])
+                                **config['model'])
 
             model.train(extracted_features, correct)
 
@@ -102,13 +99,13 @@ def run_experiment(config):
 
     if config['test']:
         test_data = load_resource(config['resources'][config['test']])
-        extracted_features = extract_features(config['feature_extraction'], test_data)
-        model_class = get_model(config['model'])
+        extracted_features = extract_features(config['extractors'], test_data)
+        model_class = get_model(config['model']['name'])
         with timer() as test_time:
             model = model_class(n_words=extracted_features.shape[1],
                                 n_features=extracted_features.shape[2],
                                 n_classes=len(test_data.y_indices),
-                                **config['models'][config['model']])
+                                **config['model'])
             predicted = model.test(extracted_features)
 
         gold = np.array(list(test_data.get_correct()))
@@ -119,10 +116,9 @@ def run_experiment(config):
 
 
 if __name__ == '__main__':
-    if len(argv) == 1:
-        config_ = get_config('config.yaml')
-    else:
-        config_ = get_config(argv[1])
+    base_config = get_config('config.yaml')
+    model_config = get_config(argv[1])
+    config_ = {**base_config, **model_config}
     logger = get_logger(__name__, config=config_['logging'])
 
     project = Project(project_name=config_['project_name'],

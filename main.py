@@ -3,7 +3,7 @@ Main starting point.
 Better docs coming.
 """
 from utils.misc_utils import get_config, get_logger, timer
-from utils.resources import PDTBRelations
+from utils.resources import PDTBRelations, evaluate_results
 from utils.extractors import Word2Vec, OneHot, RandomVectors, CBOW, BagOfWords, RandomCBOW
 from utils.models import CNN, SVM, LogisticRegression
 from utils.eval_utils import Project
@@ -82,13 +82,14 @@ def run_experiment(config):
     logger.info("Setting up...")
     # Load resources
 
+    train_time = timer()
     if config['train']:
         training_data = load_resource(config['resources'][config['train']])
         logger.debug("Training data classes: {}".format(training_data.y_indices))
         correct = get_answers(training_data)
         extracted_features = extract_features(config['extractors'], training_data)
         model_class = get_model(config['model']['name'])
-        with timer() as train_time:
+        with train_time:
             model = model_class(n_features=extracted_features.shape[2],
                                 n_classes=len(training_data.y_indices),
                                 **config['model'])
@@ -97,20 +98,23 @@ def run_experiment(config):
 
         logger.info("Finished training!")
 
+    test_time = timer()
     if config['test']:
         test_data = load_resource(config['resources'][config['test']])
         extracted_features = extract_features(config['extractors'], test_data)
         model_class = get_model(config['model']['name'])
-        with timer() as test_time:
-            model = model_class(n_words=extracted_features.shape[1],
-                                n_features=extracted_features.shape[2],
+        with test_time:
+            model = model_class(n_features=extracted_features.shape[2],
                                 n_classes=len(test_data.y_indices),
                                 **config['model'])
             predicted = model.test(extracted_features)
 
         gold = np.array(list(test_data.get_correct()))
-        test_data.store_results(predicted, 'resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations.json')
-        results = test_data.get_results_dict(predicted)
+        test_data.store_results(predicted, config['test_output_path'])
+
+        results = evaluate_results(config['test_output_path'],
+                                   config['resources'][config['test']]['path'],
+                                   print_report=config['print_report'])
         logger.info("Finished testing!")
         return results, train_time.elapsed_time, test_time.elapsed_time
 

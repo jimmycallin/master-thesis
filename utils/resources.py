@@ -1,6 +1,6 @@
 from .misc_utils import get_config, get_logger, tokenize
 from .pdtb_utils import DiscourseRelation
-from collections import Counter
+from collections import Counter, defaultdict
 import json
 import abc
 import numpy as np
@@ -51,7 +51,7 @@ class PDTBRelations(Resource):
             tokenized = "NONE"
         else:
             tokenized = tokenize(sentence)
-            
+
         if self.max_words_in_sentence:
             tokenized = tokenized[:self.max_words_in_sentence]
         if self.padding:
@@ -115,14 +115,7 @@ class PDTBRelations(Resource):
                 equal += 1
         return equal / len(predicted)
 
-
-    def get_results_dict(self, predicted):
-        res = {'predicted': [self.classes[i] for i in predicted],
-               'gold': list(self.get_correct(indices=False)),
-               'accuracy': self.calculate_accuracy(list(predicted))}
-        return res
-
-    def store_results(self, results, gold_file_path):
+    def store_results(self, results, store_path):
         """
         Don't forget to use the official scoring script here.
         """
@@ -140,16 +133,85 @@ class PDTBRelations(Resource):
 
         # Store test file
         import json
-        with open('test.json', 'w') as w:
+        with open(store_path, 'w') as w:
             for rel in predicted_rels:
                 w.write(json.dumps(rel) + '\n')
-        logger.info("Stored test file at test.json")
+        logger.info("Stored predicted output at {}".format(store_path))
 
-        with open(gold_file_path) as file_:
-            gold_rels = [json.loads(line) for line in file_]
-        from .conll16st.scorer import evaluate_sense
-        sense_cm = evaluate_sense(gold_rels, predicted_rels)
-        print('Sense classification--------------')
-        sense_cm.print_summary()
 
-        # Compare with gold standard
+def official_scorer(prediction_file_path, gold_file_path):
+    from .conll16st.scorer import evaluate_sense
+
+    with open(gold_file_path) as file_:
+        gold_rels = [json.loads(line) for line in file_]
+    with open(prediction_file_path) as file_:
+        predicted_rels = [json.loads(line) for line in file_]
+    sense_cm = evaluate_sense(gold_rels, predicted_rels)
+    print('Sense classification--------------')
+    sense_cm.print_summary()
+
+
+def evaluate_results(prediction_file_path, gold_file_path, print_report=True):
+    official_scorer(prediction_file_path, gold_file_path)
+
+    gold_rels = {}
+    pred_rels = {}
+    with open(gold_file_path) as gold_file, open(prediction_file_path) as pred_file:
+        for line in gold_file:
+            rel = DiscourseRelation(json.loads(line))
+            gold_rels[rel.relation_id()] = rel
+
+        for line in pred_file:
+            rel = DiscourseRelation(json.loads(line))
+            pred_rels[rel.relation_id()] = rel
+
+    results = {}
+    correct, incorrect, total = defaultdict(int), defaultdict(int), 0
+    classes = set()
+    for relation_id, pred_rel in pred_rels.items():
+        gold_rel = gold_rels[relation_id]
+        [classes.add(s) for s in gold_rel.senses(max_level=3) + pred_rel.senses(max_level=3)]
+        assert len(pred_rel.senses(max_level=3)) == 1
+        total += 1
+        pred_sense = pred_rel.senses(max_level=3)[0]
+        if pred_sense in gold_rel.senses(max_level=3):
+            correct[pred_sense] += 1
+        else:
+            incorrect[pred_sense] += 1
+
+    # Fill in missing keys
+    for cl in classes - set(incorrect.keys()):
+        incorrect[cl] = 0
+    for cl in classes - set(correct.keys()):
+        correct[cl] = 0
+
+    total_incorrect = sum(incorrect.values())
+    total_correct = sum(correct.values())
+    results['total_correct'] = total_correct
+    results['total_incorrect'] = total_incorrect
+    results['total_instances'] = total
+    total_accuracy = total_correct / total if total != 0 else 0
+    results['total_accuracy'] = total_accuracy
+
+    report = ""
+    report += "====== RESULTS =======\n"
+    report += "Total: {} correct / {} ({})\n".format(results['total_correct'],
+                                                     results['total_instances'],
+                                                     results['total_accuracy'])
+    report += "Specific classes:\n"
+    report += "- - - - - - - - - - \n"
+    results['classes'] = {}
+    for (corr, corrval), (incorr, incorrval) in zip(correct.items(), incorrect.items()):
+        assert corr == incorr
+        total_class = corrval + incorrval
+        class_accuracy = corrval / total_class if total_class != 0 else 0
+        results['classes'][corr] = {'correct': corrval, 'total_class': total_class, 'accuracy': corrval / total_class}
+        report += "{}: {} correct / {} ({})\n".format(corr,
+                                                      results['classes'][corr]['correct'],
+                                                      results['classes'][corr]['total_class'],
+                                                      results['classes'][corr]['accuracy'])
+    report += "- - - - - - - - - - \n"
+    if print_report:
+        print(report)
+
+    return results

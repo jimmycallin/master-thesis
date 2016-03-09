@@ -94,18 +94,53 @@ class RNN(Model):
     def store(self, store_path):
         raise NotImplementedError()
 
+from sklearn import svm
+from sklearn.externals import joblib
+class SVM(Model):
+    def __init__(self, n_features, n_classes, kernel, store_path=None, name=None):
+        self.kernel = kernel
+        self.n_features = n_features
+        self.n_classes = n_classes
+        self.store_path = store_path
+        self.model = None
+        self.name = name
+
+    def restore(self, store_path):
+        logger.info("Restoring model from {}".format(store_path))
+        return joblib.load(store_path)
+
+    def store(self, model, store_path):
+        logger.info("Storing model at {}".format(store_path))
+        return joblib.dump(model, store_path)
+
+    def train(self, feature_tensor, correct):
+        logger.info("Training model...")
+        squeezed = feature_tensor.squeeze(axis=1)
+        clf = svm.SVC(kernel=self.kernel)
+        model = clf.fit(squeezed, correct)
+        if self.store_path:
+            self.store(model, self.store_path)
+        self.model = model
+        logger.info("Training session done")
+
+    def test(self, feature_tensor):
+        logger.info("Loading model...")
+        self.model = self.restore(self.store_path)
+        logger.info("Testing model...")
+        squeezed = feature_tensor.squeeze(axis=1)
+        return self.model.predict(squeezed)
+
 class LogisticRegression(Model):
     """
     Simple logreg model just to have some sort of baseline.
     """
-    def __init__(self, n_words, n_features, n_classes, batch_size, epochs, store_path=None, name=None):
+    def __init__(self, n_features, n_classes, batch_size, epochs, store_path=None, name=None):
         self.graph = tf.Graph()
         with self.graph.as_default():
-            self.n_words = n_words
             self.n_features = n_features
             self.n_classes = n_classes
             self.batch_size = batch_size
-            self.train_x = tf.placeholder(tf.float32, shape=(None, n_words, n_features), name='x')
+            self.train_x = tf.placeholder(tf.float32, shape=(None, 1, n_features), name='x')
             self.train_y = tf.placeholder(tf.float32, shape=[None, n_classes], name='y')
             self.weights = tf.Variable(tf.random_normal((n_features, n_classes), stddev=0.01),
                                                         name='weights')

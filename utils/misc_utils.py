@@ -53,6 +53,9 @@ def tokenize(sentence):
     return [w.lower_ for w in en_model(sentence)]
 
 class timer():
+    def __init__(self):
+        self.elapsed_time = 0
+        
     def __enter__(self):
         self.start_time = time()
         return self

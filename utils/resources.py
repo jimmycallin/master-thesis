@@ -168,21 +168,32 @@ def evaluate_results(prediction_file_path, gold_file_path, print_report=True):
     results = {}
     correct, incorrect, total = defaultdict(int), defaultdict(int), 0
     classes = set()
+<<<<<<< HEAD
     type_correct = {'Explicit': 0, 'Implicit': 0, 'EntRel': 0, 'AltLex': 0}
     type_incorrect = type_correct.copy()
 
     for relation_id, pred_rel in pred_rels.items():
         gold_rel = gold_rels[relation_id]
         _ = [classes.add(s) for s in gold_rel.senses(max_level=3) + pred_rel.senses(max_level=3)]
+=======
+    for relation_id, pred_rel in pred_rels.items():
+        gold_rel = gold_rels[relation_id]
+        [classes.add(s) for s in gold_rel.senses(max_level=3) + pred_rel.senses(max_level=3)]
+>>>>>>> 1ae96853199e8db1001bce9b5b82c0a83abda068
         assert len(pred_rel.senses(max_level=3)) == 1
         total += 1
         pred_sense = pred_rel.senses(max_level=3)[0]
         if pred_sense in gold_rel.senses(max_level=3):
             correct[pred_sense] += 1
+<<<<<<< HEAD
             type_correct[gold_rel.relation_type()] += 1
         else:
             incorrect[pred_sense] += 1
             type_incorrect[gold_rel.relation_type()] += 1
+=======
+        else:
+            incorrect[pred_sense] += 1
+>>>>>>> 1ae96853199e8db1001bce9b5b82c0a83abda068
 
     # Fill in missing keys
     for cl in classes - set(incorrect.keys()):
@@ -206,6 +217,7 @@ def evaluate_results(prediction_file_path, gold_file_path, print_report=True):
     report += "Specific classes:\n"
     report += "- - - - - - - - - - \n"
     results['classes'] = {}
+
     for class_ in classes:
         total_class = correct[class_] + incorrect[class_]
         class_accuracy = correct[class_] / total_class if total_class != 0 else 0

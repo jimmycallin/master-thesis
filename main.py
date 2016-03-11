@@ -129,12 +129,13 @@ if __name__ == '__main__':
                       project_dir=config_['base_dir'],
                       config=config_,  # Base configuration for project
                       logger=logger,  # Store logger output along with experiments
+                      mongodb_uri=config_['results_db_uri'],
                       force_clean_repo=True)  # Crash program if git status doesn't return clean repo
 
     with project.new_experiment(config_) as experiment:  # This connects us to the experiment database, starts execution timer, etc.
         results, train_time, test_time = run_experiment(config_)
-        experiment.log(results=results,
-                       train_time=train_time,
-                       test_time=test_time) # A dict object of e.g. accuracy, F1 score, etc.
+        experiment.set_params(results=results,
+                              train_time=train_time,
+                              test_time=test_time) # A dict object of e.g. accuracy, F1 score, etc.
 
-        logger.info("Stored model configuration, commit ID, execution time, and test results at {}".format(project.project_store_path))
+        logger.info("Stored model configuration, commit ID, execution time, and test results at {}".format(project.db_uri))

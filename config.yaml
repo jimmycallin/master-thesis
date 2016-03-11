@@ -8,6 +8,8 @@ train: training_data
 test: dev_data
 print_report: true
 
+results_db_uri: 'mongodb://localhost:27017'
+
 # Resources
 resources:
     training_data:

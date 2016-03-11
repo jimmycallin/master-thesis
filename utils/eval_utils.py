@@ -3,114 +3,199 @@ from os.path import join
 from time import time
 import git  # pylint: disable=E0401
 import os
+from pymongo import MongoClient
+from bson.objectid import ObjectId
+from datetime import datetime
+
 
 class Project():
     def __init__(self,
                  project_name,
-                 config,
-                 project_dir=".",
+                 project_config,
                  logger=None,
-                 force_clean_repo=False):
-        self.config = config
-        self.project_name = project_name
-        self.project_dir = project_dir
-        self.db = None
-        self.logger = logger
+                 force_clean_repo=False,
+                 mongodb_uri=None):
         if force_clean_repo:
-            assert_repo_is_clean(os.getcwd())
+            _assert_repo_is_clean(os.getcwd)
+        self.db_uri = mongodb_uri
+        self.mongo_client = MongoClient(mongodb_uri)
+        self.db = self.mongo_client['projects'][project_name]
+        self.project_name = project_name
+        self.project_config = project_config
+        self.logger = logger
 
-    def _connect_db(self):
-        os.makedirs(join(self.project_dir, 'results'), exist_ok=True)
-        self.db = shelve.open(self.project_store_path, writeback=True)
 
-    def _close_db(self):
-        self.db.close()
+    @property
+    def project_config(self):
+        config = self.db['project_config'].find_one({}, {'project_name': False, '_id': False})
+        if config is None:
+            return {}
+        return config
+
+    @project_config.setter
+    def project_config(self, val):
+        assert isinstance(val, dict), "Project config must be dict instance."
+        self.db.project_config.delete_one({'project_name': self.project_name})
+        if isinstance(val, dict) and val != {}:
+            self.db.project_config.update_one({'project_name': self.project_name}, {'$set': val}, upsert=True)
+
+    def set_params(self, **kwargs):
+        for param, val in kwargs.items():
+            self.db.insert_one({param: val})
 
     @property
     def experiments(self):
-        self._connect_db()
-        self._setup_project()
-        experiments = self.db[self.project_name]['experiments']
-        self._close_db()
+        experiments = [Experiment(self, i['_id']) for i in self.db['experiments'].find({}, {'_id': True})]
         return experiments
 
-    def _setup_project(self):
-        if self.project_name not in self.db:  # pylint: disable=E1135
-            self.db[self.project_name] = {'config': self.config, 'experiments': {}} # pylint: disable=E1136
+    def get_experiment(self, experiment_id):
+        exp_id = self.db.experiments.find_one({'_id': experiment_id}, {'_id': True})
+        if exp_id is None:
+            raise ValueError("Experiment with ID {} does not exist in {}.".format(experiment_id,
+                                                                                  self.project_name))
+        return Experiment(self, exp_id)
 
-    @property
-    def project_store_path(self):
-        return join(self.project_dir, 'results', self.project_name)
+    def get_latest_experiment(self):
+        if len(self.experiments) == 0:
+            raise ValueError("There are no experiments in this project.")
+
+        return self.experiments[-1]
 
     def new_experiment(self, config):
-        new_key = sorted(self.experiments.keys(), reverse=True)[0] + 1
-        return Experiment(new_key, self, self.config)
+        return Experiment(self, config=config)
 
-    def store_experiment(self, experiment, **kwargs):
-        commit_id = git.Repo(os.getcwd()).commit().hexsha
-        exp_instance = {'config': experiment.config,
-                        'time_elapsed': experiment.time_elapsed,
-                        'commit_id': commit_id, **kwargs}
-        self.db[self.project_name]['experiments'][experiment.experiment_id] = exp_instance
-        return exp_instance
+    def __repr__(self):
+        return "Project: {}".format(self.project_name)
 
 class Experiment():
-    def __init__(self, experiment_id, project, config=None):
-        self.experiment_id = experiment_id
+    def __init__(self, project, experiment_id=None, config=None, tags=None):
         self.project = project
-        self.start_time = time()
-        self.stop_time = None
-        self.exp_instance = None
-        if config is None:
-            self.config = {}
+        if isinstance(experiment_id, str):
+            experiment_id = ObjectId(experiment_id)
 
-        experiment_specific = {}
-        for ex, ey in config.items():
-            if ex in self.project.config and self.project.config[ex] != ey:
-                experiment_specific[ex] = ey
-            elif ex not in self.project.config:
-                experiment_specific[ex] = ey
-        self.config = experiment_specific
+        if experiment_id:
+            self.experiment_id = experiment_id
+            instance = project.db.experiments.find_one({'_id': experiment_id})
+            if instance is None:
+                raise ValueError("Experiment with id {} does not exist".format(experiment_id))
+        else:
+            self.experiment_id = self.project.db.experiments.insert_one({}).inserted_id
+            self.time_added = datetime.now()
+            self.tags = tags
+            self.config = config
 
-    def log(self, **kwargs):
-        self.exp_instance = self.project.store_experiment(experiment=self, **kwargs)
-        return self.exp_instance
+    def to_dict(self):
+        return self._experiment_state
 
-    def stop_timer(self):
-        self.stop_time = time()
-        return self.time_elapsed
+    def set_params(self, **kwargs):
+        self._update_db(kwargs)
 
-    def __enter__(self):
-        self.project._connect_db()
-        self.project._setup_project()
-        return self
+    def delete_experiment(self):
+        self.project.db.experiments.delete_one({'_id': self.experiment_id})
 
-    def __exit__(self, type_, value, traceback):
-        self.stop_timer()
-        self.project._close_db()
+    @property
+    def _experiment_state(self):
+        return self.project.db.experiments.find_one({'_id': self.experiment_id})
+
+    def _update_db(self, val_dict):
+        self.project.db.experiments.update_one({'_id': self.experiment_id}, {'$set': val_dict})
+
+    def insert_parameter(self, val):
+        assert isinstance(val, dict), "Parameter must be of dict instance"
+
+    @property
+    def config(self):
+        project_config = self.project.project_config
+        exp_config = self._experiment_state.get('config', {})
+
+        return {**project_config, **exp_config}
+
+    @config.setter
+    def config(self, val):
+        if val is None:
+            val = {}
+
+        exp_config = self._experiment_state.get('config', {})
+
+        for ex, ey in val.items():
+            if ex in self.project.project_config and self.project.project_config[ex] != ey:
+                exp_config[ex] = ey
+            elif ex not in self.project.project_config:
+                exp_config[ex] = ey
+        self._update_db({'config': exp_config})
+
+    @property
+    def tags(self):
+        return self._experiment_state.get('tags', [])
+
+    @tags.setter
+    def tags(self, val):
+        if val is None:
+            val = []
+        assert isinstance(val, list), "Tags must be list instance"
+        self._update_db({'tags': val})
+
+    @property
+    def start_time(self):
+        return self._experiment_state.get('start_time', None)
+
+    @start_time.setter
+    def start_time(self, val):
+        self._update_db({'start_time': val})
+
+    @property
+    def time_added(self):
+        return self._experiment_state.get('time_added', None)
+
+    @time_added.setter
+    def time_added(self, val):
+        self._update_db({'time_added': val})
+
+
+    @property
+    def stop_time(self):
+        return self._experiment_state.get('stop_time', None)
+
+    @stop_time.setter
+    def stop_time(self, val):
+        self._update_db({'stop_time': val})
 
     @property
     def time_elapsed(self):
-        if self.stop_time:
-            return self.stop_time - self.start_time
-        else:
-            return time() - self.start_time
+        start = self._experiment_state.get('start_time', None)
+        stop = self._experiment_state.get('stop_time', None)
+        if start is None:
+            raise RuntimeError("Experiment hasn't started yet.")
+        if stop is None:
+            return datetime.now() - start
+        return stop - start
 
-def list_experiments(db_path, project):
-    with shelve.open(db_path) as db:
-        if project not in db:
-            return []
-        else:
-            return db[project]
+    def __enter__(self):
+        self.start_time = datetime.now()
+        return self
 
-def get_latest_experiment(db_path, project_name):
-    with shelve.open(db_path) as db:
-        if project_name not in db:
-            raise ValueError("{} not available in {}".format(project_name, db_path))
-        else:
-            return db[project_name]['experiments'][-1]
+    def __exit__(self, type_, value, traceback):
+        self.stop_time = datetime.now()
 
-def assert_repo_is_clean(path):
+    def __repr__(self):
+        return "Experiment {}/{}: {}".format(self.project.project_name,
+                                             self.experiment_id,
+                                             self.time_added.strftime("%Y-%m-%d %H:%M:%S"))
+
+
+def list_projects(mongodb_uri=None):
+    """
+    This lists all projects available in 'projects' db in your Mongo db.
+    """
+    if mongodb_uri is None:
+        client = MongoClient()
+    else:
+        client = MongoClient(mongodb_uri)
+    return list(set([coll.split(".")[0]
+                     for coll in client.projects.collection_names(include_system_collections=False)]))
+
+
+def _assert_repo_is_clean(path):
     repo = git.Repo(path)
     if repo.is_dirty():
         raise RuntimeError(

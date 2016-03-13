@@ -81,6 +81,8 @@ class DiscourseRelation():
         token = self.raw['Connective']['RawText']
         if token == "":
             return None
+        elif self.raw['Type'] == 'Implicit':
+            return None
         else:
             return token
 

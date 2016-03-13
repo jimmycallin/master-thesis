@@ -1,17 +1,15 @@
 # Author
 project_name: masters_thesis
 author: Jimmy Callin
+description: This is the main project for my thesis in Shallow Discourse Parsing, where I develop models for sense classification.
 email: jimmy.callin@gmail.com
 base_dir: /Users/jimmy/dev/edu/master-thesis/
 
 train: training_data
 test: dev_data
 print_report: true
-<<<<<<< HEAD
 
 results_db_uri: 'mongodb://localhost:27017'
-=======
->>>>>>> 1ae96853199e8db1001bce9b5b82c0a83abda068
 
 # Resources
 resources:

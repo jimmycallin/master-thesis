@@ -168,32 +168,24 @@ def evaluate_results(prediction_file_path, gold_file_path, print_report=True):
     results = {}
     correct, incorrect, total = defaultdict(int), defaultdict(int), 0
     classes = set()
-<<<<<<< HEAD
+
     type_correct = {'Explicit': 0, 'Implicit': 0, 'EntRel': 0, 'AltLex': 0}
     type_incorrect = type_correct.copy()
 
     for relation_id, pred_rel in pred_rels.items():
         gold_rel = gold_rels[relation_id]
         _ = [classes.add(s) for s in gold_rel.senses(max_level=3) + pred_rel.senses(max_level=3)]
-=======
-    for relation_id, pred_rel in pred_rels.items():
-        gold_rel = gold_rels[relation_id]
-        [classes.add(s) for s in gold_rel.senses(max_level=3) + pred_rel.senses(max_level=3)]
->>>>>>> 1ae96853199e8db1001bce9b5b82c0a83abda068
         assert len(pred_rel.senses(max_level=3)) == 1
         total += 1
         pred_sense = pred_rel.senses(max_level=3)[0]
         if pred_sense in gold_rel.senses(max_level=3):
             correct[pred_sense] += 1
-<<<<<<< HEAD
             type_correct[gold_rel.relation_type()] += 1
         else:
-            incorrect[pred_sense] += 1
+            # This only looks at the first gold sense, while there could be several.
+            # This is how the official scorer does it, so let's just go with it.
+            incorrect[gold_rel.senses(max_level=3)[0]] += 1
             type_incorrect[gold_rel.relation_type()] += 1
-=======
-        else:
-            incorrect[pred_sense] += 1
->>>>>>> 1ae96853199e8db1001bce9b5b82c0a83abda068
 
     # Fill in missing keys
     for cl in classes - set(incorrect.keys()):
@@ -222,8 +214,8 @@ def evaluate_results(prediction_file_path, gold_file_path, print_report=True):
         total_class = correct[class_] + incorrect[class_]
         class_accuracy = correct[class_] / total_class if total_class != 0 else 0
         results['classes'][class_] = {'correct': correct[class_],
-                                      'total_class': total_class,
-                                      'accuracy': correct[class_] / total_class}
+                                      'total_class': total_class, # TODO: FIX total class
+                                      'accuracy': class_accuracy}
         report += "{}: {} correct / {} ({})\n".format(class_,
                                                       results['classes'][class_]['correct'],
                                                       results['classes'][class_]['total_class'],
@@ -232,9 +224,10 @@ def evaluate_results(prediction_file_path, gold_file_path, print_report=True):
     for rel_type in type_correct.keys():
         corr = type_correct[rel_type]
         incorr = type_incorrect[rel_type]
+        acc = corr / (corr + incorr) if (corr + incorr) > 0 else 0
         results['type'][rel_type] = {'correct': corr,
                                      'total_class': corr + incorr,
-                                     'accuracy': corr / (corr + incorr)}
+                                     'accuracy': acc}
 
     report += "- - - - - - - - - - \n"
     if print_report:

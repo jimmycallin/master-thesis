@@ -6,7 +6,7 @@ from utils.misc_utils import get_config, get_logger, timer
 from utils.resources import PDTBRelations, evaluate_results
 from utils.extractors import Word2Vec, OneHot, RandomVectors, CBOW, BagOfWords, RandomCBOW
 from utils.models import CNN, SVM, LogisticRegression
-from utils.eval_utils import Project
+from expy import Project
 from sys import argv
 
 import numpy as np
@@ -125,17 +125,37 @@ if __name__ == '__main__':
     config_ = {**base_config, **model_config}
     logger = get_logger(__name__, config=config_['logging'])
 
+    project_config = {x:y for x,y in base_config.items() if x not in {'project_name',
+                                                                      'description',
+                                                                      'results_db_uri',
+                                                                      'logging',
+                                                                      'deploy'}}
     project = Project(project_name=config_['project_name'],
-                      project_dir=config_['base_dir'],
-                      config=config_,  # Base configuration for project
-                      logger=logger,  # Store logger output along with experiments
+                      description=config_['description'], # Project description
+                      project_config=project_config,  # Base configuration for project
                       mongodb_uri=config_['results_db_uri'],
                       force_clean_repo=True)  # Crash program if git status doesn't return clean repo
 
-    with project.new_experiment(config_) as experiment:  # This connects us to the experiment database, starts execution timer, etc.
+
+    experiment_config = {x:y for x,y in config_.items() if x not in {'project_name',
+                                                                     'description',
+                                                                     'results_db_uri',
+                                                                     'author',
+                                                                     'experiment_name',
+                                                                     'description',
+                                                                     'logging',
+                                                                     'deploy',
+                                                                     'tags'}}
+    with project.new_experiment(config=experiment_config,
+                                author=config_.get('author', None),
+                                experiment_name=config_.get('experiment_name', None),
+                                description=config_.get('description', None),
+                                tags=config_['tags']) as experiment:  # This starts execution timer
+
         results, train_time, test_time = run_experiment(config_)
-        experiment.set_params(results=results,
-                              train_time=train_time,
-                              test_time=test_time) # A dict object of e.g. accuracy, F1 score, etc.
+
+        experiment.experiment_results = results
+        experiment.train_time = train_time
+        experiment.test_time = test_time
 
         logger.info("Stored model configuration, commit ID, execution time, and test results at {}".format(project.db_uri))

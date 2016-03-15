@@ -4,7 +4,7 @@ Better docs coming.
 """
 from utils.misc_utils import get_config, get_logger, timer
 from utils.resources import PDTBRelations, evaluate_results
-from utils.extractors import Word2Vec, OneHot, RandomVectors, CBOW, BagOfWords, RandomCBOW
+from utils.extractors import Word2Vec, OneHot, RandomVectors, CBOW, BagOfWords, RandomCBOW, VocabIndices
 from utils.models import CNN, SVM, LogisticRegression
 from expy import Project
 from sys import argv
@@ -27,6 +27,7 @@ EXTRACTOR_HANDLERS = {
     'random_cbow': RandomCBOW,
     'cbow': CBOW,
     'bag_of_words': BagOfWords,
+    'vocab_indices': VocabIndices
 }
 
 MODEL_HANDLERS = {
@@ -134,7 +135,7 @@ if __name__ == '__main__':
                       description=config_['description'], # Project description
                       project_config=project_config,  # Base configuration for project
                       mongodb_uri=config_['results_db_uri'],
-                      force_clean_repo=True)  # Crash program if git status doesn't return clean repo
+                      force_clean_repo=False)  # Crash program if git status doesn't return clean repo
 
 
     experiment_config = {x:y for x,y in config_.items() if x not in {'project_name',

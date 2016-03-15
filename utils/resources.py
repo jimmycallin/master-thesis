@@ -48,7 +48,7 @@ class PDTBRelations(Resource):
 
     def massage_sentence(self, sentence):
         if sentence is None:
-            tokenized = "NONE"
+            tokenized = ["NONE"]
         else:
             tokenized = tokenize(sentence)
 
@@ -56,6 +56,7 @@ class PDTBRelations(Resource):
             tokenized = tokenized[:self.max_words_in_sentence]
         if self.padding:
             tokenized = tokenized + ['PADDING'] * (self.max_words_in_sentence - len(tokenized))
+
         return tokenized
 
     def get_feature_tensor(self, extractors):

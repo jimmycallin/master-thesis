@@ -149,6 +149,7 @@ class OneHot(Extractor):
         assert feat_matrix.shape == (len(sentence), self.n_features)
         return feat_matrix
 
+
 class BagOfWords(OneHot):
     def __init__(self, vocab_indices_path, max_vocab_size, argument, **kwargs):
         super().__init__(vocab_indices_path, max_vocab_size, argument, **kwargs)
@@ -157,3 +158,25 @@ class BagOfWords(OneHot):
         feats = np.sum(super().extract_features(sentence), axis=0, keepdims=True)
         assert feats.shape == (1, self.n_features)
         return feats
+
+
+class VocabIndices(Extractor):
+    def __init__(self, vocab_indices_path, argument, sentence_max_length, **kwargs):
+        super().__init__(argument)
+        self.vocab = self.read_vocab(vocab_indices_path)
+        self.n_features = None
+
+    def read_vocab(self, vocab_indices_path):
+        with open(vocab_indices_path) as f:
+            vocab = f.readlines()
+        return {w: i for i, w in enumerate(vocab)}
+
+    def extract_features(self, sentence):
+        """
+        Last index is for OOV words.
+        """
+        indices = np.expand_dims(np.array([self.vocab.get(s, len(s)-1) for s in sentence]), axis=0)
+        if self.n_features is None:
+            self.n_features = indices.shape[1]
+        assert indices.shape == (1, len(sentence))
+        return indices

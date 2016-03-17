@@ -22,15 +22,18 @@ class Resource(metaclass=abc.ABCMeta):
 
 
 class PDTBRelations(Resource):
-    def __init__(self, path, max_words_in_sentence, max_hierarchical_level, classes, separate_dual_classes, padding):
+    def __init__(self, path, max_words_in_sentence, max_hierarchical_level, classes, separate_dual_classes, padding, filter_type=[]):
         self.max_hierarchical_level = max_hierarchical_level
         self.separate_dual_classes = separate_dual_classes
+        self.filter_type = filter_type
         super(PDTBRelations, self).__init__(path, max_words_in_sentence, classes, padding)
 
     def _load_instances(self, path):
         with open(path) as file_:
             for line in file_:
                 rel = DiscourseRelation(json.loads(line.strip()))
+                if rel.relation_type() in self.filter_type:
+                    continue
                 if self.separate_dual_classes:
                     for splitted in rel.split_up_senses(max_level=self.max_hierarchical_level):
                         if len(splitted.senses()) > 1:
@@ -215,7 +218,7 @@ def evaluate_results(prediction_file_path, gold_file_path, print_report=True):
         total_class = correct[class_] + incorrect[class_]
         class_accuracy = correct[class_] / total_class if total_class != 0 else 0
         results['classes'][class_] = {'correct': correct[class_],
-                                      'total_class': total_class, # TODO: FIX total class
+                                      'total_class': total_class,
                                       'accuracy': class_accuracy}
         report += "{}: {} correct / {} ({})\n".format(class_,
                                                       results['classes'][class_]['correct'],

@@ -70,7 +70,7 @@ class CNN():
     def __init__(self,
                  n_features=20,
                  n_classes=3,
-                 embedding_dim=128,
+                 embedding_dim=300,
                  filter_sizes=[3,4,5],
                  num_filters=128,
                  dropout_keep_prob=0,
@@ -84,6 +84,7 @@ class CNN():
                  max_words_in_sentence=20,
                  vocab_size=300000,
                  store_path=None,
+                 word2vec_path=None,
                  name=None):
 
         self.embedding_dim = embedding_dim
@@ -103,7 +104,13 @@ class CNN():
         self.vocab_size = vocab_size
         self.graph = tf.Graph()
         self.store_path = store_path
+        self.word2vec_path = word2vec_path
+        if self.word2vec_path is not None:
+            self.embedding_matrix = Word2Vec(self.word2vec_path, 'connective_token').data.syn0[:self.vocab_size]
+        else:
+            self.embedding_matrix = np.random.randn(vocab_size, embedding_dim)
 
+        logger.debug("Embedding matrix shape: {}".format(self.embedding_matrix.shape))
         with self.graph.as_default():
             session_conf = tf.ConfigProto(allow_soft_placement=self.allow_soft_placement,
                                           log_device_placement=self.log_device_placement)
@@ -121,19 +128,19 @@ class CNN():
 
                 # Define Training procedure
                 self.global_step = tf.Variable(0, name="global_step", trainable=False)
-                optimizer = tf.train.AdamOptimizer(1e-4)
+                optimizer = tf.train.AdagradOptimizer(0.01)
                 grads_and_vars = optimizer.compute_gradients(self.cnn.loss)
                 self.train_op = optimizer.apply_gradients(grads_and_vars, global_step=self.global_step)
 
-                # Keep track of gradient values and sparsity (optional)
-                grad_summaries = []
-                for g, v in grads_and_vars:
-                    if g is not None:
-                        grad_hist_summary = tf.histogram_summary("{}/grad/hist".format(v.name), g)
-                        sparsity_summary = tf.scalar_summary("{}/grad/sparsity".format(v.name), tf.nn.zero_fraction(g))
-                        grad_summaries.append(grad_hist_summary)
-                        grad_summaries.append(sparsity_summary)
-                grad_summaries_merged = tf.merge_summary(grad_summaries)
+                # # Keep track of gradient values and sparsity (optional)
+                # grad_summaries = []
+                # for g, v in grads_and_vars:
+                #     if g is not None:
+                #         grad_hist_summary = tf.histogram_summary("{}/grad/hist".format(v.name), g)
+                #         sparsity_summary = tf.scalar_summary("{}/grad/sparsity".format(v.name), tf.nn.zero_fraction(g))
+                #         grad_summaries.append(grad_hist_summary)
+                #         grad_summaries.append(sparsity_summary)
+                # grad_summaries_merged = tf.merge_summary(grad_summaries)
 
                 # Output directory for models and summaries
                 timestamp = str(int(time.time()))
@@ -145,7 +152,7 @@ class CNN():
                 acc_summary = tf.scalar_summary("accuracy", self.cnn.accuracy)
 
                 # Train Summaries
-                self.train_summary_op = tf.merge_summary([loss_summary, acc_summary, grad_summaries_merged])
+                self.train_summary_op = tf.merge_summary([loss_summary, acc_summary])
                 train_summary_dir = os.path.join(out_dir, "summaries", "train")
                 self.train_summary_writer = tf.train.SummaryWriter(train_summary_dir, sess.graph_def)
 
@@ -162,7 +169,8 @@ class CNN():
                 self.saver = tf.train.Saver(tf.all_variables())
 
                 # Initialize all variables
-                sess.run(tf.initialize_all_variables())
+                feed = {self.cnn.embedding_matrix: self.embedding_matrix}
+                sess.run(tf.initialize_all_variables(), feed_dict=feed)
 
     def train_step(self, x_batch, y_batch):
         """
@@ -171,7 +179,7 @@ class CNN():
         feed_dict = {
           self.cnn.input_x: x_batch,
           self.cnn.input_y: y_batch,
-          self.cnn.dropout_keep_prob: self.dropout_keep_prob
+          self.cnn.dropout_keep_prob: self.dropout_keep_prob,
         }
         _, step, summaries, loss, accuracy = self.sess.run([self.train_op, self.global_step, self.train_summary_op, self.cnn.loss, self.cnn.accuracy],
                                                            feed_dict)
@@ -216,8 +224,9 @@ class CNN():
                     self.dev_step(x_dev, y_dev, writer=self.dev_summary_writer)
                     print("")
                 if current_step % self.checkpoint_every == 0:
-                    path = self.saver.save(self.sess, self.checkpoint_prefix, global_step=current_step)
-                    print("Saved model checkpoint to {}\n".format(path))
+                    #path = self.saver.save(self.sess, self.checkpoint_prefix, global_step=current_step)
+                    #print("Saved model checkpoint to {}\n".format(path))
+                    pass
 
             if self.store_path:
                 self.store(self.store_path, self.sess)
@@ -231,7 +240,7 @@ class CNN():
 
             feed_dict = {
               self.cnn.input_x: x_test,
-              self.cnn.dropout_keep_prob: 1.0
+              self.cnn.dropout_keep_prob: 1.0,
             }
             step, predictions = self.sess.run([self.global_step, self.cnn.predictions], feed_dict)
         return predictions
@@ -258,6 +267,7 @@ class CNN():
         logger.debug("Stored model at {}".format(store_path))
 
 
+from .extractors import Word2Vec
 import time
 import datetime
 class TextCNN(object):
@@ -269,6 +279,7 @@ class TextCNN(object):
       self, sequence_length, num_classes, vocab_size,
       embedding_size, filter_sizes, num_filters, l2_reg_lambda=0.0):
 
+
         # Placeholders for input, output and dropout
         self.input_x = tf.placeholder(tf.int32, [None, sequence_length], name="input_x")
         self.input_y = tf.placeholder(tf.float32, [None, num_classes], name="input_y")
@@ -279,9 +290,8 @@ class TextCNN(object):
 
         # Embedding layer
         with tf.device('/cpu:0'), tf.name_scope("embedding"):
-            W = tf.Variable(
-                tf.random_uniform([vocab_size, embedding_size], -1.0, 1.0),
-                name="W")
+            self.embedding_matrix = tf.placeholder(tf.float32, shape=(vocab_size, embedding_size))
+            W = tf.Variable(self.embedding_matrix, name="W")
             self.embedded_chars = tf.nn.embedding_lookup(W, self.input_x)
             self.embedded_chars_expanded = tf.expand_dims(self.embedded_chars, -1)
 
@@ -301,8 +311,8 @@ class TextCNN(object):
                     name="conv")
                 # Apply nonlinearity
                 h = tf.nn.relu(tf.nn.bias_add(conv, b), name="relu")
-                # Maxpooling over the outputs
-                pooled = tf.nn.max_pool(
+                # Avgpooling over the outputs
+                pooled = tf.nn.avg_pool(
                     h,
                     ksize=[1, sequence_length - filter_size + 1, 1, 1],
                     strides=[1, 1, 1, 1],

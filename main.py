@@ -70,7 +70,7 @@ def extract_features(extract_config, instances):
     for params in sorted(extract_config, key=lambda v: v['name']):
         extractor = EXTRACTOR_HANDLERS[params['name']](**params)
         extractors.append(extractor)
-
+    
     return instances.get_feature_tensor(extractors)
 
 

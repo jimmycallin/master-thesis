@@ -49,16 +49,16 @@ class PDTBRelations(Resource):
                         continue
                     yield rel
 
-    def massage_sentence(self, sentence):
+    def massage_sentence(self, sentence, extractor):
         if sentence is None:
             tokenized = ["NONE"]
         else:
             tokenized = tokenize(sentence)
 
-        if self.max_words_in_sentence:
-            tokenized = tokenized[:self.max_words_in_sentence]
+        if extractor.sentence_max_length:
+            tokenized = tokenized[:extractor.sentence_max_length]
         if self.padding:
-            tokenized = tokenized + ['PADDING'] * (self.max_words_in_sentence - len(tokenized))
+            tokenized = tokenized + ['PADDING'] * (extractor.sentence_max_length - len(tokenized))
 
         return tokenized
 
@@ -74,7 +74,7 @@ class PDTBRelations(Resource):
                 # These return matrices of shape (1, n_features)
                 # We concatenate them on axis 1
                 arg_rawtext = getattr(rel, extractor.argument)()
-                arg_tokenized = self.massage_sentence(arg_rawtext)
+                arg_tokenized = self.massage_sentence(arg_rawtext, extractor)
                 arg_feats = extractor.extract_features(arg_tokenized)
                 feats.append(arg_feats)
                 total_features_per_instance += extractor.n_features

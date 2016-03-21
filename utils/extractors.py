@@ -164,8 +164,9 @@ class VocabIndices(Extractor):
     def __init__(self, vocab_indices_path, argument, sentence_max_length, max_vocab_size, **kwargs):
         super().__init__(argument)
         self.max_vocab_size = max_vocab_size
+        self.sentence_max_length = sentence_max_length
         self.vocab = self.read_vocab(vocab_indices_path)
-        self.n_features = None
+        self.n_features = sentence_max_length
 
     def read_vocab(self, vocab_indices_path):
         with open(vocab_indices_path) as f:
@@ -179,7 +180,5 @@ class VocabIndices(Extractor):
         """
         sentence = [s if s in self.vocab else 'OOV' for s in sentence]
         indices = np.expand_dims(np.array([self.vocab[s] for s in sentence]), axis=0)  # pylint:disable=E1101
-        if self.n_features is None:
-            self.n_features = indices.shape[1]
-        assert indices.shape == (1, len(sentence))
+        assert indices.shape == (1, self.n_features)
         return indices

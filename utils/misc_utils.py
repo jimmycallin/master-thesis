@@ -5,7 +5,7 @@ Contains miscellaneous helper functions
 import logging
 import logging.config
 import yaml
-from spacy import English
+import spacy
 from time import time
 
 def get_config(path):
@@ -37,11 +37,11 @@ def get_en_model():
     logger = get_logger(__name__)
     if EN_MODEL is None:
         logger.debug("Loading spacy English model...")
-        EN_MODEL = English(tagger=False,
-                           parser=False,
-                           entity=False,
-                           matcher=False,
-                           load_vectors=False)
+        EN_MODEL = spacy.load(tagger=False,
+                              parser=False,
+                              entity=False,
+                              matcher=False,
+                              load_vectors=False)
     return EN_MODEL
 
 
@@ -55,7 +55,7 @@ def tokenize(sentence):
 class timer():
     def __init__(self):
         self.elapsed_time = 0
-        
+
     def __enter__(self):
         self.start_time = time()
         return self

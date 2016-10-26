@@ -1,0 +1,46 @@
+# train: false
+
+model:
+    name: svm
+    kernel: rbf
+    store_path: models/svm.ckpt
+
+test_output_path: results/svm.json
+
+experiment_name: "SVM baseline"
+description: "An SVM baseline using random cbow with arg1 text"
+tags: ['baseline', 'random_cbow', 'arg1_text']
+
+# Each extractor has a name from main.extractor_handlers, which points to a class
+# where any additional params are used to initiate the extractor class.
+
+extractors:
+    # -
+    #     name: bag_of_words
+    #     max_vocab_size: 5000
+    #     vocab_indices_path: resources/conll16st-en-zh-dev-train_LDC2016E50/vocab.txt
+    #     argument: connective_token
+    # -
+    #     name: word2vec
+    #     path: resources/GoogleNews-vectors-negative300.bin
+    #     argument: connective_token
+    # -
+    #     name: onehot
+    #     vocab_indices_path: resources/conll16st-en-zh-dev-train_LDC2016E50/vocab.txt
+     -
+         name: random_cbow
+         dimensionality: 300
+         argument: arg1_text
+
+    # -
+    #     name: cbow
+    #     path: resources/GoogleNews-vectors-negative300.bin
+    #     argument: connective_token
+    # -
+    #     name: cbow
+    #     path: resources/GoogleNews-vectors-negative300.bin
+    #     argument: arg2_text
+    # -
+    #     name: cbow
+    #     path: resources/GoogleNews-vectors-negative300.bin
+    #     argument: connective_token

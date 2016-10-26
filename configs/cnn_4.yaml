@@ -1,0 +1,65 @@
+# train: false
+
+model:
+    name: cnn
+    embedding_dim: 300
+    filter_sizes: [1,2]
+    num_filters: 128
+    dropout_keep_prob: 0.5
+    l2_reg_lambda: 3
+    batch_size: 128
+    num_epochs: 100
+    evaluate_every: 100
+    checkpoint_every: 100
+    allow_soft_placement: true
+    log_device_placement: false
+    max_words_in_sentence: 25
+    vocab_size: 300003
+    store_path: models/cnn2.ckpt
+    word2vec_path: resources/GoogleNews-vectors-negative300.bin
+
+test_output_path: results/cnn2.json
+experiment_name: "CNN-word2vec-arg1"
+description: "A CNN model with word2vec only on connective_token."
+tags: ['cnn', 'connective_token', 'arg1_text', 'word2vec']
+
+# Each extractor has a name from main.extractor_handlers, which points to a class
+# where any additional params are used to initiate the extractor class.
+
+extractors:
+    # -
+    #     name: bag_of_words
+    #     max_vocab_size: 5000
+    #     vocab_indices_path: resources/conll16st-en-zh-dev-train_LDC2016E50/vocab.txt
+    #     argument: connective_token
+    # -
+    #     name: word2vec
+    #     path: resources/GoogleNews-vectors-negative300.bin
+    #     argument: connective_token
+    # -
+    #     name: onehot
+    #     vocab_indices_path: resources/conll16st-en-zh-dev-train_LDC2016E50/vocab.txt
+     -
+         name: vocab_indices
+         vocab_indices_path: resources/word2vec_indices.txt
+         sentence_max_length: 5
+         max_vocab_size: 300000
+         argument: connective_token
+     -
+         name: vocab_indices
+         vocab_indices_path: resources/word2vec_indices.txt
+         sentence_max_length: 20
+         max_vocab_size: 300000
+         argument: arg1_text
+    # -
+    #     name: cbow
+    #     path: resources/GoogleNews-vectors-negative300.bin
+    #     argument: connective_token
+    # -
+    #     name: cbow
+    #     path: resources/GoogleNews-vectors-negative300.bin
+    #     argument: arg2_text
+    # -
+    #     name: cbow
+    #     path: resources/GoogleNews-vectors-negative300.bin
+    #     argument: connective_token

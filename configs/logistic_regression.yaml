@@ -1,0 +1,34 @@
+model:
+    name: logistic_regression
+    epochs: 100
+    batch_size: 1000
+    store_path: models/logreg.ckpt
+
+test_report_path: results/cnn.txt
+
+
+# Each extractor has a name from main.extractor_handlers, which points to a class
+# where any additional params are used to initiate the extractor class.
+
+extractors:
+    # -
+    #     name: word2vec
+    #     path: resources/GoogleNews-vectors-negative300.bin
+    # -
+    #     name: onehot
+    #     vocab_indices_path: resources/conll16st-en-zh-dev-train_LDC2016E50/vocab.txt
+    -
+        name: bag_of_words
+        max_vocab_size: 5000
+        vocab_indices_path: resources/conll16st-en-zh-dev-train_LDC2016E50/vocab.txt
+        argument: arg1_text
+    -
+        name: bag_of_words
+        max_vocab_size: 5000
+        vocab_indices_path: resources/conll16st-en-zh-dev-train_LDC2016E50/vocab.txt
+        argument: arg2_text
+    -
+        name: bag_of_words
+        max_vocab_size: 5000
+        vocab_indices_path: resources/conll16st-en-zh-dev-train_LDC2016E50/vocab.txt
+        argument: connective_token

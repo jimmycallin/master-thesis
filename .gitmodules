@@ -1,0 +1,12 @@
+[submodule "third_party/conll16st-v34-focused-rnns"]
+	path = third_party/conll16st-v34-focused-rnns
+	url = https://github.com/jimmycallin/conll16st-v34-focused-rnns
+[submodule "third_party/nn_discourse_parser"]
+	path = third_party/nn_discourse_parser
+	url = https://github.com/attapol/nn_discourse_parser
+[submodule "third_party/CoNLL2016-CNN"]
+	path = third_party/CoNLL2016-CNN
+	url = https://github.com/qkaren/CoNLL2016-CNN/
+[submodule "utils/conll16st-eval"]
+	path = utils/conll16st-eval
+	url = https://github.com/attapol/conll16st

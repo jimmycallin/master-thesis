@@ -1,0 +1,42 @@
+Starting job 16077411 ("ffnn-tscca-wikipedia") on c18-13 at mån dec 5 16:15:01 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16077411.d...
+We are now in nn_discourse_parser
+Start reading in the dictionary
+Skipped 0 out of 150002 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16077411.ba+    220920K      1979K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16077411     ffnn-tscc+          1                         00:01:30      0:0 
+
+Job 16077411 ("ffnn-tscca-wikipedia") completed on c18-13 at mån dec 5 16:16:26 CET 2016
+Starting job 16077607 ("ffnn-tscca-wikipedia") on c18-20 at mån dec 5 16:43:59 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16077607.d...
+We are now in nn_discourse_parser
+Start reading in the dictionary
+Skipped 0 out of 150002 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16077607.ba+    220920K      2344K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16077607     ffnn-tscc+          1                         00:01:33      0:0 
+
+Job 16077607 ("ffnn-tscca-wikipedia") completed on c18-20 at mån dec 5 16:45:28 CET 2016

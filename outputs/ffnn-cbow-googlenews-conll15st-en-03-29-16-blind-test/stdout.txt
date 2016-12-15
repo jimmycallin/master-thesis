@@ -1,0 +1,40 @@
+Starting job 16077576 ("ffnn-cbow-googlenews") on c14-19 at mån dec 5 16:16:00 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16077576.d...
+We are now in nn_discourse_parser
+Start reading in the dictionary
+Skipped 0 out of 3000001 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16077576.ba+   5705748K   5213340K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16077576     ffnn-cbow+          1                         00:01:55      0:0 
+
+Job 16077576 ("ffnn-cbow-googlenews") completed on c14-19 at mån dec 5 16:17:51 CET 2016
+Starting job 16084100 ("ffnn-cbow-googlenews") on c13-31 at tis dec 6 12:19:50 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16084100.d...
+slurmstepd: *** JOB 16084100 ON c13-31 CANCELLED AT 2016-12-06T12:20:19 ***
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16084100.ba+    326776K      3113K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16084100     ffnn-cbow+          4                         00:00:31      0:0 
+
+Job 16084100 ("ffnn-cbow-googlenews") completed on c13-31 at tis dec 6 12:20:20 CET 2016

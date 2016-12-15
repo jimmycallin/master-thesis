@@ -1,0 +1,21 @@
+Starting job 16175799 ("ffnn-skipgram-googlenews-3") on c17-35 at tor dec 15 13:32:45 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16175799.d...
+We are now in nn_discourse_parser
+Start reading in the dictionary
+Skipped 0 out of 3000001 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16175799.ba+   8748228K   8255482K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16175799     ffnn-skip+          1                         00:04:54      0:0 
+
+Job 16175799 ("ffnn-skipgram-googlenews-3") completed on c17-35 at tor dec 15 13:37:36 CET 2016

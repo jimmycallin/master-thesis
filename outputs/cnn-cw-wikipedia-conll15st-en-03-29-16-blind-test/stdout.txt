@@ -1,0 +1,60 @@
+Starting job 16098170 ("cnn-cw-wikipedia") on c13-24 at ons dec 7 20:56:43 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16098170.d...
+NAME: cnn-cw-wikipedia
+TEST_TYPE: conll15st-en-03-29-16-blind-test
+INPUT_PATH: /work/jobs/16098170.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test/
+MODEL_PATH: /work/jobs/16098170.d/models/cnn-cw-wikipedia/
+EMBEDDING_PATH: /work/jobs/16098170.d/resources//word_embeddings/precompiled/c&w/size=50.merged
+EMBEDDING_DIR: /work/jobs/16098170.d/resources//word_embeddings/precompiled/c&w
+OUTPUT_PATH: /usit/abel/u1/jimmycallin//outputs/cnn-cw-wikipedia-conll15st-en-03-29-16-blind-test/
+TRAIN_FILE_PATH: /work/jobs/16098170.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train/
+We are now in CoNLL2016-CNN and begin testing...
+Using Theano backend.
+/usit/abel/u1/jimmycallin/miniconda2/envs/cnn/lib/python3.5/site-packages/gensim/utils.py:1015: UserWarning: Pattern library is not installed, lemmatization won't be available.
+  warnings.warn("Pattern library is not installed, lemmatization won't be available.")
+/work/jobs/16098170.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test//relations.json /work/jobs/16098170.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test//parses.json ((653, 120), (653, 120), (653, 20), (653, 20))
+the lens of vocab and pos_vocab:  35397 45
+--------------------------------------------------------------------------------
+Layer (name)                  Output Shape                  Param #             
+--------------------------------------------------------------------------------
+Layer (arg1)                  (None, 120)                   0                   
+Layer (arg2)                  (None, 120)                   0                   
+Layer (pos1)                  (None, 120)                   0                   
+Layer (pos2)                  (None, 120)                   0                   
+Embedding (embedding1)        (None, 120, 50)               1769900             
+Embedding (embedding2)        (None, 120, 50)               1769900             
+Embedding (embedding3)        (None, 120, 100)              4600                
+Embedding (embedding4)        (None, 120, 100)              4600                
+Dropout (arg_1)               (None, 120, 150)              0                   
+Dropout (arg_2)               (None, 120, 150)              0                   
+Siamese (cnn1)                (None, 120, 2048)             461824              
+Siamese (cnn2)                (None, 120, 2048)             461824              
+Siamese (cnn3)                (None, 120, 2048)             461824              
+MaxPooling1D (mpooling1)      (None, 1, 2048)               0                   
+MaxPooling1D (mpooling2)      (None, 1, 2048)               0                   
+MaxPooling1D (mpooling3)      (None, 1, 2048)               0                   
+Flatten (f1)                  (None, 2048)                  0                   
+Flatten (f2)                  (None, 2048)                  0                   
+Flatten (f3)                  (None, 2048)                  0                   
+Dense (final)                 (None, 20)                    122900              
+Activation (lastDim)          (None, 20)                    0                   
+Activation (output)           (None, 20)                    0                   
+--------------------------------------------------------------------------------
+Total params: 5057372
+--------------------------------------------------------------------------------
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16098170.ba+   1271724K    404621K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16098170     cnn-cw-wi+          4                         00:04:34      0:0 
+
+Job 16098170 ("cnn-cw-wikipedia") completed on c13-24 at ons dec 7 21:01:12 CET 2016

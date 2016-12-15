@@ -19,6 +19,7 @@
 ## Kido, Yusuke, and Akiko Aizawa. “Discourse Relation Sense Classification with Two-Step Classifiers.” ACL 2016, 2016, 129.
 
 - The paper uses a two-step classifier to gain competitive results (8th) with an SVM and MaxEnt classifier.
+- SVM CANDIDATE
 - It has training data analysis numbers for connective tokens per class (figure 1)
 - It replaces unknown connective words with known connective words by looking up which connective word is the closest according to word2vec.
 - Notes the difficulty of disambiguating Comparison.Concession from Contrast.
@@ -30,3 +31,29 @@
 
 - A modular FFNN using WE and dependencies. Achieves pretty good results for being generic.
 - FFNN CANDIDATE
+
+## Rutherford, Attapol T., and Nianwen Xue. “Robust Non-Explicit Neural Discourse Parser in English and Chinese.” ACL 2016, 2016, 55.
+
+- Best performing for implicit sense classification
+- Quite basic, straight forward approach
+- Repo: https://github.com/attapol/nn_discourse_parser
+- FFNN CANDIDATE
+
+- Quotes:
+    - "Previous studies including the results from CoNLL 2015 Shared Task have shown that classifying the senses of implicit discourse relations is the most difficult part of the task of discourse parsing (Xue et al 2015). Therefore, we focus exclusively on this particular challenging subtask."
+
+## Qin, Lianhui, Zhisong Zhang, and Hai Zhao. “Shallow Discourse Parsing Using Convolutional Neural Network.” ACL 2016, 2016, 70.
+- CNN CANDIDATE
+- 3rd place in implicit sense classification
+
+## Laali, Majid, Andre Cianflone, and Leila Kosseim. “The CLaC Discourse Parser at CoNLL-2016.” ACL 2016, 2016.
+- CNN CANDIDATE
+
+## Wang, Jianxiang, and Man Lan. “Two End-to-End Shallow Discourse Parsers for English and Chinese in CoNLL-2016 Shared Task.” ACL 2016, 2016, 33.
+- CNN CANDIDATE
+- SECOND best score of the CNNs (34. something)
+- codename: ecnucs
+- email authors about code
+
+
+##

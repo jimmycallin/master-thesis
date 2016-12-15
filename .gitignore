@@ -5,6 +5,7 @@ overens/
 .ipynb_checkpoints/
 notes/
 notebooks/Playground.ipynb
+__pycache__/
 
 # LaTeX
 *.aux

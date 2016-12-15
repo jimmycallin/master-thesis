@@ -17,8 +17,8 @@ resources:
         name: conll16st-en-01-12-16-train
         path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-train/relations.json
         max_hierarchical_level: 3
-        max_words_in_sentence: 45
-        padding: true
+        max_words_in_sentence: 50
+        padding: false
         classes: ["Temporal.Asynchronous.Precedence",
                   "Temporal.Asynchronous.Succession",
                   "Temporal.Synchrony",
@@ -35,13 +35,13 @@ resources:
                   "Expansion.Exception",
                   "EntRel"]
         separate_dual_classes: true
-        filter_type: []
+        filter_type: ["Implicit", "EntRel"]
     dev_data:
         name: conll16st-en-01-12-16-dev
         path: resources/conll16st-en-zh-dev-train_LDC2016E50/conll16st-en-01-12-16-dev/relations.json
         max_hierarchical_level: 3
-        max_words_in_sentence: 45
-        padding: true
+        max_words_in_sentence: 50
+        padding: false
         classes: ["Temporal.Asynchronous.Precedence",
                   "Temporal.Asynchronous.Succession",
                   "Temporal.Synchrony",
@@ -58,7 +58,7 @@ resources:
                   "Expansion.Exception",
                   "EntRel"]
         separate_dual_classes: false
-        filter_type: []
+        filter_type: ["Implicit", "EntRel"]
 
 # Logging
 logging:

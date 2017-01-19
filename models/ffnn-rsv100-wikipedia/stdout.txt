@@ -1,0 +1,27 @@
+Starting job 16176477 ("ffnn-rsv-wikipedia") on c31-32 at tor dec 15 15:31:01 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16176477.d...
+We are now in nn_discourse_parser
+Starting FFNN run
+NAME: ffnn-rsv-wikipedia
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16176477.d/resources//word_embeddings/precompiled/rsv/wiki_2008_d100_w1_ncntx10000.wembed
+DATA_BASE_PATH: /work/jobs/16176477.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/ffnn-rsv-wikipedia
+Start reading in the dictionary
+Skipped 0 out of 110135 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16176477.ba+   1814232K   1204469K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16176477     ffnn-rsv-+          4                         00:11:30      0:0 
+
+Job 16176477 ("ffnn-rsv-wikipedia") completed on c31-32 at tor dec 15 15:42:28 CET 2016

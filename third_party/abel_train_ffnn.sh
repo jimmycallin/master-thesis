@@ -39,8 +39,7 @@ LOCAL_BASE_DIR="/usit/abel/u1/jimmycallin/"
 EMBEDDING_PATH="$SCRATCH/resources/$2"
 DATA_BASE_PATH="$SCRATCH/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16"
 MODEL_STORE_PATH="$LOCAL_BASE_DIR/models/$NAME"
-mkdir $MODEL_STORE_PATH
-mkdir $LOCAL_BASE_DIR/run_$SLURM_JOBID-$SLURM_JOB_NAME
+mkdir -p $MODEL_STORE_PATH
 
 echo "Starting FFNN run"
 echo "NAME: $NAME"

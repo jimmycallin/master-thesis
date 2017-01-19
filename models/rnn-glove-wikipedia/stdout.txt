@@ -1,0 +1,1233 @@
+Starting job 16086900 ("rnn-glove-wikipedia") on c14-33 at tis dec 6 15:26:47 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16086900.d...
+We are now in conll16st-v34-focused-rnns
+Starting RNN run
+NAME: rnn-glove-wikipedia
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16086900.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+DATA_BASE_PATH: /work/jobs/16086900.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+CONFIG: --config={"filter_fn_name":"conn_gt_0","words_dim":20,"focus_dim":4,"rnn_dim":20,"final_dim":100,"words2vec_txt":"$EMBEDDING_PATH"}
+Using Theano backend.
+[2016-12-06 15:29] configuration (/usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia)
+[2016-12-06 15:29]     config 'epochs':  (1000)
+[2016-12-06 15:29]     config 'epochs_len':  (-1)
+[2016-12-06 15:29]     config 'epochs_patience':  (20)
+[2016-12-06 15:29]     config 'batch_size':  (64)
+[2016-12-06 15:29]     config 'snapshot_size':  (2048)
+[2016-12-06 15:29]     config 'random_per_sample':  (32)
+[2016-12-06 15:29]     config 'words_dim': 20 (20)
+[2016-12-06 15:29]     config 'focus_dim': 4 (4)
+[2016-12-06 15:29]     config 'rnn_dim': 20 (20)
+[2016-12-06 15:29]     config 'final_dim': 100 (100)
+[2016-12-06 15:29]     config 'arg1_len':  (100)
+[2016-12-06 15:29]     config 'arg2_len':  (100)
+[2016-12-06 15:29]     config 'conn_len':  (10)
+[2016-12-06 15:29]     config 'punc_len':  (2)
+[2016-12-06 15:29]     config 'words_dropout':  (0.1)
+[2016-12-06 15:29]     config 'focus_dropout_W':  (0.33)
+[2016-12-06 15:29]     config 'focus_dropout_U':  (0.66)
+[2016-12-06 15:29]     config 'rnn_dropout_W':  (0.33)
+[2016-12-06 15:29]     config 'rnn_dropout_U':  (0.33)
+[2016-12-06 15:29]     config 'final_dropout':  (0.5)
+[2016-12-06 15:29]     config 'filter_fn_name': conn_gt_0 (conn_eq_0)
+[2016-12-06 15:29]     config 'words2vec_bin':  (None)
+[2016-12-06 15:29]     config 'words2vec_txt': $EMBEDDING_PATH (None)
+[2016-12-06 15:29]   args.experiment_dir: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+[2016-12-06 15:29]   args.train_dir: /work/jobs/16086900.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train
+[2016-12-06 15:29]   args.valid_dir: /work/jobs/16086900.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev
+[2016-12-06 15:29]   K._config: {u'image_dim_ordering': u'tf', u'backend': u'theano', u'floatx': u'float32', u'epsilon': 1e-07}
+[2016-12-06 15:29]   os.getenv("THEANO_FLAGS"): None
+[2016-12-06 15:29]   filter_types: None
+[2016-12-06 15:29]   filter_senses: None
+[2016-12-06 15:29]   filter_fn_name: conn_gt_0
+[2016-12-06 15:29]   config: {u'words_dim': 20, u'filter_fn_name': u'conn_gt_0', u'focus_dim': 4, u'words2vec_txt': u'$EMBEDDING_PATH', u'final_dim': 100, u'rnn_dim': 20}
+[2016-12-06 15:29] load dataset for training (/work/jobs/16086900.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train)
+slurmstepd: *** JOB 16086900 ON c14-33 CANCELLED AT 2016-12-06T15:33:03 ***
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16086900.ba+   3797412K   3202216K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16086900     rnn-glove+          4                         00:06:21      0:0 
+
+Job 16086900 ("rnn-glove-wikipedia") completed on c14-33 at tis dec 6 15:33:03 CET 2016
+Starting job 16086956 ("rnn-glove-wikipedia") on c14-22 at tis dec 6 15:36:38 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16086956.d...
+We are now in conll16st-v34-focused-rnns
+Starting RNN run
+NAME: rnn-glove-wikipedia
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16086956.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+DATA_BASE_PATH: /work/jobs/16086956.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+CONFIG: --config={"filter_fn_name":"conn_gt_0","words_dim":20,"focus_dim":6,"rnn_dim":50,"final_dim":40,"words2vec_txt":"$EMBEDDING_PATH"}
+Using Theano backend.
+[2016-12-06 15:38] configuration (/usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia)
+[2016-12-06 15:38]     config 'epochs':  (1000)
+[2016-12-06 15:38]     config 'epochs_len':  (-1)
+[2016-12-06 15:38]     config 'epochs_patience':  (20)
+[2016-12-06 15:38]     config 'batch_size':  (64)
+[2016-12-06 15:38]     config 'snapshot_size':  (2048)
+[2016-12-06 15:38]     config 'random_per_sample':  (32)
+[2016-12-06 15:38]     config 'words_dim': 20 (20)
+[2016-12-06 15:38]     config 'focus_dim': 6 (4)
+[2016-12-06 15:38]     config 'rnn_dim': 50 (20)
+[2016-12-06 15:38]     config 'final_dim': 40 (100)
+[2016-12-06 15:38]     config 'arg1_len':  (100)
+[2016-12-06 15:38]     config 'arg2_len':  (100)
+[2016-12-06 15:38]     config 'conn_len':  (10)
+[2016-12-06 15:38]     config 'punc_len':  (2)
+[2016-12-06 15:38]     config 'words_dropout':  (0.1)
+[2016-12-06 15:38]     config 'focus_dropout_W':  (0.33)
+[2016-12-06 15:38]     config 'focus_dropout_U':  (0.66)
+[2016-12-06 15:38]     config 'rnn_dropout_W':  (0.33)
+[2016-12-06 15:38]     config 'rnn_dropout_U':  (0.33)
+[2016-12-06 15:38]     config 'final_dropout':  (0.5)
+[2016-12-06 15:38]     config 'filter_fn_name': conn_gt_0 (conn_eq_0)
+[2016-12-06 15:38]     config 'words2vec_bin':  (None)
+[2016-12-06 15:38]     config 'words2vec_txt': $EMBEDDING_PATH (None)
+[2016-12-06 15:38]   args.experiment_dir: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+[2016-12-06 15:38]   args.train_dir: /work/jobs/16086956.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train
+[2016-12-06 15:38]   args.valid_dir: /work/jobs/16086956.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev
+[2016-12-06 15:38]   K._config: {u'image_dim_ordering': u'tf', u'backend': u'theano', u'floatx': u'float32', u'epsilon': 1e-07}
+[2016-12-06 15:38]   os.getenv("THEANO_FLAGS"): None
+[2016-12-06 15:38]   filter_types: None
+[2016-12-06 15:38]   filter_senses: None
+[2016-12-06 15:38]   filter_fn_name: conn_gt_0
+[2016-12-06 15:38]   config: {u'words_dim': 20, u'filter_fn_name': u'conn_gt_0', u'focus_dim': 6, u'words2vec_txt': u'$EMBEDDING_PATH', u'final_dim': 40, u'rnn_dim': 50}
+[2016-12-06 15:38] load dataset for training (/work/jobs/16086956.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train)
+[2016-12-06 15:44] lang: ?, doc_ids: 1756, words: 933049, rel_ids: 17289, relation tokens: 676659
+[2016-12-06 15:44] load dataset for validation (/work/jobs/16086956.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev)
+[2016-12-06 15:45] lang: ?, doc_ids: 79, words: 39712, rel_ids: 737, relation tokens: 28745
+[2016-12-06 15:45] build indexes
+[2016-12-06 15:45]   rel_senses2id: 22, words2id: 43918
+[2016-12-06 15:45] Fast version of gensim.models.doc2vec is being used
+[2016-12-06 15:45] 'pattern' package found; tag filters are available for English
+[2016-12-06 15:45] loading projection weights from $EMBEDDING_PATH
+Traceback (most recent call last):
+  File "./v34/train.py", line 153, in <module>
+    init_weights = load_word2vec(indexes['words2id'], indexes_size['words2id'], words_dim, words2vec_bin, words2vec_txt)
+  File "/work/jobs/16086956.d/conll16st-v34-focused-rnns/v34/data_utils.py", line 229, in load_word2vec
+    model = word2vec.Word2Vec.load_word2vec_format(words2vec_txt)
+  File "/usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/gensim/models/word2vec.py", line 1171, in load_word2vec_format
+    with utils.smart_open(fname) as fin:
+  File "/usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/smart_open/smart_open_lib.py", line 127, in smart_open
+    return file_smart_open(parsed_uri.uri_path, mode)
+  File "/usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/smart_open/smart_open_lib.py", line 558, in file_smart_open
+    return open(fname, mode)
+IOError: [Errno 2] No such file or directory: u'$EMBEDDING_PATH'
+> /usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/smart_open/smart_open_lib.py(558)file_smart_open()
+-> return open(fname, mode)
+(Pdb) 
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16086956.ba+   5552448K   5061676K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16086956     rnn-glove+          4                         00:08:35      0:0 
+
+Job 16086956 ("rnn-glove-wikipedia") completed on c14-22 at tis dec 6 15:45:09 CET 2016
+Starting job 16087287 ("rnn-glove-wikipedia") on c15-30 at tis dec 6 16:19:47 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16087287.d...
+We are now in conll16st-v34-focused-rnns
+Starting RNN run
+NAME: rnn-glove-wikipedia
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16087287.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+DATA_BASE_PATH: /work/jobs/16087287.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+CONFIG: --config={"filter_fn_name":"conn_gt_0","words_dim":20,"focus_dim":6,"rnn_dim":50,"final_dim":40,"words2vec_txt":"$EMBEDDING_PATH"}
+Using Theano backend.
+slurmstepd: *** JOB 16087287 ON c15-30 CANCELLED AT 2016-12-06T16:25:47 ***
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16087287.ba+    571700K     40193K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16087287     rnn-glove+          4                         00:06:01      0:0 
+
+Job 16087287 ("rnn-glove-wikipedia") completed on c15-30 at tis dec 6 16:25:47 CET 2016
+Starting job 16087365 ("rnn-glove-wikipedia") on c16-2 at tis dec 6 16:32:50 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16087365.d...
+We are now in conll16st-v34-focused-rnns
+Starting RNN run
+NAME: rnn-glove-wikipedia
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16087365.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+DATA_BASE_PATH: /work/jobs/16087365.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+CONFIG: --config={"filter_fn_name":"conn_gt_0","words_dim":20,"focus_dim":6,"rnn_dim":50,"final_dim":40,"words2vec_txt":"${EMBEDDING_PATH}"}
+Using Theano backend.
+[2016-12-06 16:34] configuration (/usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia)
+[2016-12-06 16:34]     config 'epochs':  (1000)
+[2016-12-06 16:34]     config 'epochs_len':  (-1)
+[2016-12-06 16:34]     config 'epochs_patience':  (20)
+[2016-12-06 16:34]     config 'batch_size':  (64)
+[2016-12-06 16:34]     config 'snapshot_size':  (2048)
+[2016-12-06 16:34]     config 'random_per_sample':  (32)
+[2016-12-06 16:34]     config 'words_dim': 20 (20)
+[2016-12-06 16:34]     config 'focus_dim': 6 (4)
+[2016-12-06 16:34]     config 'rnn_dim': 50 (20)
+[2016-12-06 16:34]     config 'final_dim': 40 (100)
+[2016-12-06 16:34]     config 'arg1_len':  (100)
+[2016-12-06 16:34]     config 'arg2_len':  (100)
+[2016-12-06 16:34]     config 'conn_len':  (10)
+[2016-12-06 16:34]     config 'punc_len':  (2)
+[2016-12-06 16:34]     config 'words_dropout':  (0.1)
+[2016-12-06 16:34]     config 'focus_dropout_W':  (0.33)
+[2016-12-06 16:34]     config 'focus_dropout_U':  (0.66)
+[2016-12-06 16:34]     config 'rnn_dropout_W':  (0.33)
+[2016-12-06 16:34]     config 'rnn_dropout_U':  (0.33)
+[2016-12-06 16:34]     config 'final_dropout':  (0.5)
+[2016-12-06 16:34]     config 'filter_fn_name': conn_gt_0 (conn_eq_0)
+[2016-12-06 16:34]     config 'words2vec_bin':  (None)
+[2016-12-06 16:34]     config 'words2vec_txt': ${EMBEDDING_PATH} (None)
+[2016-12-06 16:34]   args.experiment_dir: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+[2016-12-06 16:34]   args.train_dir: /work/jobs/16087365.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train
+[2016-12-06 16:34]   args.valid_dir: /work/jobs/16087365.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev
+[2016-12-06 16:34]   K._config: {u'image_dim_ordering': u'tf', u'backend': u'theano', u'floatx': u'float32', u'epsilon': 1e-07}
+[2016-12-06 16:34]   os.getenv("THEANO_FLAGS"): None
+[2016-12-06 16:34]   filter_types: None
+[2016-12-06 16:34]   filter_senses: None
+[2016-12-06 16:34]   filter_fn_name: conn_gt_0
+[2016-12-06 16:34]   config: {u'words_dim': 20, u'filter_fn_name': u'conn_gt_0', u'focus_dim': 6, u'words2vec_txt': u'${EMBEDDING_PATH}', u'final_dim': 40, u'rnn_dim': 50}
+[2016-12-06 16:34] load dataset for training (/work/jobs/16087365.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train)
+[2016-12-06 16:40] lang: ?, doc_ids: 1756, words: 933049, rel_ids: 17289, relation tokens: 676659
+[2016-12-06 16:40] load dataset for validation (/work/jobs/16087365.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev)
+[2016-12-06 16:41] lang: ?, doc_ids: 79, words: 39712, rel_ids: 737, relation tokens: 28745
+[2016-12-06 16:41] build indexes
+[2016-12-06 16:41]   rel_senses2id: 22, words2id: 43918
+[2016-12-06 16:41] Fast version of gensim.models.doc2vec is being used
+[2016-12-06 16:41] 'pattern' package found; tag filters are available for English
+[2016-12-06 16:41] loading projection weights from ${EMBEDDING_PATH}
+Traceback (most recent call last):
+  File "./v34/train.py", line 153, in <module>
+    init_weights = load_word2vec(indexes['words2id'], indexes_size['words2id'], words_dim, words2vec_bin, words2vec_txt)
+  File "/work/jobs/16087365.d/conll16st-v34-focused-rnns/v34/data_utils.py", line 229, in load_word2vec
+    model = word2vec.Word2Vec.load_word2vec_format(words2vec_txt)
+  File "/usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/gensim/models/word2vec.py", line 1171, in load_word2vec_format
+    with utils.smart_open(fname) as fin:
+  File "/usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/smart_open/smart_open_lib.py", line 127, in smart_open
+    return file_smart_open(parsed_uri.uri_path, mode)
+  File "/usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/smart_open/smart_open_lib.py", line 558, in file_smart_open
+    return open(fname, mode)
+IOError: [Errno 2] No such file or directory: u'${EMBEDDING_PATH}'
+> /usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/smart_open/smart_open_lib.py(558)file_smart_open()
+-> return open(fname, mode)
+(Pdb) 
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16087365.ba+   4982672K   4492265K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16087365     rnn-glove+          4                         00:08:34      0:0 
+
+Job 16087365 ("rnn-glove-wikipedia") completed on c16-2 at tis dec 6 16:41:20 CET 2016
+Starting job 16087545 ("rnn-glove-wikipedia") on c16-19 at tis dec 6 16:50:04 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16087545.d...
+We are now in conll16st-v34-focused-rnns
+Starting RNN run
+NAME: rnn-glove-wikipedia
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16087545.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+DATA_BASE_PATH: /work/jobs/16087545.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+CONFIG: --config={"filter_fn_name":"conn_gt_0","words_dim":20,"focus_dim":6,"rnn_dim":50,"final_dim":40,"words2vec_txt":"/work/jobs/16087545.d/resources//word_embeddings/precompiled/glove/size=50.embeddings"}
+Using Theano backend.
+[2016-12-06 16:53] configuration (/usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia)
+[2016-12-06 16:53]     config 'epochs':  (1000)
+[2016-12-06 16:53]     config 'epochs_len':  (-1)
+[2016-12-06 16:53]     config 'epochs_patience':  (20)
+[2016-12-06 16:53]     config 'batch_size':  (64)
+[2016-12-06 16:53]     config 'snapshot_size':  (2048)
+[2016-12-06 16:53]     config 'random_per_sample':  (32)
+[2016-12-06 16:53]     config 'words_dim': 20 (20)
+[2016-12-06 16:53]     config 'focus_dim': 6 (4)
+[2016-12-06 16:53]     config 'rnn_dim': 50 (20)
+[2016-12-06 16:53]     config 'final_dim': 40 (100)
+[2016-12-06 16:53]     config 'arg1_len':  (100)
+[2016-12-06 16:53]     config 'arg2_len':  (100)
+[2016-12-06 16:53]     config 'conn_len':  (10)
+[2016-12-06 16:53]     config 'punc_len':  (2)
+[2016-12-06 16:53]     config 'words_dropout':  (0.1)
+[2016-12-06 16:53]     config 'focus_dropout_W':  (0.33)
+[2016-12-06 16:53]     config 'focus_dropout_U':  (0.66)
+[2016-12-06 16:53]     config 'rnn_dropout_W':  (0.33)
+[2016-12-06 16:53]     config 'rnn_dropout_U':  (0.33)
+[2016-12-06 16:53]     config 'final_dropout':  (0.5)
+[2016-12-06 16:53]     config 'filter_fn_name': conn_gt_0 (conn_eq_0)
+[2016-12-06 16:53]     config 'words2vec_bin':  (None)
+[2016-12-06 16:53]     config 'words2vec_txt': /work/jobs/16087545.d/resources//word_embeddings/precompiled/glove/size=50.embeddings (None)
+[2016-12-06 16:53]   args.experiment_dir: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+[2016-12-06 16:53]   args.train_dir: /work/jobs/16087545.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train
+[2016-12-06 16:53]   args.valid_dir: /work/jobs/16087545.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev
+[2016-12-06 16:53]   K._config: {u'image_dim_ordering': u'tf', u'backend': u'theano', u'floatx': u'float32', u'epsilon': 1e-07}
+[2016-12-06 16:53]   os.getenv("THEANO_FLAGS"): None
+[2016-12-06 16:53]   filter_types: None
+[2016-12-06 16:53]   filter_senses: None
+[2016-12-06 16:53]   filter_fn_name: conn_gt_0
+[2016-12-06 16:53]   config: {u'words_dim': 20, u'filter_fn_name': u'conn_gt_0', u'focus_dim': 6, u'words2vec_txt': u'/work/jobs/16087545.d/resources//word_embeddings/precompiled/glove/size=50.embeddings', u'final_dim': 40, u'rnn_dim': 50}
+[2016-12-06 16:53] load dataset for training (/work/jobs/16087545.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train)
+[2016-12-06 16:59] lang: ?, doc_ids: 1756, words: 933049, rel_ids: 17289, relation tokens: 676659
+[2016-12-06 16:59] load dataset for validation (/work/jobs/16087545.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev)
+[2016-12-06 17:00] lang: ?, doc_ids: 79, words: 39712, rel_ids: 737, relation tokens: 28745
+[2016-12-06 17:00] build indexes
+[2016-12-06 17:00]   rel_senses2id: 22, words2id: 43918
+[2016-12-06 17:00] Fast version of gensim.models.doc2vec is being used
+[2016-12-06 17:00] 'pattern' package found; tag filters are available for English
+[2016-12-06 17:00] loading projection weights from /work/jobs/16087545.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+[2016-12-06 17:00] Fast version of gensim.models.word2vec is being used
+[2016-12-06 17:00] consider setting layer size to a multiple of 4 for greater performance
+[2016-12-06 17:01] loaded (840347, 50) matrix from /work/jobs/16087545.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+[2016-12-06 17:01] build model
+[2016-12-06 17:01]     config 'rsenses_loss':  (categorical_crossentropy)
+[2016-12-06 17:01]     config 'optimizer':  (adam)
+[2016-12-06 17:01] initialize weights
+[2016-12-06 17:01] prepare snapshots
+[2016-12-06 17:01] train model
+/usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/keras/engine/training.py:1397: UserWarning: Epoch comprised more than `samples_per_epoch` samples, which might affect learning results. Set `samples_per_epoch` correctly to avoid this warning.
+  warnings.warn('Epoch comprised more than '
+/var/spool/slurmd/job16087545/slurm_script: rad 62:  9366 Dödad                  ./v34/train.py $MODEL_STORE_PATH $DATA_BASE_PATH-train $DATA_BASE_PATH-dev --clean "$CONFIG"
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16087545.ba+  18337008K  16774038K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16087545     rnn-glove+          4                         02:58:54      0:0 
+
+Job 16087545 ("rnn-glove-wikipedia") completed on c16-19 at tis dec 6 19:48:57 CET 2016
+slurmstepd: Exceeded step memory limit at some point.
+Starting job 16090365 ("rnn-glove-wikipedia") on c14-20 at tis dec 6 23:05:26 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16090365.d...
+We are now in conll16st-v34-focused-rnns
+Starting RNN run
+NAME: rnn-glove-wikipedia
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16090365.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+DATA_BASE_PATH: /work/jobs/16090365.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+CONFIG: --config={"filter_fn_name":"conn_gt_0","words_dim":20,"focus_dim":6,"rnn_dim":50,"final_dim":40,"words2vec_txt":"/work/jobs/16090365.d/resources//word_embeddings/precompiled/glove/size=50.embeddings"}
+Using Theano backend.
+[2016-12-06 23:11] configuration (/usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia)
+[2016-12-06 23:11]     config 'epochs':  (1000)
+[2016-12-06 23:11]     config 'epochs_len':  (-1)
+[2016-12-06 23:11]     config 'epochs_patience':  (20)
+[2016-12-06 23:11]     config 'batch_size':  (64)
+[2016-12-06 23:11]     config 'snapshot_size':  (2048)
+[2016-12-06 23:11]     config 'random_per_sample':  (32)
+[2016-12-06 23:11]     config 'words_dim': 20 (20)
+[2016-12-06 23:11]     config 'focus_dim': 6 (4)
+[2016-12-06 23:11]     config 'rnn_dim': 50 (20)
+[2016-12-06 23:11]     config 'final_dim': 40 (100)
+[2016-12-06 23:11]     config 'arg1_len':  (100)
+[2016-12-06 23:11]     config 'arg2_len':  (100)
+[2016-12-06 23:11]     config 'conn_len':  (10)
+[2016-12-06 23:11]     config 'punc_len':  (2)
+[2016-12-06 23:11]     config 'words_dropout':  (0.1)
+[2016-12-06 23:11]     config 'focus_dropout_W':  (0.33)
+[2016-12-06 23:11]     config 'focus_dropout_U':  (0.66)
+[2016-12-06 23:11]     config 'rnn_dropout_W':  (0.33)
+[2016-12-06 23:11]     config 'rnn_dropout_U':  (0.33)
+[2016-12-06 23:11]     config 'final_dropout':  (0.5)
+[2016-12-06 23:11]     config 'filter_fn_name': conn_gt_0 (conn_eq_0)
+[2016-12-06 23:11]     config 'words2vec_bin':  (None)
+[2016-12-06 23:11]     config 'words2vec_txt': /work/jobs/16090365.d/resources//word_embeddings/precompiled/glove/size=50.embeddings (None)
+[2016-12-06 23:11]   args.experiment_dir: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+[2016-12-06 23:11]   args.train_dir: /work/jobs/16090365.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train
+[2016-12-06 23:11]   args.valid_dir: /work/jobs/16090365.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev
+[2016-12-06 23:11]   K._config: {u'image_dim_ordering': u'tf', u'backend': u'theano', u'floatx': u'float32', u'epsilon': 1e-07}
+[2016-12-06 23:11]   os.getenv("THEANO_FLAGS"): None
+[2016-12-06 23:11]   filter_types: None
+[2016-12-06 23:11]   filter_senses: None
+[2016-12-06 23:11]   filter_fn_name: conn_gt_0
+[2016-12-06 23:11]   config: {u'words_dim': 20, u'filter_fn_name': u'conn_gt_0', u'focus_dim': 6, u'words2vec_txt': u'/work/jobs/16090365.d/resources//word_embeddings/precompiled/glove/size=50.embeddings', u'final_dim': 40, u'rnn_dim': 50}
+[2016-12-06 23:11] load dataset for training (/work/jobs/16090365.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train)
+[2016-12-06 23:17] lang: ?, doc_ids: 1756, words: 933049, rel_ids: 17289, relation tokens: 676659
+[2016-12-06 23:17] load dataset for validation (/work/jobs/16090365.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev)
+[2016-12-06 23:17] lang: ?, doc_ids: 79, words: 39712, rel_ids: 737, relation tokens: 28745
+[2016-12-06 23:17] build indexes
+[2016-12-06 23:17]   rel_senses2id: 22, words2id: 43918
+[2016-12-06 23:17] Fast version of gensim.models.doc2vec is being used
+[2016-12-06 23:17] 'pattern' package found; tag filters are available for English
+[2016-12-06 23:17] loading projection weights from /work/jobs/16090365.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+[2016-12-06 23:17] Fast version of gensim.models.word2vec is being used
+[2016-12-06 23:17] consider setting layer size to a multiple of 4 for greater performance
+[2016-12-06 23:18] loaded (840347, 50) matrix from /work/jobs/16090365.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+[2016-12-06 23:18] build model
+[2016-12-06 23:19]     config 'rsenses_loss':  (categorical_crossentropy)
+[2016-12-06 23:19]     config 'optimizer':  (adam)
+[2016-12-06 23:19] initialize weights
+[2016-12-06 23:19] prepare snapshots
+[2016-12-06 23:19] train model
+/usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/keras/engine/training.py:1397: UserWarning: Epoch comprised more than `samples_per_epoch` samples, which might affect learning results. Set `samples_per_epoch` correctly to avoid this warning.
+  warnings.warn('Epoch comprised more than '
+[2016-12-07 04:59] training finished
+____________________________________________________________________________________________________
+Layer (type)                       Output Shape        Param #     Connected to                     
+====================================================================================================
+arg1_ids (InputLayer)              (None, 100)         0                                            
+____________________________________________________________________________________________________
+arg2_ids (InputLayer)              (None, 100)         0                                            
+____________________________________________________________________________________________________
+conn_ids (InputLayer)              (None, 10)          0                                            
+____________________________________________________________________________________________________
+punc_ids (InputLayer)              (None, 2)           0                                            
+____________________________________________________________________________________________________
+shared_emb (Embedding)             multiple            878360      arg1_ids[0][0]                   
+                                                                   arg2_ids[0][0]                   
+                                                                   conn_ids[0][0]                   
+                                                                   punc_ids[0][0]                   
+____________________________________________________________________________________________________
+gru_1 (GRU)                        (None, 100, 6)      486         shared_emb[0][0]                 
+____________________________________________________________________________________________________
+gru_15 (GRU)                       (None, 10, 6)       486         shared_emb[2][0]                 
+____________________________________________________________________________________________________
+gru_22 (GRU)                       (None, 2, 6)        486         shared_emb[3][0]                 
+____________________________________________________________________________________________________
+gru_8 (GRU)                        (None, 100, 6)      486         shared_emb[1][0]                 
+____________________________________________________________________________________________________
+timedistributed_1 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_10 (TimeDistributed(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_11 (TimeDistributed(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_12 (TimeDistributed(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_13 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_14 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_15 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_16 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_17 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_18 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_19 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_2 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_20 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_21 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_22 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_23 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_24 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_3 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_4 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_5 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_6 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_7 (TimeDistributed)(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_8 (TimeDistributed)(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_9 (TimeDistributed)(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+merge_1 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_1[0][0]          
+____________________________________________________________________________________________________
+merge_10 (Merge)                   (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_10[0][0]         
+____________________________________________________________________________________________________
+merge_11 (Merge)                   (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_11[0][0]         
+____________________________________________________________________________________________________
+merge_12 (Merge)                   (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_12[0][0]         
+____________________________________________________________________________________________________
+merge_13 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_13[0][0]         
+____________________________________________________________________________________________________
+merge_14 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_14[0][0]         
+____________________________________________________________________________________________________
+merge_15 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_15[0][0]         
+____________________________________________________________________________________________________
+merge_16 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_16[0][0]         
+____________________________________________________________________________________________________
+merge_17 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_17[0][0]         
+____________________________________________________________________________________________________
+merge_18 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_18[0][0]         
+____________________________________________________________________________________________________
+merge_19 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_19[0][0]         
+____________________________________________________________________________________________________
+merge_2 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_2[0][0]          
+____________________________________________________________________________________________________
+merge_20 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_20[0][0]         
+____________________________________________________________________________________________________
+merge_21 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_21[0][0]         
+____________________________________________________________________________________________________
+merge_22 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_22[0][0]         
+____________________________________________________________________________________________________
+merge_23 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_23[0][0]         
+____________________________________________________________________________________________________
+merge_24 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_24[0][0]         
+____________________________________________________________________________________________________
+merge_3 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_3[0][0]          
+____________________________________________________________________________________________________
+merge_4 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_4[0][0]          
+____________________________________________________________________________________________________
+merge_5 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_5[0][0]          
+____________________________________________________________________________________________________
+merge_6 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_6[0][0]          
+____________________________________________________________________________________________________
+merge_7 (Merge)                    (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_7[0][0]          
+____________________________________________________________________________________________________
+merge_8 (Merge)                    (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_8[0][0]          
+____________________________________________________________________________________________________
+merge_9 (Merge)                    (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_9[0][0]          
+____________________________________________________________________________________________________
+gru_10 (GRU)                       (None, 50)          10650       merge_8[0][0]                    
+____________________________________________________________________________________________________
+gru_11 (GRU)                       (None, 50)          10650       merge_9[0][0]                    
+____________________________________________________________________________________________________
+gru_12 (GRU)                       (None, 50)          10650       merge_10[0][0]                   
+____________________________________________________________________________________________________
+gru_13 (GRU)                       (None, 50)          10650       merge_11[0][0]                   
+____________________________________________________________________________________________________
+gru_14 (GRU)                       (None, 50)          10650       merge_12[0][0]                   
+____________________________________________________________________________________________________
+gru_16 (GRU)                       (None, 50)          10650       merge_13[0][0]                   
+____________________________________________________________________________________________________
+gru_17 (GRU)                       (None, 50)          10650       merge_14[0][0]                   
+____________________________________________________________________________________________________
+gru_18 (GRU)                       (None, 50)          10650       merge_15[0][0]                   
+____________________________________________________________________________________________________
+gru_19 (GRU)                       (None, 50)          10650       merge_16[0][0]                   
+____________________________________________________________________________________________________
+gru_2 (GRU)                        (None, 50)          10650       merge_1[0][0]                    
+____________________________________________________________________________________________________
+gru_20 (GRU)                       (None, 50)          10650       merge_17[0][0]                   
+____________________________________________________________________________________________________
+gru_21 (GRU)                       (None, 50)          10650       merge_18[0][0]                   
+____________________________________________________________________________________________________
+gru_23 (GRU)                       (None, 50)          10650       merge_19[0][0]                   
+____________________________________________________________________________________________________
+gru_24 (GRU)                       (None, 50)          10650       merge_20[0][0]                   
+____________________________________________________________________________________________________
+gru_25 (GRU)                       (None, 50)          10650       merge_21[0][0]                   
+____________________________________________________________________________________________________
+gru_26 (GRU)                       (None, 50)          10650       merge_22[0][0]                   
+____________________________________________________________________________________________________
+gru_27 (GRU)                       (None, 50)          10650       merge_23[0][0]                   
+____________________________________________________________________________________________________
+gru_28 (GRU)                       (None, 50)          10650       merge_24[0][0]                   
+____________________________________________________________________________________________________
+gru_3 (GRU)                        (None, 50)          10650       merge_2[0][0]                    
+____________________________________________________________________________________________________
+gru_4 (GRU)                        (None, 50)          10650       merge_3[0][0]                    
+____________________________________________________________________________________________________
+gru_5 (GRU)                        (None, 50)          10650       merge_4[0][0]                    
+____________________________________________________________________________________________________
+gru_6 (GRU)                        (None, 50)          10650       merge_5[0][0]                    
+____________________________________________________________________________________________________
+gru_7 (GRU)                        (None, 50)          10650       merge_6[0][0]                    
+____________________________________________________________________________________________________
+gru_9 (GRU)                        (None, 50)          10650       merge_7[0][0]                    
+____________________________________________________________________________________________________
+merge_25 (Merge)                   (None, 1200)        0           gru_2[0][0]                      
+                                                                   gru_3[0][0]                      
+                                                                   gru_4[0][0]                      
+                                                                   gru_5[0][0]                      
+                                                                   gru_6[0][0]                      
+                                                                   gru_7[0][0]                      
+                                                                   gru_9[0][0]                      
+                                                                   gru_10[0][0]                     
+                                                                   gru_11[0][0]                     
+                                                                   gru_12[0][0]                     
+                                                                   gru_13[0][0]                     
+                                                                   gru_14[0][0]                     
+                                                                   gru_16[0][0]                     
+                                                                   gru_17[0][0]                     
+                                                                   gru_18[0][0]                     
+                                                                   gru_19[0][0]                     
+                                                                   gru_20[0][0]                     
+                                                                   gru_21[0][0]                     
+                                                                   gru_23[0][0]                     
+                                                                   gru_24[0][0]                     
+                                                                   gru_25[0][0]                     
+                                                                   gru_26[0][0]                     
+                                                                   gru_27[0][0]                     
+                                                                   gru_28[0][0]                     
+____________________________________________________________________________________________________
+dense_1 (Dense)                    (None, 40)          48040       merge_25[0][0]                   
+____________________________________________________________________________________________________
+srelu_1 (SReLU)                    (None, 40)          160         dense_1[0][0]                    
+____________________________________________________________________________________________________
+dropout_1 (Dropout)                (None, 40)          0           srelu_1[0][0]                    
+____________________________________________________________________________________________________
+dense_2 (Dense)                    (None, 22)          902         dropout_1[0][0]                  
+____________________________________________________________________________________________________
+rsenses (Activation)               (None, 22)          0           dense_2[0][0]                    
+====================================================================================================
+Total params: 1185006
+____________________________________________________________________________________________________
+Epoch 1/1000
+328s - loss: 0.2325 - acc: 0.9681 - val_loss: 2.8521 - val_acc: 0.0597
+Epoch 2/1000
+378s - loss: 0.1057 - acc: 0.9723 - val_loss: 2.4217 - val_acc: 0.2266
+Epoch 3/1000
+379s - loss: 0.1029 - acc: 0.9720 - val_loss: 2.5394 - val_acc: 0.1384
+Epoch 4/1000
+379s - loss: 0.0970 - acc: 0.9721 - val_loss: 2.2183 - val_acc: 0.2632
+Epoch 5/1000
+379s - loss: 0.0873 - acc: 0.9734 - val_loss: 2.2729 - val_acc: 0.2836
+Epoch 6/1000
+384s - loss: 0.0835 - acc: 0.9748 - val_loss: 2.2358 - val_acc: 0.2266
+Epoch 7/1000
+389s - loss: 0.0876 - acc: 0.9734 - val_loss: 2.4801 - val_acc: 0.2388
+Epoch 8/1000
+392s - loss: 0.0804 - acc: 0.9740 - val_loss: 2.2664 - val_acc: 0.2198
+Epoch 9/1000
+391s - loss: 0.0798 - acc: 0.9739 - val_loss: 2.2883 - val_acc: 0.1574
+Epoch 10/1000
+392s - loss: 0.0790 - acc: 0.9741 - val_loss: 2.3609 - val_acc: 0.2578
+Epoch 11/1000
+394s - loss: 0.0796 - acc: 0.9746 - val_loss: 2.1951 - val_acc: 0.2687
+Epoch 12/1000
+385s - loss: 0.0759 - acc: 0.9753 - val_loss: 2.3944 - val_acc: 0.2469
+Epoch 13/1000
+406s - loss: 0.0771 - acc: 0.9750 - val_loss: 2.1948 - val_acc: 0.2727
+Epoch 14/1000
+401s - loss: 0.0781 - acc: 0.9744 - val_loss: 2.3005 - val_acc: 0.2605
+Epoch 15/1000
+400s - loss: 0.0786 - acc: 0.9753 - val_loss: 2.3531 - val_acc: 0.2632
+Epoch 16/1000
+392s - loss: 0.0776 - acc: 0.9761 - val_loss: 2.2593 - val_acc: 0.2727
+Epoch 17/1000
+380s - loss: 0.0767 - acc: 0.9746 - val_loss: 2.3212 - val_acc: 0.2497
+Epoch 18/1000
+383s - loss: 0.0742 - acc: 0.9754 - val_loss: 2.3014 - val_acc: 0.1872
+Epoch 19/1000
+391s - loss: 0.0746 - acc: 0.9757 - val_loss: 2.4937 - val_acc: 0.2578
+Epoch 20/1000
+394s - loss: 0.0778 - acc: 0.9759 - val_loss: 2.3973 - val_acc: 0.2510
+Epoch 21/1000
+379s - loss: 0.0715 - acc: 0.9759 - val_loss: 2.2795 - val_acc: 0.2700
+Epoch 22/1000
+380s - loss: 0.0742 - acc: 0.9750 - val_loss: 2.4019 - val_acc: 0.2578
+Epoch 23/1000
+379s - loss: 0.0725 - acc: 0.9757 - val_loss: 2.1597 - val_acc: 0.2822
+Epoch 24/1000
+385s - loss: 0.0724 - acc: 0.9756 - val_loss: 2.3954 - val_acc: 0.2076
+Epoch 25/1000
+374s - loss: 0.0730 - acc: 0.9760 - val_loss: 2.1938 - val_acc: 0.2212
+Epoch 26/1000
+385s - loss: 0.0748 - acc: 0.9757 - val_loss: 2.2312 - val_acc: 0.2619
+Epoch 27/1000
+376s - loss: 0.0737 - acc: 0.9755 - val_loss: 2.1398 - val_acc: 0.2836
+Epoch 28/1000
+377s - loss: 0.0741 - acc: 0.9758 - val_loss: 2.2008 - val_acc: 0.2347
+Epoch 29/1000
+364s - loss: 0.0726 - acc: 0.9759 - val_loss: 2.1816 - val_acc: 0.2673
+Epoch 30/1000
+382s - loss: 0.0751 - acc: 0.9744 - val_loss: 2.1265 - val_acc: 0.2836
+Epoch 31/1000
+382s - loss: 0.0707 - acc: 0.9752 - val_loss: 2.0959 - val_acc: 0.2931
+Epoch 32/1000
+337s - loss: 0.0721 - acc: 0.9768 - val_loss: 2.2301 - val_acc: 0.2727
+Epoch 33/1000
+326s - loss: 0.0714 - acc: 0.9763 - val_loss: 2.2090 - val_acc: 0.2809
+Epoch 34/1000
+325s - loss: 0.0729 - acc: 0.9758 - val_loss: 2.2030 - val_acc: 0.2782
+Epoch 35/1000
+339s - loss: 0.0683 - acc: 0.9767 - val_loss: 2.1938 - val_acc: 0.2673
+Epoch 36/1000
+376s - loss: 0.0702 - acc: 0.9757 - val_loss: 2.2329 - val_acc: 0.2497
+Epoch 37/1000
+357s - loss: 0.0713 - acc: 0.9759 - val_loss: 2.1644 - val_acc: 0.2849
+Epoch 38/1000
+339s - loss: 0.0715 - acc: 0.9766 - val_loss: 2.1873 - val_acc: 0.2646
+Epoch 39/1000
+384s - loss: 0.0701 - acc: 0.9755 - val_loss: 2.1400 - val_acc: 0.2877
+Epoch 40/1000
+382s - loss: 0.0791 - acc: 0.9755 - val_loss: 2.1577 - val_acc: 0.2768
+Epoch 41/1000
+383s - loss: 0.0714 - acc: 0.9759 - val_loss: 2.2088 - val_acc: 0.2863
+Epoch 42/1000
+383s - loss: 0.0734 - acc: 0.9746 - val_loss: 2.1771 - val_acc: 0.2714
+Epoch 43/1000
+359s - loss: 0.0693 - acc: 0.9758 - val_loss: 2.1449 - val_acc: 0.2904
+Epoch 44/1000
+348s - loss: 0.0733 - acc: 0.9769 - val_loss: 2.1280 - val_acc: 0.2727
+Epoch 45/1000
+359s - loss: 0.0710 - acc: 0.9762 - val_loss: 2.1520 - val_acc: 0.2958
+Epoch 46/1000
+360s - loss: 0.0745 - acc: 0.9765 - val_loss: 2.2721 - val_acc: 0.2849
+Epoch 47/1000
+343s - loss: 0.0774 - acc: 0.9754 - val_loss: 2.3890 - val_acc: 0.2564
+Epoch 48/1000
+365s - loss: 0.0860 - acc: 0.9735 - val_loss: 2.6638 - val_acc: 0.1493
+Epoch 49/1000
+341s - loss: 0.0812 - acc: 0.9744 - val_loss: 2.1659 - val_acc: 0.2822
+Epoch 50/1000
+345s - loss: 0.0738 - acc: 0.9750 - val_loss: 2.2913 - val_acc: 0.2646
+Epoch 51/1000
+385s - loss: 0.0758 - acc: 0.9760 - val_loss: 2.1893 - val_acc: 0.2795
+Epoch 52/1000
+379s - loss: 0.0721 - acc: 0.9763 - val_loss: 2.2576 - val_acc: 0.2741
+
+
+{"acc": 0.9762896352824364, "loss": -0.29579375848032563, "val_acc_max": 0.29579375848032563, "val_loss_min": 2.0958531281356088, "status": "ok", "val_acc": 0.27408412483039346, "loss_": 0.072127210687248755, "epochs_len": 52, "acc_max": 0.97692576733254299, "loss_min": 0.06827577156590596, "val_loss": 2.2575653915974629}
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16090365.ba+  24964488K  23246050K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16090365     rnn-glove+          6                         05:54:35      0:0 
+
+Job 16090365 ("rnn-glove-wikipedia") completed on c14-20 at ons dec 7 05:00:00 CET 2016
+Starting job 16098751 ("rnn-glove-wikipedia") on c31-21 at ons dec 7 22:28:37 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16098751.d...
+We are now in conll16st-v34-focused-rnns
+Starting RNN run
+NAME: rnn-glove-wikipedia
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16098751.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+DATA_BASE_PATH: /work/jobs/16098751.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+CONFIG: --config={"filter_fn_name":"conn_gt_0","words_dim":20,"focus_dim":6,"rnn_dim":50,"final_dim":40,"words2vec_txt":"/work/jobs/16098751.d/resources//word_embeddings/precompiled/glove/size=50.embeddings"}
+Using Theano backend.
+[2016-12-07 22:31] configuration (/usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia)
+[2016-12-07 22:31]     config 'epochs':  (1000)
+[2016-12-07 22:31]     config 'epochs_len':  (-1)
+[2016-12-07 22:31]     config 'epochs_patience':  (20)
+[2016-12-07 22:31]     config 'batch_size':  (64)
+[2016-12-07 22:31]     config 'snapshot_size':  (2048)
+[2016-12-07 22:31]     config 'random_per_sample':  (32)
+[2016-12-07 22:31]     config 'words_dim': 20 (20)
+[2016-12-07 22:31]     config 'focus_dim': 6 (4)
+[2016-12-07 22:31]     config 'rnn_dim': 50 (20)
+[2016-12-07 22:31]     config 'final_dim': 40 (100)
+[2016-12-07 22:31]     config 'arg1_len':  (100)
+[2016-12-07 22:31]     config 'arg2_len':  (100)
+[2016-12-07 22:31]     config 'conn_len':  (10)
+[2016-12-07 22:31]     config 'punc_len':  (2)
+[2016-12-07 22:31]     config 'words_dropout':  (0.1)
+[2016-12-07 22:31]     config 'focus_dropout_W':  (0.33)
+[2016-12-07 22:31]     config 'focus_dropout_U':  (0.66)
+[2016-12-07 22:31]     config 'rnn_dropout_W':  (0.33)
+[2016-12-07 22:31]     config 'rnn_dropout_U':  (0.33)
+[2016-12-07 22:31]     config 'final_dropout':  (0.5)
+[2016-12-07 22:31]     config 'filter_fn_name': conn_gt_0 (conn_eq_0)
+[2016-12-07 22:31]     config 'words2vec_bin':  (None)
+[2016-12-07 22:31]     config 'words2vec_txt': /work/jobs/16098751.d/resources//word_embeddings/precompiled/glove/size=50.embeddings (None)
+[2016-12-07 22:31]   args.experiment_dir: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+[2016-12-07 22:31]   args.train_dir: /work/jobs/16098751.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train
+[2016-12-07 22:31]   args.valid_dir: /work/jobs/16098751.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev
+[2016-12-07 22:31]   K._config: {u'image_dim_ordering': u'tf', u'backend': u'theano', u'floatx': u'float32', u'epsilon': 1e-07}
+[2016-12-07 22:31]   os.getenv("THEANO_FLAGS"): None
+[2016-12-07 22:31]   filter_types: None
+[2016-12-07 22:31]   filter_senses: None
+[2016-12-07 22:31]   filter_fn_name: conn_gt_0
+[2016-12-07 22:31]   config: {u'words_dim': 20, u'filter_fn_name': u'conn_gt_0', u'focus_dim': 6, u'words2vec_txt': u'/work/jobs/16098751.d/resources//word_embeddings/precompiled/glove/size=50.embeddings', u'final_dim': 40, u'rnn_dim': 50}
+[2016-12-07 22:31] load dataset for training (/work/jobs/16098751.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train)
+[2016-12-07 22:36] lang: ?, doc_ids: 1756, words: 933049, rel_ids: 17289, relation tokens: 676659
+[2016-12-07 22:36] load dataset for validation (/work/jobs/16098751.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev)
+[2016-12-07 22:36] lang: ?, doc_ids: 79, words: 39712, rel_ids: 737, relation tokens: 28745
+[2016-12-07 22:36] build indexes
+[2016-12-07 22:36]   rel_senses2id: 22, words2id: 43918
+[2016-12-07 22:36] Fast version of gensim.models.doc2vec is being used
+[2016-12-07 22:36] 'pattern' package found; tag filters are available for English
+[2016-12-07 22:36] loading projection weights from /work/jobs/16098751.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+[2016-12-07 22:36] Fast version of gensim.models.word2vec is being used
+[2016-12-07 22:36] consider setting layer size to a multiple of 4 for greater performance
+[2016-12-07 22:37] loaded (840347, 50) matrix from /work/jobs/16098751.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+[2016-12-07 22:37] build model
+[2016-12-07 22:37]     config 'rsenses_loss':  (categorical_crossentropy)
+[2016-12-07 22:37]     config 'optimizer':  (adam)
+[2016-12-07 22:37] initialize weights
+[2016-12-07 22:37] prepare snapshots
+[2016-12-07 22:37] train model
+/usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/keras/engine/training.py:1397: UserWarning: Epoch comprised more than `samples_per_epoch` samples, which might affect learning results. Set `samples_per_epoch` correctly to avoid this warning.
+  warnings.warn('Epoch comprised more than '
+/var/spool/slurmd/job16098751/slurm_script: rad 62: 19730 Dödad                  ./v34/train.py $MODEL_STORE_PATH $DATA_BASE_PATH-train $DATA_BASE_PATH-dev --clean "$CONFIG"
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16098751.ba+  26877212K  25146214K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16098751     rnn-glove+          6                         04:56:04      0:0 
+
+Job 16098751 ("rnn-glove-wikipedia") completed on c31-21 at tor dec 8 03:24:38 CET 2016
+slurmstepd: Exceeded step memory limit at some point.
+slurmstepd: Exceeded job memory limit at some point.
+Starting job 16167504 ("rnn-glove-wikipedia") on c16-23 at ons dec 14 20:50:50 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16167504.d...
+We are now in conll16st-v34-focused-rnns
+Starting RNN run
+NAME: rnn-glove-wikipedia
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16167504.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+DATA_BASE_PATH: /work/jobs/16167504.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+CONFIG: --config={"words2vec_bin": null, "words_dim": 20.0, "filter_fn_name": "conn_gt_0", "focus_dim": 6.0, "random_per_sample": 24.0, "final_dropout": 0.01608656108471007, "epochs": 200, "words2vec_txt": "/work/jobs/16167504.d/resources//word_embeddings/precompiled/glove/size=50.embeddings", "focus_dropout_W": 0.4850461135349744, "rnn_dim": 50.0, "focus_dropout_U": 0.18210894621865603, "epochs_len": -1, "final_dim": 40.0, "epochs_patience": 10, "rnn_dropout_W": 0.16649459724958682, "words_dropout": 0.3543889040084549, "rnn_dropout_U": 0.4899141021546136}
+Using Theano backend.
+[2016-12-14 20:59] configuration (/usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia)
+[2016-12-14 20:59]     config 'epochs': 200 (1000)
+[2016-12-14 20:59]     config 'epochs_len': -1 (-1)
+[2016-12-14 20:59]     config 'epochs_patience': 10 (20)
+[2016-12-14 20:59]     config 'batch_size':  (64)
+[2016-12-14 20:59]     config 'snapshot_size':  (2048)
+[2016-12-14 20:59]     config 'random_per_sample': 24.0 (32)
+[2016-12-14 20:59]     config 'words_dim': 20.0 (20)
+[2016-12-14 20:59]     config 'focus_dim': 6.0 (4)
+[2016-12-14 20:59]     config 'rnn_dim': 50.0 (20)
+[2016-12-14 20:59]     config 'final_dim': 40.0 (100)
+[2016-12-14 20:59]     config 'arg1_len':  (100)
+[2016-12-14 20:59]     config 'arg2_len':  (100)
+[2016-12-14 20:59]     config 'conn_len':  (10)
+[2016-12-14 20:59]     config 'punc_len':  (2)
+[2016-12-14 20:59]     config 'words_dropout': 0.354388904008 (0.1)
+[2016-12-14 20:59]     config 'focus_dropout_W': 0.485046113535 (0.33)
+[2016-12-14 20:59]     config 'focus_dropout_U': 0.182108946219 (0.66)
+[2016-12-14 20:59]     config 'rnn_dropout_W': 0.16649459725 (0.33)
+[2016-12-14 20:59]     config 'rnn_dropout_U': 0.489914102155 (0.33)
+[2016-12-14 20:59]     config 'final_dropout': 0.0160865610847 (0.5)
+[2016-12-14 20:59]     config 'filter_fn_name': conn_gt_0 (conn_eq_0)
+[2016-12-14 20:59]     config 'words2vec_bin': None (None)
+[2016-12-14 20:59]     config 'words2vec_txt': /work/jobs/16167504.d/resources//word_embeddings/precompiled/glove/size=50.embeddings (None)
+[2016-12-14 20:59]   args.experiment_dir: /usit/abel/u1/jimmycallin//models/rnn-glove-wikipedia
+[2016-12-14 20:59]   args.train_dir: /work/jobs/16167504.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train
+[2016-12-14 20:59]   args.valid_dir: /work/jobs/16167504.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev
+[2016-12-14 20:59]   K._config: {u'image_dim_ordering': u'tf', u'backend': u'theano', u'floatx': u'float32', u'epsilon': 1e-07}
+[2016-12-14 20:59]   os.getenv("THEANO_FLAGS"): None
+[2016-12-14 20:59]   filter_types: None
+[2016-12-14 20:59]   filter_senses: None
+[2016-12-14 20:59]   filter_fn_name: conn_gt_0
+[2016-12-14 20:59]   config: {u'words_dim': 20.0, u'random_per_sample': 24.0, u'focus_dim': 6.0, u'filter_fn_name': u'conn_gt_0', u'final_dropout': 0.01608656108471007, u'rnn_dropout_W': 0.16649459724958682, u'epochs': 200, u'epochs_len': -1, u'focus_dropout_W': 0.4850461135349744, u'words2vec_txt': u'/work/jobs/16167504.d/resources//word_embeddings/precompiled/glove/size=50.embeddings', u'words2vec_bin': None, u'final_dim': 40.0, u'rnn_dropout_U': 0.4899141021546136, u'focus_dropout_U': 0.18210894621865603, u'rnn_dim': 50.0, u'words_dropout': 0.3543889040084549, u'epochs_patience': 10}
+[2016-12-14 20:59] load dataset for training (/work/jobs/16167504.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-train)
+[2016-12-14 21:09] lang: ?, doc_ids: 1756, words: 933049, rel_ids: 17289, relation tokens: 676659
+[2016-12-14 21:09] load dataset for validation (/work/jobs/16167504.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev)
+[2016-12-14 21:09] lang: ?, doc_ids: 79, words: 39712, rel_ids: 737, relation tokens: 28745
+[2016-12-14 21:09] build indexes
+[2016-12-14 21:09]   rel_senses2id: 22, words2id: 43918
+[2016-12-14 21:10] Fast version of gensim.models.doc2vec is being used
+[2016-12-14 21:10] 'pattern' package found; tag filters are available for English
+[2016-12-14 21:10] loading projection weights from /work/jobs/16167504.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+[2016-12-14 21:10] Fast version of gensim.models.word2vec is being used
+[2016-12-14 21:10] consider setting layer size to a multiple of 4 for greater performance
+[2016-12-14 21:11] loaded (840347, 50) matrix from /work/jobs/16167504.d/resources//word_embeddings/precompiled/glove/size=50.embeddings
+[2016-12-14 21:11] build model
+[2016-12-14 21:12]     config 'rsenses_loss':  (categorical_crossentropy)
+[2016-12-14 21:12]     config 'optimizer':  (adam)
+[2016-12-14 21:12] initialize weights
+[2016-12-14 21:12] prepare snapshots
+[2016-12-14 21:12] train model
+/usit/abel/u1/jimmycallin/miniconda2/envs/rnn/lib/python2.7/site-packages/keras/engine/training.py:1397: UserWarning: Epoch comprised more than `samples_per_epoch` samples, which might affect learning results. Set `samples_per_epoch` correctly to avoid this warning.
+  warnings.warn('Epoch comprised more than '
+[2016-12-15 00:34] training finished
+____________________________________________________________________________________________________
+Layer (type)                       Output Shape        Param #     Connected to                     
+====================================================================================================
+arg1_ids (InputLayer)              (None, 100)         0                                            
+____________________________________________________________________________________________________
+arg2_ids (InputLayer)              (None, 100)         0                                            
+____________________________________________________________________________________________________
+conn_ids (InputLayer)              (None, 10)          0                                            
+____________________________________________________________________________________________________
+punc_ids (InputLayer)              (None, 2)           0                                            
+____________________________________________________________________________________________________
+shared_emb (Embedding)             multiple            878360      arg1_ids[0][0]                   
+                                                                   arg2_ids[0][0]                   
+                                                                   conn_ids[0][0]                   
+                                                                   punc_ids[0][0]                   
+____________________________________________________________________________________________________
+gru_1 (GRU)                        (None, 100, 6)      486         shared_emb[0][0]                 
+____________________________________________________________________________________________________
+gru_15 (GRU)                       (None, 10, 6)       486         shared_emb[2][0]                 
+____________________________________________________________________________________________________
+gru_22 (GRU)                       (None, 2, 6)        486         shared_emb[3][0]                 
+____________________________________________________________________________________________________
+gru_8 (GRU)                        (None, 100, 6)      486         shared_emb[1][0]                 
+____________________________________________________________________________________________________
+timedistributed_1 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_10 (TimeDistributed(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_11 (TimeDistributed(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_12 (TimeDistributed(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_13 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_14 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_15 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_16 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_17 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_18 (TimeDistributed(None, 10, 20)      0           gru_15[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_19 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_2 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_20 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_21 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_22 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_23 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_24 (TimeDistributed(None, 2, 20)       0           gru_22[0][0]                     
+____________________________________________________________________________________________________
+timedistributed_3 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_4 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_5 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_6 (TimeDistributed)(None, 100, 20)     0           gru_1[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_7 (TimeDistributed)(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_8 (TimeDistributed)(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+timedistributed_9 (TimeDistributed)(None, 100, 20)     0           gru_8[0][0]                      
+____________________________________________________________________________________________________
+merge_1 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_1[0][0]          
+____________________________________________________________________________________________________
+merge_10 (Merge)                   (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_10[0][0]         
+____________________________________________________________________________________________________
+merge_11 (Merge)                   (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_11[0][0]         
+____________________________________________________________________________________________________
+merge_12 (Merge)                   (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_12[0][0]         
+____________________________________________________________________________________________________
+merge_13 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_13[0][0]         
+____________________________________________________________________________________________________
+merge_14 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_14[0][0]         
+____________________________________________________________________________________________________
+merge_15 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_15[0][0]         
+____________________________________________________________________________________________________
+merge_16 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_16[0][0]         
+____________________________________________________________________________________________________
+merge_17 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_17[0][0]         
+____________________________________________________________________________________________________
+merge_18 (Merge)                   (None, 10, 20)      0           shared_emb[2][0]                 
+                                                                   timedistributed_18[0][0]         
+____________________________________________________________________________________________________
+merge_19 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_19[0][0]         
+____________________________________________________________________________________________________
+merge_2 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_2[0][0]          
+____________________________________________________________________________________________________
+merge_20 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_20[0][0]         
+____________________________________________________________________________________________________
+merge_21 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_21[0][0]         
+____________________________________________________________________________________________________
+merge_22 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_22[0][0]         
+____________________________________________________________________________________________________
+merge_23 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_23[0][0]         
+____________________________________________________________________________________________________
+merge_24 (Merge)                   (None, 2, 20)       0           shared_emb[3][0]                 
+                                                                   timedistributed_24[0][0]         
+____________________________________________________________________________________________________
+merge_3 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_3[0][0]          
+____________________________________________________________________________________________________
+merge_4 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_4[0][0]          
+____________________________________________________________________________________________________
+merge_5 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_5[0][0]          
+____________________________________________________________________________________________________
+merge_6 (Merge)                    (None, 100, 20)     0           shared_emb[0][0]                 
+                                                                   timedistributed_6[0][0]          
+____________________________________________________________________________________________________
+merge_7 (Merge)                    (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_7[0][0]          
+____________________________________________________________________________________________________
+merge_8 (Merge)                    (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_8[0][0]          
+____________________________________________________________________________________________________
+merge_9 (Merge)                    (None, 100, 20)     0           shared_emb[1][0]                 
+                                                                   timedistributed_9[0][0]          
+____________________________________________________________________________________________________
+gru_10 (GRU)                       (None, 50)          10650       merge_8[0][0]                    
+____________________________________________________________________________________________________
+gru_11 (GRU)                       (None, 50)          10650       merge_9[0][0]                    
+____________________________________________________________________________________________________
+gru_12 (GRU)                       (None, 50)          10650       merge_10[0][0]                   
+____________________________________________________________________________________________________
+gru_13 (GRU)                       (None, 50)          10650       merge_11[0][0]                   
+____________________________________________________________________________________________________
+gru_14 (GRU)                       (None, 50)          10650       merge_12[0][0]                   
+____________________________________________________________________________________________________
+gru_16 (GRU)                       (None, 50)          10650       merge_13[0][0]                   
+____________________________________________________________________________________________________
+gru_17 (GRU)                       (None, 50)          10650       merge_14[0][0]                   
+____________________________________________________________________________________________________
+gru_18 (GRU)                       (None, 50)          10650       merge_15[0][0]                   
+____________________________________________________________________________________________________
+gru_19 (GRU)                       (None, 50)          10650       merge_16[0][0]                   
+____________________________________________________________________________________________________
+gru_2 (GRU)                        (None, 50)          10650       merge_1[0][0]                    
+____________________________________________________________________________________________________
+gru_20 (GRU)                       (None, 50)          10650       merge_17[0][0]                   
+____________________________________________________________________________________________________
+gru_21 (GRU)                       (None, 50)          10650       merge_18[0][0]                   
+____________________________________________________________________________________________________
+gru_23 (GRU)                       (None, 50)          10650       merge_19[0][0]                   
+____________________________________________________________________________________________________
+gru_24 (GRU)                       (None, 50)          10650       merge_20[0][0]                   
+____________________________________________________________________________________________________
+gru_25 (GRU)                       (None, 50)          10650       merge_21[0][0]                   
+____________________________________________________________________________________________________
+gru_26 (GRU)                       (None, 50)          10650       merge_22[0][0]                   
+____________________________________________________________________________________________________
+gru_27 (GRU)                       (None, 50)          10650       merge_23[0][0]                   
+____________________________________________________________________________________________________
+gru_28 (GRU)                       (None, 50)          10650       merge_24[0][0]                   
+____________________________________________________________________________________________________
+gru_3 (GRU)                        (None, 50)          10650       merge_2[0][0]                    
+____________________________________________________________________________________________________
+gru_4 (GRU)                        (None, 50)          10650       merge_3[0][0]                    
+____________________________________________________________________________________________________
+gru_5 (GRU)                        (None, 50)          10650       merge_4[0][0]                    
+____________________________________________________________________________________________________
+gru_6 (GRU)                        (None, 50)          10650       merge_5[0][0]                    
+____________________________________________________________________________________________________
+gru_7 (GRU)                        (None, 50)          10650       merge_6[0][0]                    
+____________________________________________________________________________________________________
+gru_9 (GRU)                        (None, 50)          10650       merge_7[0][0]                    
+____________________________________________________________________________________________________
+merge_25 (Merge)                   (None, 1200)        0           gru_2[0][0]                      
+                                                                   gru_3[0][0]                      
+                                                                   gru_4[0][0]                      
+                                                                   gru_5[0][0]                      
+                                                                   gru_6[0][0]                      
+                                                                   gru_7[0][0]                      
+                                                                   gru_9[0][0]                      
+                                                                   gru_10[0][0]                     
+                                                                   gru_11[0][0]                     
+                                                                   gru_12[0][0]                     
+                                                                   gru_13[0][0]                     
+                                                                   gru_14[0][0]                     
+                                                                   gru_16[0][0]                     
+                                                                   gru_17[0][0]                     
+                                                                   gru_18[0][0]                     
+                                                                   gru_19[0][0]                     
+                                                                   gru_20[0][0]                     
+                                                                   gru_21[0][0]                     
+                                                                   gru_23[0][0]                     
+                                                                   gru_24[0][0]                     
+                                                                   gru_25[0][0]                     
+                                                                   gru_26[0][0]                     
+                                                                   gru_27[0][0]                     
+                                                                   gru_28[0][0]                     
+____________________________________________________________________________________________________
+dense_1 (Dense)                    (None, 40)          48040       merge_25[0][0]                   
+____________________________________________________________________________________________________
+srelu_1 (SReLU)                    (None, 40)          160         dense_1[0][0]                    
+____________________________________________________________________________________________________
+dropout_1 (Dropout)                (None, 40)          0           srelu_1[0][0]                    
+____________________________________________________________________________________________________
+dense_2 (Dense)                    (None, 22)          902         dropout_1[0][0]                  
+____________________________________________________________________________________________________
+rsenses (Activation)               (None, 22)          0           dense_2[0][0]                    
+====================================================================================================
+Total params: 1185006
+____________________________________________________________________________________________________
+Epoch 1/200
+279s - loss: 0.3127 - acc: 0.9572 - val_loss: 2.9549 - val_acc: 0.0000e+00
+Epoch 2/200
+275s - loss: 0.1492 - acc: 0.9612 - val_loss: 2.8887 - val_acc: 0.0733
+Epoch 3/200
+275s - loss: 0.1390 - acc: 0.9620 - val_loss: 2.7453 - val_acc: 0.0719
+Epoch 4/200
+276s - loss: 0.1421 - acc: 0.9617 - val_loss: 2.5405 - val_acc: 0.1588
+Epoch 5/200
+277s - loss: 0.1321 - acc: 0.9628 - val_loss: 2.4044 - val_acc: 0.1615
+Epoch 6/200
+275s - loss: 0.1269 - acc: 0.9640 - val_loss: 2.5738 - val_acc: 0.1981
+Epoch 7/200
+278s - loss: 0.1163 - acc: 0.9651 - val_loss: 2.2186 - val_acc: 0.1710
+Epoch 8/200
+275s - loss: 0.1172 - acc: 0.9648 - val_loss: 2.2029 - val_acc: 0.2687
+Epoch 9/200
+275s - loss: 0.1153 - acc: 0.9647 - val_loss: 2.2729 - val_acc: 0.1655
+Epoch 10/200
+275s - loss: 0.1152 - acc: 0.9646 - val_loss: 2.2758 - val_acc: 0.1967
+Epoch 11/200
+275s - loss: 0.1129 - acc: 0.9657 - val_loss: 2.3067 - val_acc: 0.2551
+Epoch 12/200
+274s - loss: 0.1129 - acc: 0.9641 - val_loss: 2.4668 - val_acc: 0.2212
+Epoch 13/200
+275s - loss: 0.1169 - acc: 0.9638 - val_loss: 2.2277 - val_acc: 0.2171
+Epoch 14/200
+275s - loss: 0.1062 - acc: 0.9652 - val_loss: 2.2686 - val_acc: 0.1642
+Epoch 15/200
+276s - loss: 0.1076 - acc: 0.9655 - val_loss: 2.2245 - val_acc: 0.2673
+Epoch 16/200
+278s - loss: 0.1036 - acc: 0.9662 - val_loss: 2.1532 - val_acc: 0.2727
+Epoch 17/200
+276s - loss: 0.1013 - acc: 0.9654 - val_loss: 2.1857 - val_acc: 0.2659
+Epoch 18/200
+275s - loss: 0.1046 - acc: 0.9661 - val_loss: 2.2257 - val_acc: 0.2768
+Epoch 19/200
+275s - loss: 0.1085 - acc: 0.9649 - val_loss: 2.2082 - val_acc: 0.2714
+Epoch 20/200
+275s - loss: 0.1134 - acc: 0.9646 - val_loss: 2.1824 - val_acc: 0.2659
+Epoch 21/200
+275s - loss: 0.1072 - acc: 0.9655 - val_loss: 2.3651 - val_acc: 0.2320
+Epoch 22/200
+276s - loss: 0.1059 - acc: 0.9654 - val_loss: 2.2157 - val_acc: 0.1940
+Epoch 23/200
+276s - loss: 0.1047 - acc: 0.9664 - val_loss: 2.2998 - val_acc: 0.2185
+Epoch 24/200
+276s - loss: 0.1015 - acc: 0.9673 - val_loss: 2.1810 - val_acc: 0.2727
+Epoch 25/200
+279s - loss: 0.1010 - acc: 0.9669 - val_loss: 2.1391 - val_acc: 0.2741
+Epoch 26/200
+276s - loss: 0.0995 - acc: 0.9672 - val_loss: 2.2406 - val_acc: 0.2768
+Epoch 27/200
+276s - loss: 0.1000 - acc: 0.9665 - val_loss: 2.1387 - val_acc: 0.2863
+Epoch 28/200
+276s - loss: 0.0971 - acc: 0.9671 - val_loss: 2.1384 - val_acc: 0.2415
+Epoch 29/200
+276s - loss: 0.0961 - acc: 0.9677 - val_loss: 2.1146 - val_acc: 0.2917
+Epoch 30/200
+275s - loss: 0.0975 - acc: 0.9673 - val_loss: 2.1637 - val_acc: 0.2972
+Epoch 31/200
+276s - loss: 0.0980 - acc: 0.9680 - val_loss: 2.1220 - val_acc: 0.2890
+Epoch 32/200
+276s - loss: 0.0948 - acc: 0.9683 - val_loss: 2.2023 - val_acc: 0.2687
+Epoch 33/200
+276s - loss: 0.0970 - acc: 0.9675 - val_loss: 2.2276 - val_acc: 0.2564
+Epoch 34/200
+276s - loss: 0.0979 - acc: 0.9675 - val_loss: 2.1923 - val_acc: 0.2605
+Epoch 35/200
+276s - loss: 0.0980 - acc: 0.9679 - val_loss: 2.2384 - val_acc: 0.2727
+Epoch 36/200
+276s - loss: 0.1004 - acc: 0.9671 - val_loss: 2.1792 - val_acc: 0.2809
+Epoch 37/200
+273s - loss: 0.0969 - acc: 0.9676 - val_loss: 2.2302 - val_acc: 0.2727
+Epoch 38/200
+276s - loss: 0.0964 - acc: 0.9680 - val_loss: 2.1512 - val_acc: 0.2958
+Epoch 39/200
+276s - loss: 0.0978 - acc: 0.9675 - val_loss: 2.2576 - val_acc: 0.2469
+Epoch 40/200
+286s - loss: 0.0982 - acc: 0.9673 - val_loss: 2.1690 - val_acc: 0.2877
+
+
+{"acc": 0.96734103319272835, "loss": -0.29715061058344638, "val_acc_max": 0.29715061058344638, "val_loss_min": 2.1146415866699115, "status": "ok", "val_acc": 0.28765264586160111, "loss_": 0.098230201126523101, "epochs_len": 40, "acc_max": 0.96826588900792121, "loss_min": 0.094808704558910661, "val_loss": 2.1689942467002403}
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16167504.ba+  21129836K  19692675K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16167504     rnn-glove+          2                         03:44:08      0:0 
+
+Job 16167504 ("rnn-glove-wikipedia") completed on c16-23 at tor dec 15 00:34:56 CET 2016

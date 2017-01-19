@@ -1,0 +1,74 @@
+Starting job 16380276 ("logreg-reproduce-4") on c14-9 at ons jan 18 22:24:42 CET 2017
+An unexpected error has occurred.
+Please consider posting the following information to the
+conda GitHub issue tracker at:
+
+    https://github.com/conda/conda/issues
+
+
+
+Current conda install:
+
+               platform : linux-64
+          conda version : 4.2.13
+       conda is private : False
+      conda-env version : 4.2.13
+    conda-build version : not installed
+         python version : 2.7.12.final.0
+       requests version : 2.11.1
+       root environment : /usit/abel/u1/jimmycallin/miniconda2  (writable)
+    default environment : /usit/abel/u1/jimmycallin/miniconda2
+       envs directories : /usit/abel/u1/jimmycallin/miniconda2/envs
+          package cache : /usit/abel/u1/jimmycallin/miniconda2/pkgs
+           channel URLs : https://repo.continuum.io/pkgs/free/linux-64
+                          https://repo.continuum.io/pkgs/free/noarch
+                          https://repo.continuum.io/pkgs/pro/linux-64
+                          https://repo.continuum.io/pkgs/pro/noarch
+            config file : None
+           offline mode : False
+
+
+
+`$ /usit/abel/u1/jimmycallin/miniconda2/bin/conda ..checkenv bash cnn2`
+
+
+
+
+    Traceback (most recent call last):
+      File "/usit/abel/u1/jimmycallin/miniconda2/lib/python2.7/site-packages/conda/exceptions.py", line 479, in conda_exception_handler
+        return_value = func(*args, **kwargs)
+      File "/usit/abel/u1/jimmycallin/miniconda2/lib/python2.7/site-packages/conda/cli/main.py", line 94, in _main
+        activate.main()
+      File "/usit/abel/u1/jimmycallin/miniconda2/lib/python2.7/site-packages/conda/cli/activate.py", line 148, in main
+        conda.install.symlink_conda(prefix, context.root_dir, shell)
+      File "/usit/abel/u1/jimmycallin/miniconda2/lib/python2.7/site-packages/conda/install.py", line 541, in symlink_conda
+        symlink_conda_hlp(prefix, root_dir, where, symlink_fn)
+      File "/usit/abel/u1/jimmycallin/miniconda2/lib/python2.7/site-packages/conda/install.py", line 558, in symlink_conda_hlp
+        symlink_fn(root_file, prefix_file)
+    OSError: [Errno 2] No such file or directory
+
+Python environment is set up
+Copying files to /work/jobs/16380276.d...
+We are now in conll16st-hd-sdp
+==========================================
+==============TRAIN=======================
+==========================================
+Traceback (most recent call last):
+  File "sup_parser_v2_hierarchy.py", line 28, in <module>
+    from sklearn import preprocessing
+ImportError: No module named sklearn
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16380276.ba+    220920K      2164K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16380276     logreg-re+          4                         00:10:00      0:0 
+
+Job 16380276 ("logreg-reproduce-4") completed on c14-9 at ons jan 18 22:34:37 CET 2017

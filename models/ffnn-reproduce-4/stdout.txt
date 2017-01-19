@@ -1,0 +1,71 @@
+Starting job 16379343 ("ffnn-reproduce-4") on c13-17 at ons jan 18 19:19:48 CET 2017
+Python environment is set up
+Copying files to /work/jobs/16379343.d...
+We are now in nn_discourse_parser
+Starting FFNN run
+NAME: ffnn-reproduce-4
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16379343.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+DATA_BASE_PATH: /work/jobs/16379343.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/ffnn-reproduce-4
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '5997' (I am process '24739')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+Start reading in the dictionary
+Skipped 0 out of 3000001 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16379343.ba+  12259924K  11710487K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16379343     ffnn-repr+          4                         00:42:42      0:0 
+
+Job 16379343 ("ffnn-reproduce-4") completed on c13-17 at ons jan 18 20:02:28 CET 2017

@@ -1,6 +1,6 @@
-Starting job 16077602 ("ffnn-cw-wikipedia") on c18-7 at mån dec 5 16:40:32 CET 2016
+Starting job 16176677 ("ffnn-cw-wikipedia") on c15-21 at tor dec 15 16:21:19 CET 2016
 Python environment is set up
-Copying files to /work/jobs/16077602.d...
+Copying files to /work/jobs/16176677.d...
 We are now in nn_discourse_parser
 Start reading in the dictionary
 Skipped 0 out of 130001 lines
@@ -11,11 +11,11 @@ Currently Loaded Modulefiles:
 Job script resource usage:
        JobID  MaxVMSize     MaxRSS 
 ------------ ---------- ---------- 
-16077602.ba+    644844K    146375K 
+16176677.ba+    552188K     58871K 
 
 Job step resource usage:
        JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
 ------------ ---------- ---------- ---------- ---------- ---------- -------- 
-16077602     ffnn-cw-w+          1                         00:01:35      0:0 
+16176677     ffnn-cw-w+          1                         00:08:48      0:0 
 
-Job 16077602 ("ffnn-cw-wikipedia") completed on c18-7 at mån dec 5 16:42:03 CET 2016
+Job 16176677 ("ffnn-cw-wikipedia") completed on c15-21 at tor dec 15 16:30:04 CET 2016

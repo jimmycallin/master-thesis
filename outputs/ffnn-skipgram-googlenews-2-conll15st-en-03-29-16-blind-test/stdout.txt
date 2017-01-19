@@ -1,7 +1,11 @@
-Starting job 16175798 ("ffnn-skipgram-googlenews-2") on c15-18 at tor dec 15 13:31:49 CET 2016
+Starting job 16322909 ("ffnn-skipgram-googlenews-2") on c16-29 at mån jan 9 14:12:04 CET 2017
 Python environment is set up
-Copying files to /work/jobs/16175798.d...
+Copying files to /work/jobs/16322909.d...
 We are now in nn_discourse_parser
+INFO (theano.gof.compilelock): Waiting for existing lock by process '11436' (I am process '13236')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '20484' (I am process '13236')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
 Start reading in the dictionary
 Skipped 0 out of 3000001 lines
 
@@ -11,11 +15,11 @@ Currently Loaded Modulefiles:
 Job script resource usage:
        JobID  MaxVMSize     MaxRSS 
 ------------ ---------- ---------- 
-16175798.ba+  10300976K   9802371K 
+16322909.ba+  10421952K   9926926K 
 
 Job step resource usage:
        JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
 ------------ ---------- ---------- ---------- ---------- ---------- -------- 
-16175798     ffnn-skip+          1                         00:05:19      0:0 
+16322909     ffnn-skip+          1                         00:06:23      0:0 
 
-Job 16175798 ("ffnn-skipgram-googlenews-2") completed on c15-18 at tor dec 15 13:37:04 CET 2016
+Job 16322909 ("ffnn-skipgram-googlenews-2") completed on c16-29 at mån jan 9 14:18:24 CET 2017

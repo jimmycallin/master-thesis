@@ -1,0 +1,62 @@
+Starting job 16167411 ("ffnn-skipgram-googlenews-4") on c17-31 at ons dec 14 20:00:56 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16167411.d...
+We are now in nn_discourse_parser
+Starting FFNN run
+NAME: ffnn-skipgram-googlenews-4
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16167411.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+DATA_BASE_PATH: /work/jobs/16167411.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/ffnn-skipgram-googlenews-4
+Start reading in the dictionary
+Skipped 0 out of 3000001 lines
+Traceback (most recent call last):
+  File "./train_models.py", line 183, in <module>
+    globals()[experiment_name](experiment_name, data_base_path, embedding_path, model_store_path)
+  File "./train_models.py", line 86, in implicit_conll_ff_train
+    minibatch_size=None)
+  File "./train_models.py", line 129, in train
+    random_seed = random.randint(1, 100)
+NameError: global name 'random' is not defined
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16167411.ba+  11745532K  11198751K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16167411     ffnn-skip+          4                         00:10:22      0:0 
+
+Job 16167411 ("ffnn-skipgram-googlenews-4") completed on c17-31 at ons dec 14 20:11:16 CET 2016
+Starting job 16175072 ("ffnn-skipgram-googlenews-4") on c17-1 at tor dec 15 12:25:31 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16175072.d...
+We are now in nn_discourse_parser
+Starting FFNN run
+NAME: ffnn-skipgram-googlenews-4
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16175072.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+DATA_BASE_PATH: /work/jobs/16175072.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/ffnn-skipgram-googlenews-4
+Start reading in the dictionary
+Skipped 0 out of 3000001 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16175072.ba+  12364812K  11817515K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16175072     ffnn-skip+          4                         00:11:10      0:0 
+
+Job 16175072 ("ffnn-skipgram-googlenews-4") completed on c17-1 at tor dec 15 12:36:36 CET 2016

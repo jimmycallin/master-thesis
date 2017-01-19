@@ -1,0 +1,27 @@
+Starting job 16176473 ("ffnn-glove-wikipedia-gigawords") on c13-36 at tor dec 15 15:25:37 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16176473.d...
+We are now in nn_discourse_parser
+Starting FFNN run
+NAME: ffnn-glove-wikipedia-gigawords
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16176473.d/resources//word_embeddings/precompiled/glove/glove.6B.50d.txt
+DATA_BASE_PATH: /work/jobs/16176473.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/ffnn-glove-wikipedia-gigawords
+Start reading in the dictionary
+Skipped 0 out of 400001 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16176473.ba+   2440364K   1893993K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16176473     ffnn-glov+          4                         00:11:39      0:0 
+
+Job 16176473 ("ffnn-glove-wikipedia-gigawords") completed on c13-36 at tor dec 15 15:37:13 CET 2016

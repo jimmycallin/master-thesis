@@ -1,0 +1,27 @@
+Starting job 16176470 ("ffnn-cbow-wikipedia") on c13-13 at tor dec 15 15:23:31 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16176470.d...
+We are now in nn_discourse_parser
+Starting FFNN run
+NAME: ffnn-cbow-wikipedia
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16176470.d/resources//word_embeddings/precompiled/cbow/size=50.embeddings
+DATA_BASE_PATH: /work/jobs/16176470.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/ffnn-cbow-wikipedia
+Start reading in the dictionary
+Skipped 0 out of 518915 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16176470.ba+   3074728K   2527630K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16176470     ffnn-cbow+          4                         00:07:14      0:0 
+
+Job 16176470 ("ffnn-cbow-wikipedia") completed on c13-13 at tor dec 15 15:30:41 CET 2016

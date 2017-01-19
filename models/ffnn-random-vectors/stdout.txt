@@ -1,0 +1,27 @@
+Starting job 16184514 ("ffnn-random-vectors") on c13-36 at fre dec 16 17:58:24 CET 2016
+Python environment is set up
+Copying files to /work/jobs/16184514.d...
+We are now in nn_discourse_parser
+Starting FFNN run
+NAME: ffnn-random-vectors
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16184514.d/resources//word_embeddings/precompiled/random_vectors/random_vectors.50d.txt
+DATA_BASE_PATH: /work/jobs/16184514.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/ffnn-random-vectors
+Start reading in the dictionary
+Skipped 0 out of 48830 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16184514.ba+   1641392K    653871K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16184514     ffnn-rand+          4                         00:04:43      0:0 
+
+Job 16184514 ("ffnn-random-vectors") completed on c13-36 at fre dec 16 18:03:04 CET 2016

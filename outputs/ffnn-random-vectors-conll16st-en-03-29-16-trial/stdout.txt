@@ -1,6 +1,6 @@
-Starting job 16152666 ("ffnn-random-vectors") on c13-20 at tis dec 13 16:03:10 CET 2016
+Starting job 16177322 ("ffnn-random-vectors") on c15-10 at tor dec 15 18:41:14 CET 2016
 Python environment is set up
-Copying files to /work/jobs/16152666.d...
+Copying files to /work/jobs/16177322.d...
 We are now in nn_discourse_parser
 Start reading in the dictionary
 Skipped 0 out of 103648 lines
@@ -11,11 +11,11 @@ Currently Loaded Modulefiles:
 Job script resource usage:
        JobID  MaxVMSize     MaxRSS 
 ------------ ---------- ---------- 
-16152666.ba+    487708K     23814K 
+16177322.ba+    220920K      2250K 
 
 Job step resource usage:
        JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
 ------------ ---------- ---------- ---------- ---------- ---------- -------- 
-16152666     ffnn-rand+          1                         00:03:18      0:0 
+16177322     ffnn-rand+          1                         00:03:24      0:0 
 
-Job 16152666 ("ffnn-random-vectors") completed on c13-20 at tis dec 13 16:06:24 CET 2016
+Job 16177322 ("ffnn-random-vectors") completed on c15-10 at tor dec 15 18:44:35 CET 2016

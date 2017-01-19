@@ -1,0 +1,27 @@
+Starting job 16379340 ("ffnn-reproduce-1") on c15-24 at ons jan 18 19:18:52 CET 2017
+Python environment is set up
+Copying files to /work/jobs/16379340.d...
+We are now in nn_discourse_parser
+Starting FFNN run
+NAME: ffnn-reproduce-1
+LOCAL_BASE_DIR: /usit/abel/u1/jimmycallin/
+EMBEDDING_PATH: /work/jobs/16379340.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+DATA_BASE_PATH: /work/jobs/16379340.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16
+MODEL_STORE_PATH: /usit/abel/u1/jimmycallin//models/ffnn-reproduce-1
+Start reading in the dictionary
+Skipped 0 out of 3000001 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16379340.ba+  12330096K  11783225K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16379340     ffnn-repr+          4                         00:45:50      0:0 
+
+Job 16379340 ("ffnn-reproduce-1") completed on c15-24 at ons jan 18 20:04:37 CET 2017

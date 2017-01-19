@@ -1,6 +1,6 @@
-Starting job 16077582 ("ffnn-hpca-wikipedia") on c14-19 at mån dec 5 16:20:00 CET 2016
+Starting job 16176651 ("ffnn-hpca-wikipedia") on c14-27 at tor dec 15 16:07:44 CET 2016
 Python environment is set up
-Copying files to /work/jobs/16077582.d...
+Copying files to /work/jobs/16176651.d...
 We are now in nn_discourse_parser
 Start reading in the dictionary
 Skipped 0 out of 840298 lines
@@ -11,11 +11,11 @@ Currently Loaded Modulefiles:
 Job script resource usage:
        JobID  MaxVMSize     MaxRSS 
 ------------ ---------- ---------- 
-16077582.ba+    220920K      2841K 
+16176651.ba+   1190620K    697307K 
 
 Job step resource usage:
        JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
 ------------ ---------- ---------- ---------- ---------- ---------- -------- 
-16077582     ffnn-hpca+          1                         00:01:26      0:0 
+16176651     ffnn-hpca+          1                         00:06:27      0:0 
 
-Job 16077582 ("ffnn-hpca-wikipedia") completed on c14-19 at mån dec 5 16:21:22 CET 2016
+Job 16176651 ("ffnn-hpca-wikipedia") completed on c14-27 at tor dec 15 16:14:09 CET 2016

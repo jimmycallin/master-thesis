@@ -1,14 +1,14 @@
 measure {
  key: "All Parser precision" 
- value: "0.3642"
+ value: "0.3631"
 }
 measure {
  key: "All Parser recall" 
- value: "0.3642"
+ value: "0.3631"
 }
 measure {
  key: "All Parser f1" 
- value: "0.3642"
+ value: "0.3631"
 }
 measure {
  key: "All Explicit connective precision" 
@@ -120,15 +120,15 @@ measure {
 }
 measure {
  key: "Non-explicit only Parser precision" 
- value: "0.3642"
+ value: "0.3631"
 }
 measure {
  key: "Non-explicit only Parser recall" 
- value: "0.3642"
+ value: "0.3631"
 }
 measure {
  key: "Non-explicit only Parser f1" 
- value: "0.3642"
+ value: "0.3631"
 }
 measure {
  key: "Non-explicit only Explicit connective precision" 
@@ -177,4 +177,160 @@ measure {
 measure {
  key: "Non-explicit only Arg 1 Arg2 extraction f1" 
  value: "1.0"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction Precision"
+ value: "0.4"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction Recall"
+ value: "0.165517241379"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction F1"
+ value: "0.234146341463"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation Precision"
+ value: "0.521739130435"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation Recall"
+ value: "0.529411764706"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation F1"
+ value: "0.525547445255"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason Precision"
+ value: "0.337278106509"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason Recall"
+ value: "0.495652173913"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason F1"
+ value: "0.401408450704"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast Precision"
+ value: "0.157894736842"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast Recall"
+ value: "0.0241935483871"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast F1"
+ value: "0.041958041958"
+}
+measure {
+ key: "Non-explicit EntRel Precision"
+ value: "0.371490280778"
+}
+measure {
+ key: "Non-explicit EntRel Recall"
+ value: "0.792626728111"
+}
+measure {
+ key: "Non-explicit EntRel F1"
+ value: "0.505882352941"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement Precision"
+ value: "0.352941176471"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement Recall"
+ value: "0.285714285714"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement F1"
+ value: "0.315789473684"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Succession Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Succession Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Succession F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result Precision"
+ value: "0.230769230769"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result Recall"
+ value: "0.134831460674"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result F1"
+ value: "0.170212765957"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence Precision"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative.Chosen alternative Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative.Chosen alternative Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative.Chosen alternative F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Expansion Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion F1"
+ value: "0.0"
 }

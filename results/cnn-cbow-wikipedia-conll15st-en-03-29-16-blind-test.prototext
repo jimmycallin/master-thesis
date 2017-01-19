@@ -178,3 +178,135 @@ measure {
  key: "Non-explicit only Arg 1 Arg2 extraction f1" 
  value: "1.0"
 }
+measure {
+ key: "Non-explicit EntRel Precision"
+ value: "0.340375586854"
+}
+measure {
+ key: "Non-explicit EntRel Recall"
+ value: "0.725"
+}
+measure {
+ key: "Non-explicit EntRel F1"
+ value: "0.463258785942"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement Precision"
+ value: "0.318181818182"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement Recall"
+ value: "0.0992907801418"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement F1"
+ value: "0.151351351351"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason Precision"
+ value: "0.0909090909091"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason Recall"
+ value: "0.0714285714286"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason F1"
+ value: "0.08"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction Precision"
+ value: "0.140845070423"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction Recall"
+ value: "0.0952380952381"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction F1"
+ value: "0.113636363636"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result Precision"
+ value: "0.0967741935484"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result Recall"
+ value: "0.1"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result F1"
+ value: "0.0983606557377"
+}
+measure {
+ key: "Non-explicit Comparison.Concession Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation Precision"
+ value: "0.0666666666667"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation Recall"
+ value: "0.027027027027"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation F1"
+ value: "0.0384615384615"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence Precision"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast Precision"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony F1"
+ value: "0.0"
+}

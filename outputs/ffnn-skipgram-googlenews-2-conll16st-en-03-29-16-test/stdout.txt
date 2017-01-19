@@ -1,7 +1,13 @@
-Starting job 16175804 ("ffnn-skipgram-googlenews-2") on c18-32 at tor dec 15 13:52:48 CET 2016
+Starting job 16322917 ("ffnn-skipgram-googlenews-2") on c16-22 at mån jan 9 14:14:25 CET 2017
 Python environment is set up
-Copying files to /work/jobs/16175804.d...
+Copying files to /work/jobs/16322917.d...
 We are now in nn_discourse_parser
+INFO (theano.gof.compilelock): Waiting for existing lock by process '11436' (I am process '12791')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '11436' (I am process '12791')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
+INFO (theano.gof.compilelock): Waiting for existing lock by process '20484' (I am process '12791')
+INFO (theano.gof.compilelock): To manually release the lock, delete /cluster/home/jimmycallin/.theano/compiledir_Linux-2.6-el6.x86_64-x86_64-with-centos-6.8-Final-x86_64-2.7.12-64/lock_dir
 Start reading in the dictionary
 Skipped 0 out of 3000001 lines
 
@@ -11,11 +17,11 @@ Currently Loaded Modulefiles:
 Job script resource usage:
        JobID  MaxVMSize     MaxRSS 
 ------------ ---------- ---------- 
-16175804.ba+   5278300K   4785572K 
+16322917.ba+  10434852K   9939411K 
 
 Job step resource usage:
        JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
 ------------ ---------- ---------- ---------- ---------- ---------- -------- 
-16175804     ffnn-skip+          1                         00:03:02      0:0 
+16322917     ffnn-skip+          1                         00:03:58      0:0 
 
-Job 16175804 ("ffnn-skipgram-googlenews-2") completed on c18-32 at tor dec 15 13:55:47 CET 2016
+Job 16322917 ("ffnn-skipgram-googlenews-2") completed on c16-22 at mån jan 9 14:18:20 CET 2017

@@ -1,0 +1,11 @@
+Starting job 16385162 ("rnn-reproduce-2") on c12-19 at tor jan 19 13:21:00 CET 2017
+Python environment is set up
+Copying files to /work/jobs/16385162.d...
+We are now in conll16st-v34-focused-rnns
+CONFIG:
+INPUT_PATH: /work/jobs/16385162.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test/
+EMBEDDING_PATH: /work/jobs/16385162.d/resources/none-2
+MODEL_PATH: /work/jobs/16385162.d/models/rnn-reproduce-2/
+OUTPUT_PATH: /usit/abel/u1/jimmycallin//outputs/rnn-reproduce-2-conll15st-en-03-29-16-blind-test/
+CONFIG: --config={"words2vec_bin": null, "words_dim": 20.0, "filter_fn_name": "conn_gt_0", "focus_dim": 6.0, "random_per_sample": 24.0, "final_dropout": 0.01608656108471007, "epochs": 200, "words2vec_txt": null, "focus_dropout_W": 0.4850461135349744, "rnn_dim": 50.0, "focus_dropout_U": 0.18210894621865603, "epochs_len": -1, "final_dim": 40.0, "epochs_patience": 10, "rnn_dropout_W": 0.16649459724958682, "words_dropout": 0.3543889040084549, "rnn_dropout_U": 0.4899141021546136}
+=========================

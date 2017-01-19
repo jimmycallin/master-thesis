@@ -10,3 +10,6 @@
 [submodule "utils/conll16st-eval"]
 	path = utils/conll16st-eval
 	url = https://github.com/attapol/conll16st
+[submodule "third_party/conll16st-hd-sdp"]
+	path = third_party/conll16st-hd-sdp
+	url = https://github.com/tbmihailov/conll16st-hd-sdp

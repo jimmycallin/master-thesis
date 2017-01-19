@@ -1,0 +1,90 @@
+Starting job 16367832 ("logreg-rsv50-wikipedia") on c14-12 at tis jan 17 04:00:00 CET 2017
+Python environment is set up
+Copying files to /work/jobs/16367832.d...
+We are now in conll16st-hd-sdp
+==========================================
+==============TRAIN=======================
+==========================================
+/usit/abel/u1/jimmycallin/miniconda2/envs/cnn2/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/usit/abel/u1/jimmycallin/miniconda2/envs/cnn2/lib/python2.7/site-packages/sklearn/grid_search.py:43: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
+  DeprecationWarning)
+2017-01-17 04:33:04,667 [MainThread  ]: INFO : cmd:test
+2017-01-17 04:33:04,667 [MainThread  ]: INFO : run_name:logreg-rsv50-wikipedia
+2017-01-17 04:33:04,667 [MainThread  ]: INFO : scale_features:True
+2017-01-17 04:33:04,667 [MainThread  ]: INFO : Word2Vec File:
+	/work/jobs/16367832.d/resources//word_embeddings/precompiled/rsv/wiki_2008_d50_w1_ncntx100000.wembed
+2017-01-17 04:33:04,667 [MainThread  ]: INFO : wordclusters_mapping_file:
+	
+2017-01-17 04:33:04,667 [MainThread  ]: INFO : use_id_for_vector:False
+2017-01-17 04:33:04,668 [MainThread  ]: INFO : word2vec_load_bin:True
+2017-01-17 04:33:04,668 [MainThread  ]: INFO : brownclusters_file:
+	
+2017-01-17 04:33:04,668 [MainThread  ]: INFO : loading projection weights from /work/jobs/16367832.d/resources//word_embeddings/precompiled/rsv/wiki_2008_d50_w1_ncntx100000.wembed
+2017-01-17 04:33:04,789 [MainThread  ]: DEBUG : Fast version of gensim.models.word2vec is being used
+2017-01-17 04:33:04,789 [MainThread  ]: WARNING : consider setting layer size to a multiple of 4 for greater performance
+2017-01-17 04:33:27,111 [MainThread  ]: INFO : loaded (110134, 50) matrix from /work/jobs/16367832.d/resources//word_embeddings/precompiled/rsv/wiki_2008_d50_w1_ncntx100000.wembed
+2017-01-17 04:33:27,111 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,111 [MainThread  ]: INFO : Embeddings feature vectors length:50
+2017-01-17 04:33:27,111 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,111 [MainThread  ]: INFO : Model syn0 len=110134
+2017-01-17 04:33:27,111 [MainThread  ]: INFO : -----------TEST----------------------------------
+2017-01-17 04:33:27,111 [MainThread  ]: DEBUG : class_mapping_id_to_origtext:
+2017-01-17 04:33:27,111 [MainThread  ]: DEBUG : {0: 'Temporal.Asynchronous.Precedence', 1: 'Temporal.Asynchronous.Succession', 2: 'Temporal.Synchrony', 3: 'Contingency.Cause.Reason', 4: 'Contingency.Cause.Result', 5: 'Contingency.Condition', 6: 'Comparison.Contrast', 7: 'Comparison.Concession', 8: 'Expansion.Conjunction', 9: 'Expansion.Instantiation', 10: 'Expansion.Restatement', 11: 'Expansion.Alternative', 12: 'Expansion.Alternative.Chosen alternative', 13: 'Expansion.Exception', 14: 'EntRel'}
+2017-01-17 04:33:27,111 [MainThread  ]: WARNING : direct access to index2word will not be supported in future gensim releases, please use model.wv.index2word
+2017-01-17 04:33:27,428 [MainThread  ]: INFO : Using arg1+arg2 to PDTB connective_embeddings similarity:True
+2017-01-17 04:33:27,446 [MainThread  ]: INFO : Scaling is enabled!
+2017-01-17 04:33:27,449 [MainThread  ]: INFO : EXP_LEVEL1 classifier: LogisticRegression(C=3, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=8,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+2017-01-17 04:33:27,457 [MainThread  ]: INFO : Scaling is enabled!
+2017-01-17 04:33:27,460 [MainThread  ]: INFO : NONEXP_LEVEL1 classifier: LogisticRegression(C=2, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=8,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+2017-01-17 04:33:27,460 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,499 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,509 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,526 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,557 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,573 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,608 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,623 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,626 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,635 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,648 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,651 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,673 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,675 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,695 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,710 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,727 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,733 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,746 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,753 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,766 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,770 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,787 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,798 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,801 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,807 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,869 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,893 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,907 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-17 04:33:27,913 [MainThread  ]: INFO : output file written:/usit/abel/u1/jimmycallin//outputs/logreg-rsv50-wikipedia-conll16st-en-03-29-16-trial//output.json
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16367832.ba+    643268K     60692K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16367832     logreg-rs+          2                         00:33:30      0:0 
+
+Job 16367832 ("logreg-rsv50-wikipedia") completed on c14-12 at tis jan 17 04:33:28 CET 2017

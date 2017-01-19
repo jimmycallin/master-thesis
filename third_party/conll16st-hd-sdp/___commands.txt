@@ -1,0 +1,51 @@
+#run parser
+bash sup_parser_v1_run_train2016_dev2016.sh svm_background_google
+
+# run command in background
+nohup bash sup_parser_v1_run_train2016_dev2016.sh sup_parser_v1_run_tr16dev16_back> sup_parser_v1_run_tr16dev16_back.out 2> sup_parser_v1_run_tr16dev16_back.err < /dev/null &
+
+nohup bash sup_parser_v4_hierarchy_cnn_run_train2016_dev2016.sh sup_parser_v4_cnn_tr16dev16_back> sup_parser_v4_cnn_tr16dev16_back.out 2> sup_parser_v4_cnn_tr16dev16_back.err < /dev/null &
+
+nohup bash sup_parser_v1_run_trial2016_trial2016.sh svm_background_trial> background.out 2> background.err < /dev/null &
+
+nohup bash sup_parser_v5_hierarchy_cnn_cross_run_train2016_dev2016.sh svm_cnn_v5_background_google_tr16dev> svm_cnn_v5_background_google_tr16dev.out 2> svm_cnn_v5_background_google_tr16dev.err < /dev/null &
+
+nohup bash sup_parser_v2_hierarchy_run_train2016_dev2016.sh sup_parser_v2_hier_lg_run_tr16dev16_back> sup_parser_v2_hier_lg_run_tr16dev16_back.out 2> sup_parser_v2_hier_lg_run_tr16dev16_back.err < /dev/null &
+
+nohup bash sup_parser_v3_hierarchy_cnn_run_train2016_dev2016.sh sup_parser_v3_cnn_run_tr16dev16_back> sup_parser_v3_cnn_run_tr16dev16_back.out 2> sup_parser_v3_cnn_run_tr16dev16_back.err < /dev/null &
+
+nohup bash sup_parser_v6_hierarchy_cnn_cross_run_train2016_dev2016.sh svm_cnn_v6_background_google_tr16dev> svm_cnn_v6_background_google_tr16dev.out 2> svm_cnn_v6_background_google_tr16dev.err < /dev/null &
+
+nohup bash sup_parser_v6_hierarchy_cnn_cross_run_dev2016_dev2016.sh svm_cnn_v6_background_google_dev16dev_multith> svm_cnn_v6_background_google_dev16dev_multith.out 2> svm_cnn_v6_background_google_dev16dev_multith.err < /dev/null &
+
+
+nohup bash sup_parser_v6_hierarchy_cnn_cross_run_train2016_test2016.sh svm_cnn_v6_background_google_tr16test> svm_cnn_v6_background_google_tr16test.out 2> svm_cnn_v6_background_google_tr16test.err < /dev/null &
+nohup bash sup_parser_v6_hierarchy_cnn_cross_run_train2016_blind2016.sh svm_cnn_v6_background_google_tr16blind16> svm_cnn_v6_background_google_tr16blind16.out 2> svm_cnn_v6_background_google_tr16blind16.err < /dev/null &
+
+
+nohup bash sup_parser_v4_hierarchy_cnn_run_train2016_test2016.sh sup_parser_v4_cnn_tr16test16_back> sup_parser_v4_cnn_tr16test16_back.out 2> sup_parser_v4_cnn_tr16test16_back.err < /dev/null &
+nohup bash sup_parser_v4_hierarchy_cnn_run_train2016_blind2016.sh sup_parser_v4_cnn_tr16blind16_back> sup_parser_v4_cnn_tr16blind16_back.out 2> sup_parser_v4_cnn_tr16blind16_back.err < /dev/null &
+
+nohup bash sup_parser_v5_hierarchy_cnn_cross_run_train2016_dev2016.sh svm_cnn_v5_background_google_tr16dev_ep100> svm_cnn_v5_background_google_tr16dev_ep100.out 2> svm_cnn_v5_background_google_tr16dev_ep100.err < /dev/null &
+nohup bash sup_parser_v5_hierarchy_cnn_cross_run_train2016_test2016.sh svm_cnn_v5_background_google_tr16test16_epoch100> svm_cnn_v5_background_google_tr16test16_epoch100.out 2> svm_cnn_v5_background_google_tr16test16_epoch100.err < /dev/null &
+nohup bash sup_parser_v5_hierarchy_cnn_cross_run_train2016_blind2016.sh svm_cnn_v5_background_google_tr16blind16_epoch100> svm_cnn_v5_background_google_tr16blind16_epoch100.out 2> svm_cnn_v5_background_google_tr16blind16_epoch100.err < /dev/null &
+
+
+
+# multi processor
+nohup bash sup_parser_v6_hierarchy_cnn_cross_run_train2016_dev2016.sh svm_cnn_v6_background_google_tr16dev_B400> svm_cnn_v6_background_google_tr16dev_B400.out 2> svm_cnn_v6_background_google_tr16dev_B400.err < /dev/null &
+
+nohup bash sup_parser_v6_hierarchy_cnn_cross_run_train2016_dev2016.sh svm_cnn_v6_background_google_tr16dev_B500_4proc> svm_cnn_v6_background_google_tr16dev_B500_4proc.out 2> svm_cnn_v6_background_google_tr16dev_B500_4proc.err < /dev/null &
+
+nohup bash sup_parser_v6_hierarchy_cnn_cross_run_train2016_test2016.sh > svm_cnn_v6_background_google_tr16test_testonly.out 2> svm_cnn_v6_background_google_tr16test_testonly.err < /dev/null &
+
+nohup bash sup_parser_v2_hierarchy_run_train2016_dev2016.sh sup_parser_v2_hier_lg_run_tr16dev16_back> sup_parser_v2_hier_lg_run_tr16dev16_back.out 2> sup_parser_v2_hier_lg_run_tr16dev16_back.err < /dev/null &
+nohup bash sup_parser_v2_hierarchy_run_train2016_blind2016.sh sup_parser_v2_hier_lg_run_tr16blind16_back> sup_parser_v2_hier_lg_run_tr16blind16_back.out 2> sup_parser_v2_hier_lg_run_tr16blind16_back.err < /dev/null &
+nohup bash sup_parser_v2_hierarchy_run_train2016_test2016.sh sup_parser_v2_hier_lg_run_tr16test16_back> sup_parser_v2_hier_lg_run_tr16test16_back.out 2> sup_parser_v2_hier_lg_run_tr16test16_back.err < /dev/null &
+
+###########################################
+Dependency based word embeddings
+
+ nohup ./word2vecf -train ../conll16st-hd-sdp/resources/external/dep_embeddings/deps.contexts -wvocab wv -cvocab cv -output dim200vecs_vocab0 -size 200 -negative 15 -threads 20 > dim200vecs_vocab0_back.out 2> dim200vecs_vocab0_back.out < /dev/null &
+
+vecs2nps.py ../../conll16st-hd-sdp/resources/external/dep_embeddings/deps.words deps_300_words

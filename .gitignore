@@ -6,6 +6,7 @@ overens/
 notes/
 notebooks/Playground.ipynb
 __pycache__/
+third_party/CoNLL2016-CNN/
 
 # LaTeX
 *.aux

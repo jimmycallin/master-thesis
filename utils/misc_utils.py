@@ -37,11 +37,12 @@ def get_en_model():
     logger = get_logger(__name__)
     if EN_MODEL is None:
         logger.debug("Loading spacy English model...")
-        EN_MODEL = spacy.load(tagger=False,
+        EN_MODEL = spacy.load('en',
+                              tagger=False,
                               parser=False,
                               entity=False,
                               matcher=False,
-                              load_vectors=False)
+                              add_vectors=False)
     return EN_MODEL
 
 

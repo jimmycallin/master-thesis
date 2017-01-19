@@ -1,0 +1,25 @@
+\begin{tabular}{lrrrrr}
+\toprule
+{} &  cnn &  ffnn &  logreg &  average &  variance \\
+\midrule
+cbow-googlenews            &  0.0 &   NaN &     NaN &      0.0 &       0.0 \\
+cbow-wikipedia             &  0.0 &   0.0 &     0.0 &      0.0 &       0.0 \\
+cw-wikipedia               &  0.0 &   0.0 &     0.0 &      0.0 &       0.0 \\
+glove-wikipedia            &  0.0 &   0.0 &     0.0 &      0.0 &       0.0 \\
+glove-wikipedia-gigawords  &  0.0 &   0.0 &     0.0 &      0.0 &       0.0 \\
+hpca-wikipedia             &  0.0 &   0.0 &     0.0 &      0.0 &       0.0 \\
+random-vectors             &  0.0 &   0.0 &     0.0 &      0.0 &       0.0 \\
+randomprojection-wikipedia &  0.0 &   0.0 &     0.0 &      0.0 &       0.0 \\
+rsv-wikipedia              &  0.0 &   0.0 &     NaN &      0.0 &       0.0 \\
+rsv100-wikipedia           &  NaN &   0.0 &     0.0 &      0.0 &       0.0 \\
+rsv50-wikipedia            &  NaN &   0.0 &     0.0 &      0.0 &       0.0 \\
+skipgram-googlenews        &  NaN &   0.0 &     0.0 &      0.0 &       0.0 \\
+skipgram-googlenews-1      &  NaN &   0.0 &     NaN &      0.0 &       0.0 \\
+skipgram-googlenews-2      &  NaN &   0.0 &     NaN &      0.0 &       0.0 \\
+skipgram-googlenews-3      &  NaN &   0.0 &     NaN &      0.0 &       0.0 \\
+skipgram-googlenews-4      &  NaN &   0.0 &     NaN &      0.0 &       0.0 \\
+tscca-wikipedia            &  0.0 &   0.0 &     0.0 &      0.0 &       0.0 \\
+average                    &  0.0 &   0.0 &     0.0 &      0.0 &       0.0 \\
+variance                   &  0.0 &   0.0 &     0.0 &      0.0 &       0.0 \\
+\bottomrule
+\end{tabular}

@@ -32,7 +32,7 @@ class PDTBRelations(Resource):
         with open(path) as file_:
             for line in file_:
                 rel = DiscourseRelation(json.loads(line.strip()))
-                if rel.relation_type() in self.filter_type:
+                if (self.filter_type != [] or self.filter_type is not None) and rel.relation_type() not in self.filter_type:
                     continue
                 if self.separate_dual_classes:
                     for splitted in rel.split_up_senses(max_level=self.max_hierarchical_level):
@@ -55,7 +55,7 @@ class PDTBRelations(Resource):
         else:
             tokenized = tokenize(sentence)
 
-        if extractor.sentence_max_length:
+        if hasattr(extractor, 'sentence_max_length') and extractor.sentence_max_length:
             tokenized = tokenized[:extractor.sentence_max_length]
         if self.padding:
             tokenized = tokenized + ['PADDING'] * (extractor.sentence_max_length - len(tokenized))

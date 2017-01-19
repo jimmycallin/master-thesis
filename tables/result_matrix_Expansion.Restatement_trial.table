@@ -1,0 +1,30 @@
+\begin{tabular}{lrrrrrr}
+\toprule
+{} &       cnn &      ffnn &    logreg &       rnn &   average &  variance \\
+\midrule
+cbow-googlenews            &  0.000000 &       NaN &       NaN &  0.000000 &  0.000000 &  0.000000 \\
+cbow-wikipedia             &  0.000000 &  0.000000 &  0.000000 &  0.000000 &  0.000000 &  0.000000 \\
+cw-wikipedia               &  0.000000 &  0.000000 &  0.250000 &  0.444444 &  0.173611 &  0.034867 \\
+glove-wikipedia            &  0.571429 &  0.000000 &  0.000000 &  0.444444 &  0.253968 &  0.066515 \\
+glove-wikipedia-gigawords  &  0.500000 &  0.333333 &  0.222222 &  0.000000 &  0.263889 &  0.032986 \\
+hpca-wikipedia             &  0.750000 &  0.500000 &  0.285714 &  0.000000 &  0.383929 &  0.076132 \\
+random-vectors             &  0.000000 &  0.000000 &  0.222222 &  0.000000 &  0.055556 &  0.009259 \\
+randomprojection-wikipedia &  0.333333 &  0.500000 &  0.200000 &  0.000000 &  0.258333 &  0.033542 \\
+reproduce                  &       NaN &       NaN &       NaN &  0.545455 &  0.545455 &  0.000000 \\
+reproduce-1                &       NaN &       NaN &       NaN &  0.750000 &  0.750000 &  0.000000 \\
+reproduce-2                &       NaN &       NaN &       NaN &  0.400000 &  0.400000 &  0.000000 \\
+reproduce-3                &       NaN &       NaN &       NaN &  0.000000 &  0.000000 &  0.000000 \\
+reproduce-4                &       NaN &       NaN &       NaN &  0.333333 &  0.333333 &  0.000000 \\
+rsv-wikipedia              &  0.285714 &  0.000000 &       NaN &  0.000000 &  0.095238 &  0.018141 \\
+rsv100-wikipedia           &       NaN &  0.000000 &  0.285714 &  0.000000 &  0.095238 &  0.018141 \\
+rsv50-wikipedia            &       NaN &  0.333333 &  0.000000 &  0.444444 &  0.259259 &  0.035665 \\
+skipgram-googlenews        &       NaN &  0.400000 &  0.461538 &       NaN &  0.430769 &  0.000947 \\
+skipgram-googlenews-1      &       NaN &  0.363636 &       NaN &       NaN &  0.363636 &  0.000000 \\
+skipgram-googlenews-2      &       NaN &  0.363636 &       NaN &       NaN &  0.363636 &  0.000000 \\
+skipgram-googlenews-3      &       NaN &  0.444444 &       NaN &       NaN &  0.444444 &  0.000000 \\
+skipgram-googlenews-4      &       NaN &  0.250000 &       NaN &       NaN &  0.250000 &  0.000000 \\
+tscca-wikipedia            &  0.000000 &  0.250000 &  0.000000 &  0.333333 &  0.145833 &  0.022135 \\
+average                    &  0.244048 &  0.233649 &  0.175219 &  0.217380 &  0.217574 &  0.000688 \\
+variance                   &  0.081798 &  0.039716 &  0.023983 &  0.064470 &  0.052492 &  0.000495 \\
+\bottomrule
+\end{tabular}

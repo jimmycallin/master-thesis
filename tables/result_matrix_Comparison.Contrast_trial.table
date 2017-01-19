@@ -1,0 +1,30 @@
+\begin{tabular}{lrrrrrr}
+\toprule
+{} &    cnn &   ffnn &  logreg &       rnn &   average &  variance \\
+\midrule
+cbow-googlenews            &  0.000 &    NaN &     NaN &  0.000000 &  0.000000 &  0.000000 \\
+cbow-wikipedia             &  0.000 &  0.400 &     0.0 &  0.000000 &  0.100000 &  0.030000 \\
+cw-wikipedia               &  0.000 &  0.000 &     0.0 &  0.000000 &  0.000000 &  0.000000 \\
+glove-wikipedia            &  0.000 &  0.000 &     0.0 &  0.000000 &  0.000000 &  0.000000 \\
+glove-wikipedia-gigawords  &  0.000 &  0.000 &     0.0 &  0.000000 &  0.000000 &  0.000000 \\
+hpca-wikipedia             &  0.000 &  0.000 &     0.0 &  0.000000 &  0.000000 &  0.000000 \\
+random-vectors             &  0.000 &  0.000 &     0.0 &  0.000000 &  0.000000 &  0.000000 \\
+randomprojection-wikipedia &  0.000 &  0.000 &     0.0 &  0.000000 &  0.000000 &  0.000000 \\
+reproduce                  &    NaN &    NaN &     NaN &  0.500000 &  0.500000 &  0.000000 \\
+reproduce-1                &    NaN &    NaN &     NaN &  0.000000 &  0.000000 &  0.000000 \\
+reproduce-2                &    NaN &    NaN &     NaN &  0.000000 &  0.000000 &  0.000000 \\
+reproduce-3                &    NaN &    NaN &     NaN &  0.000000 &  0.000000 &  0.000000 \\
+reproduce-4                &    NaN &    NaN &     NaN &  0.000000 &  0.000000 &  0.000000 \\
+rsv-wikipedia              &  0.500 &  0.000 &     NaN &  0.000000 &  0.166667 &  0.055556 \\
+rsv100-wikipedia           &    NaN &  0.000 &     0.0 &  0.000000 &  0.000000 &  0.000000 \\
+rsv50-wikipedia            &    NaN &  0.000 &     0.0 &  0.000000 &  0.000000 &  0.000000 \\
+skipgram-googlenews        &    NaN &  0.000 &     0.0 &       NaN &  0.000000 &  0.000000 \\
+skipgram-googlenews-1      &    NaN &  0.000 &     NaN &       NaN &  0.000000 &  0.000000 \\
+skipgram-googlenews-2      &    NaN &  0.000 &     NaN &       NaN &  0.000000 &  0.000000 \\
+skipgram-googlenews-3      &    NaN &  0.000 &     NaN &       NaN &  0.000000 &  0.000000 \\
+skipgram-googlenews-4      &    NaN &  0.000 &     NaN &       NaN &  0.000000 &  0.000000 \\
+tscca-wikipedia            &  0.000 &  0.000 &     0.0 &  0.000000 &  0.000000 &  0.000000 \\
+average                    &  0.050 &  0.025 &     0.0 &  0.029412 &  0.026103 &  0.000316 \\
+variance                   &  0.025 &  0.010 &     0.0 &  0.014706 &  0.012426 &  0.000081 \\
+\bottomrule
+\end{tabular}

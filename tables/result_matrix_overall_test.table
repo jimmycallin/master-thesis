@@ -1,0 +1,25 @@
+\begin{tabular}{lrrrrr}
+\toprule
+{} &      cnn &      ffnn &    logreg &   average &      variance \\
+\midrule
+cbow-googlenews            &  0.21260 &       NaN &       NaN &  0.212600 &  0.000000e+00 \\
+cbow-wikipedia             &  0.20370 &  0.315000 &  0.337600 &  0.285433 &  3.425296e-03 \\
+cw-wikipedia               &  0.17720 &  0.312000 &  0.332800 &  0.274000 &  4.757227e-03 \\
+glove-wikipedia            &  0.15350 &  0.311000 &  0.330700 &  0.265067 &  6.288242e-03 \\
+glove-wikipedia-gigawords  &  0.14670 &  0.317900 &  0.348400 &  0.271000 &  7.880287e-03 \\
+hpca-wikipedia             &  0.18600 &  0.277600 &  0.303100 &  0.255567 &  2.528136e-03 \\
+random-vectors             &  0.18210 &  0.286300 &  0.242200 &  0.236867 &  1.823829e-03 \\
+randomprojection-wikipedia &  0.17220 &  0.268700 &  0.273600 &  0.238167 &  2.179802e-03 \\
+rsv-wikipedia              &  0.19000 &  0.302200 &       NaN &  0.246100 &  3.147210e-03 \\
+rsv100-wikipedia           &      NaN &  0.302200 &  0.325900 &  0.314050 &  1.404225e-04 \\
+rsv50-wikipedia            &      NaN &  0.305100 &  0.330900 &  0.318000 &  1.664100e-04 \\
+skipgram-googlenews        &      NaN &  0.358300 &  0.377000 &  0.367650 &  8.742250e-05 \\
+skipgram-googlenews-1      &      NaN &  0.358300 &       NaN &  0.358300 &  0.000000e+00 \\
+skipgram-googlenews-2      &      NaN &  0.354300 &       NaN &  0.354300 &  0.000000e+00 \\
+skipgram-googlenews-3      &      NaN &  0.357300 &       NaN &  0.357300 &  0.000000e+00 \\
+skipgram-googlenews-4      &      NaN &  0.359300 &       NaN &  0.359300 &  0.000000e+00 \\
+tscca-wikipedia            &  0.14370 &  0.327800 &  0.323800 &  0.265100 &  7.371647e-03 \\
+average                    &  0.17677 &  0.319581 &  0.320545 &  0.272299 &  4.563040e-03 \\
+variance                   &  0.00054 &  0.000913 &  0.001330 &  0.000928 &  1.041736e-07 \\
+\bottomrule
+\end{tabular}

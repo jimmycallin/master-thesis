@@ -1,0 +1,1457 @@
+Starting job 16387496 ("logreg-seed-reproduce-2") on c16-27 at tor jan 19 20:37:46 CET 2017
+Python environment is set up
+Copying files to /work/jobs/16387496.d...
+We are now in conll16st-hd-sdp
+==========================================
+==============TRAIN=======================
+==========================================
+/usit/abel/u1/jimmycallin/miniconda2/envs/cnn2/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/usit/abel/u1/jimmycallin/miniconda2/envs/cnn2/lib/python2.7/site-packages/sklearn/grid_search.py:43: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
+  DeprecationWarning)
+2017-01-19 21:12:46,849 [MainThread  ]: INFO : cmd:test
+2017-01-19 21:12:46,849 [MainThread  ]: INFO : run_name:logreg-seed-reproduce-2
+2017-01-19 21:12:46,849 [MainThread  ]: INFO : scale_features:True
+2017-01-19 21:12:46,849 [MainThread  ]: INFO : Word2Vec File:
+	/work/jobs/16387496.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-01-19 21:12:46,849 [MainThread  ]: INFO : wordclusters_mapping_file:
+	
+2017-01-19 21:12:46,849 [MainThread  ]: INFO : use_id_for_vector:False
+2017-01-19 21:12:46,849 [MainThread  ]: INFO : word2vec_load_bin:True
+2017-01-19 21:12:46,849 [MainThread  ]: INFO : brownclusters_file:
+	
+2017-01-19 21:12:46,849 [MainThread  ]: INFO : loading projection weights from /work/jobs/16387496.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-01-19 21:12:46,851 [MainThread  ]: DEBUG : Fast version of gensim.models.word2vec is being used
+2017-01-19 21:59:23,838 [MainThread  ]: INFO : loaded (3000000, 300) matrix from /work/jobs/16387496.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-01-19 21:59:23,838 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:23,838 [MainThread  ]: INFO : Embeddings feature vectors length:300
+2017-01-19 21:59:23,838 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:23,839 [MainThread  ]: INFO : Model syn0 len=3000000
+2017-01-19 21:59:23,839 [MainThread  ]: INFO : -----------TEST----------------------------------
+2017-01-19 21:59:23,839 [MainThread  ]: DEBUG : class_mapping_id_to_origtext:
+2017-01-19 21:59:23,839 [MainThread  ]: DEBUG : {0: 'Temporal.Asynchronous.Precedence', 1: 'Temporal.Asynchronous.Succession', 2: 'Temporal.Synchrony', 3: 'Contingency.Cause.Reason', 4: 'Contingency.Cause.Result', 5: 'Contingency.Condition', 6: 'Comparison.Contrast', 7: 'Comparison.Concession', 8: 'Expansion.Conjunction', 9: 'Expansion.Instantiation', 10: 'Expansion.Restatement', 11: 'Expansion.Alternative', 12: 'Expansion.Alternative.Chosen alternative', 13: 'Expansion.Exception', 14: 'EntRel'}
+2017-01-19 21:59:23,839 [MainThread  ]: WARNING : direct access to index2word will not be supported in future gensim releases, please use model.wv.index2word
+2017-01-19 21:59:26,765 [MainThread  ]: INFO : Using arg1+arg2 to PDTB connective_embeddings similarity:True
+2017-01-19 21:59:26,800 [MainThread  ]: INFO : Scaling is enabled!
+2017-01-19 21:59:27,505 [MainThread  ]: INFO : EXP_LEVEL1 classifier: LogisticRegression(C=0.1, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=8,
+          penalty='l2',
+          random_state=<mtrand.RandomState object at 0x7f9e523dbf50>,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)
+2017-01-19 21:59:27,555 [MainThread  ]: INFO : Scaling is enabled!
+2017-01-19 21:59:28,177 [MainThread  ]: INFO : NONEXP_LEVEL1 classifier: LogisticRegression(C=0.1, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=8,
+          penalty='l2',
+          random_state=<mtrand.RandomState object at 0x7f9e523e0730>,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False)
+2017-01-19 21:59:28,177 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,204 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+/usit/abel/u1/jimmycallin/miniconda2/envs/cnn2/lib/python2.7/site-packages/scipy/spatial/distance.py:326: RuntimeWarning: invalid value encountered in true_divide
+  dist = 1.0 - np.dot(u, v) / (norm(u) * norm(v))
+2017-01-19 21:59:28,298 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,303 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,316 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,322 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,329 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,349 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,355 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,379 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,383 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,402 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,444 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,460 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,491 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,532 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,542 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,546 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,577 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,590 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,600 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,605 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,622 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,635 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,745 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,760 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,788 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,801 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,825 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,832 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,843 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,857 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,879 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,902 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,910 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,946 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,964 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,970 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:28,990 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,021 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,132 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,154 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,169 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,185 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,219 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,225 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,239 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,254 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,275 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,289 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,308 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,319 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,346 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,353 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,374 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,386 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,389 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,395 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,407 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,413 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,436 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,450 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,464 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,486 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,499 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,523 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,532 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,553 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,567 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,581 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,612 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,630 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,636 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,677 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,695 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,699 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,712 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,719 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,724 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,746 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,757 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,768 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,789 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,812 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,846 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,862 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,877 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,881 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,919 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,934 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,949 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,957 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,966 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,975 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:29,988 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,017 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,028 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,034 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,053 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,066 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,085 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,103 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,119 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,138 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,175 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,182 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,191 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,196 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,212 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,217 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,255 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,265 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,283 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,292 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,316 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,325 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,336 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,345 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,363 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,369 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,416 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,441 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,456 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,477 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,497 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,522 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,535 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,542 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,546 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,568 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,605 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,614 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,627 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,643 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,646 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,651 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,723 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,751 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,838 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,871 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,891 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,926 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:30,941 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,022 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,029 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,034 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,051 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,078 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,109 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,114 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,120 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,139 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,167 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,188 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,220 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,232 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,254 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,266 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,295 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,306 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,316 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,343 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,360 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,374 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,377 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,389 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,418 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,442 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,449 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,467 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,490 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,494 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,516 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,544 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,556 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,575 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,593 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,598 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,621 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,629 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,684 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,712 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,720 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,730 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,736 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,741 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,747 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,757 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,768 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,771 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,780 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,787 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,810 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,818 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,837 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,843 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,850 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,868 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,879 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,892 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,913 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,925 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,940 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,965 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,970 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,976 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,979 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:31,995 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,025 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,041 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,058 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,083 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,145 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,172 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,185 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,191 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,222 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,230 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,240 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,268 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,284 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,288 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,306 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,317 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,326 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,342 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,349 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,353 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,374 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,393 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,433 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,439 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,445 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,458 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,471 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,502 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,508 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,522 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,528 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,559 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,574 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,585 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,600 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,607 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,622 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,631 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,640 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,656 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,677 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,681 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,692 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,696 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,708 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,728 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,767 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,773 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,806 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,816 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,821 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,837 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,851 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,870 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,892 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,899 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,902 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,925 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,928 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,950 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,959 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,968 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:32,983 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,003 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,017 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,045 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,054 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,064 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,082 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,089 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,102 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,118 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,124 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,137 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,146 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,162 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,171 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,181 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,185 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,194 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,207 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,215 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,225 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,231 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,238 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,250 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,258 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,270 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,294 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,297 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,309 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,312 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,337 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,349 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,371 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,384 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,397 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,415 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,420 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,433 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,440 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,504 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,510 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,524 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,766 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,780 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,785 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,804 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,817 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,839 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,854 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,868 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,898 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,927 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,951 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:33,980 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,004 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,018 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,038 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,054 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,060 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,084 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,089 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,101 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,115 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,166 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,177 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,286 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,314 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,338 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,358 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,362 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,371 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,381 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,391 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,403 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,421 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,427 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,441 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,461 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,504 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,524 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,528 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,560 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,572 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,584 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,588 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,694 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,698 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,724 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,738 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,756 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,771 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,798 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,802 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,808 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,836 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,855 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,875 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,897 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,908 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,911 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,934 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,939 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,959 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,965 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,987 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:34,992 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,005 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,011 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,025 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,037 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,061 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,078 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,086 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,136 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,178 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,255 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,271 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,482 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,716 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:35,743 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,163 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,182 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,190 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,211 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,233 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,245 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,256 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,273 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,281 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,310 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,341 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,360 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,376 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,381 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,398 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,454 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,462 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,504 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,519 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,525 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,544 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,557 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,577 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,581 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,604 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,616 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,634 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,641 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,694 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,724 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,744 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,765 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,788 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,800 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,805 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,821 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,832 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,858 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,873 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,877 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,909 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,915 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,940 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,944 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,949 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,957 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,970 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,982 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:36,989 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,005 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,015 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,019 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,026 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,036 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,050 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,071 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,087 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,095 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,116 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,125 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,167 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,197 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,216 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,220 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,237 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,253 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,486 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,517 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,527 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,649 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,670 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,679 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,730 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,758 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,872 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,876 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,893 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,900 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,920 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,930 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,952 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,966 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,982 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:37,986 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,016 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,031 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,036 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,155 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,176 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,183 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,190 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,209 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,230 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,251 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,256 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,297 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,388 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,406 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,418 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,444 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,463 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,473 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,492 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,496 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,500 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,510 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,522 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,534 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,547 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,557 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,564 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,570 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,598 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:38,995 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,001 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,027 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,051 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,058 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,062 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,086 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,092 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,106 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,110 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,122 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,128 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,147 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,153 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,159 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,173 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,202 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,218 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,250 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,294 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,332 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,347 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,361 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,365 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,384 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,472 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,480 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,504 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,508 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,515 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,524 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,533 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,550 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,567 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,593 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,612 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,622 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,634 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,673 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,700 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,704 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,712 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,725 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,759 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,769 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,773 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,780 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,802 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,813 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,830 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,837 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,860 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,879 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:39,997 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,013 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,030 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,067 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,076 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,089 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,093 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,125 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,140 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,162 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,189 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,203 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,229 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,241 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,288 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,298 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,315 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,351 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,369 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,378 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,383 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,388 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,394 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,413 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,431 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,436 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,487 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,508 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,527 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,533 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,555 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,571 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,582 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,605 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,617 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,667 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,675 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,696 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,758 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,794 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,805 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,816 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,829 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,856 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,881 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,900 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,910 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,967 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,981 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:40,997 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,010 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,023 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,029 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,037 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,063 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,067 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,087 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,099 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,114 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,133 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,138 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,158 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,168 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,196 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,210 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,226 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,237 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,245 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,249 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,256 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,273 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,277 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,282 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,297 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,301 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,316 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,325 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,328 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,342 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,356 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,372 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,386 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,398 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,411 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,420 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,428 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,450 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,457 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,473 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,479 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,491 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,518 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,529 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,538 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,563 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,574 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,593 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,612 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,625 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,641 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,663 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,678 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,692 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,699 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,704 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,719 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,737 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,747 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,757 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,774 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,788 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,928 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,942 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,953 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,966 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:41,985 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,015 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,027 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,035 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,051 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,068 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,094 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,124 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,136 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,140 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,154 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,168 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,176 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,189 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,199 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,227 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,267 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,285 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,308 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,317 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,322 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,342 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,363 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,368 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,384 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,388 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,450 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,472 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,476 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,501 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,528 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,533 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,544 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,568 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,583 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,592 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,602 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,686 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,704 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,716 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,728 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,735 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,758 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,777 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,810 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,846 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,854 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,885 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,909 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,928 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,937 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,941 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,960 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,964 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:42,996 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,022 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,029 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,034 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,085 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,089 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,093 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,098 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,128 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,131 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,145 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,157 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,164 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,175 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,187 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,196 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,209 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,214 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,225 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,243 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,256 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,269 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,279 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,302 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,316 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,340 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,363 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,381 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,393 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,412 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,450 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,463 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,479 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,497 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,515 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,544 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,558 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,594 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,609 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,637 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,652 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,671 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,678 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,708 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,718 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,722 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,736 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,770 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,798 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,838 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,845 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,871 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,909 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,922 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,950 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,962 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,967 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,982 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:43,989 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,011 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,028 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,043 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,058 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,073 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,092 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,130 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,159 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,173 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,228 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,245 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,357 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,403 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,421 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,425 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,432 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,482 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,503 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,514 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,530 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,567 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,588 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,595 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,623 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,638 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,645 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,655 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,677 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,845 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,879 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,912 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,918 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,932 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,937 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,950 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,958 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,981 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:44,989 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,004 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,009 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,015 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,033 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,037 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,050 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,057 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,065 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,088 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,124 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,147 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,184 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,200 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,212 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,217 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,231 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,236 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,261 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,268 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,325 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,343 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,354 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,365 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,387 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,401 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,406 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,415 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,422 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,433 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,452 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,475 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,481 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,507 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,521 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,527 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,546 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,556 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,565 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,584 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,590 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,614 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,625 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,635 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,649 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,661 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,673 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,702 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,719 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,738 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,752 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,794 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,800 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,822 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,826 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,842 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,856 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,863 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,883 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,892 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,899 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,918 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,926 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,952 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,959 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:45,977 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,006 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,018 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,022 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,030 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,034 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,058 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,074 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,121 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,192 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,221 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,234 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,250 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,270 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,281 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,295 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,302 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,312 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,322 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,328 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,370 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,379 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,384 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,409 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,440 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,462 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,484 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,495 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,502 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,515 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,531 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,557 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,612 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,644 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,662 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,877 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,895 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,908 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,926 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,957 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,961 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:46,998 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,002 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,010 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,023 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,038 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,048 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,060 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,073 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,092 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,103 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,107 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,123 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,133 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,137 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,150 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,156 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,173 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,189 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,215 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,235 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,246 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,257 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,262 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,283 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,287 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,294 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,302 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,323 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,338 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,343 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,355 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,372 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,379 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,389 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,402 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,405 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,424 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,437 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,458 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,470 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,477 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,493 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,517 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,543 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,570 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,589 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,601 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,612 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,631 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,671 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,677 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,682 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,687 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,699 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,737 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,761 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,778 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,796 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,808 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,814 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,819 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,837 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,843 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,861 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,878 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,899 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,963 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:47,989 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,004 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,009 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,014 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,052 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,066 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+999 of 1209
+2017-01-19 21:59:48,079 [MainThread  ]: INFO : 999 of 1209
+999 features:[ -1.00000000e+00  -5.24095568e-01   1.04905547e-01  -4.07531260e-01
+  -1.60188875e-02   3.17397572e-01   1.08056497e-01   3.67167750e-01
+   1.28931365e-01  -2.10076519e-01  -1.43179345e-01   1.83651155e-03
+  -2.59391384e-01   1.83666263e-01   1.94499782e-01   2.63340352e-01
+   2.94510936e-01  -3.15194449e-01   3.50838804e-02  -2.14666744e-02
+  -2.14349712e-01  -3.05698452e-01  -4.21981276e-02  -5.88052667e-01
+   7.83097936e-02   2.48410226e-01  -2.88957113e-01  -8.95494918e-02
+  -2.05784110e-01  -1.86762046e-01  -1.92047795e-01  -4.81091143e-01
+   9.80924828e-02   6.01118241e-02   5.75266719e-01   3.63663507e-01
+   8.60777221e-02   3.86246560e-02  -2.81593811e-01   5.98349101e-02
+  -1.49050324e-01   7.25122879e-01   5.96046825e-01  -3.86821919e-01
+   5.07862193e-01   3.90127876e-01  -2.37559717e-02   8.24623597e-02
+  -3.97524934e-01   6.79492267e-02  -1.71779210e-01   2.44773817e-01
+  -3.15919517e-01  -2.02612827e-01  -4.12362401e-02  -7.30048693e-02
+  -2.26660325e-01   1.56774884e-01  -1.08547596e-01  -3.61217175e-01
+   1.34562937e-01   4.09672166e-01   8.50510923e-02   1.44650192e-01
+  -3.98010603e-01  -5.35256566e-02   6.23258398e-01  -8.72205573e-02
+   5.16318478e-01  -1.36773662e-01  -7.70495639e-02  -2.72501616e-01
+  -1.41543001e-01  -2.67414737e-01  -2.10155704e-01   3.42308781e-01
+   7.88247677e-02   2.28251590e-01   2.12328236e-01   2.38239482e-01
+  -1.38915042e-01   4.06815102e-01  -3.95602661e-01   3.39522410e-01
+  -2.67430516e-01   2.62616593e-01  -1.78947138e-01  -1.61944935e-01
+  -3.82615188e-01  -8.04067178e-02   2.29264816e-01   6.18490620e-02
+  -1.26576443e-01  -3.66779537e-01   5.42735079e-02  -1.93885277e-01
+  -3.67839526e-02  -1.90837808e-01  -1.13300965e-01  -2.06770052e-01
+   9.37892484e-02   2.02251180e-01  -2.18085922e-01  -5.13151344e-01
+  -5.50459750e-01   4.27089090e-01  -5.13579634e-01   2.69203186e-02
+  -5.95612634e-01   1.85994058e-01   1.23319946e-02  -2.49417320e-01
+   2.36513340e-02   1.88440147e-01  -3.09272988e-01   2.49980139e-01
+   3.86914230e-02  -1.80045123e-01   1.16531573e-02  -2.13307747e-02
+   7.74124194e-02   1.54334446e-02  -2.88644352e-01   6.91767342e-01
+  -5.70395074e-02   2.96647641e-02  -2.57754770e-02  -1.18047973e-01
+   1.94140321e-01  -3.87257809e-01   3.94970200e-02   9.78463109e-02
+   3.09095247e-01  -6.53170040e-02   2.88974431e-01   1.49852140e-01
+  -7.02231548e-02   1.26015262e-01  -3.64165726e-01   1.58033647e-01
+  -1.99404995e-01   3.04470894e-02   4.55038399e-02  -2.37382766e-02
+  -7.21724112e-02   1.92062508e-01   5.08419592e-03   2.40977001e-01
+  -8.23582586e-02   5.34566059e-02   2.26992460e-01  -5.39450178e-01
+   6.11981434e-01   2.49132828e-01   1.48096649e-01   2.06469496e-01
+  -3.61989646e-01   1.08621384e-02   7.23003321e-03   2.50320300e-03
+   1.38916158e-01   2.73740577e-01   3.24039143e-02  -3.40494984e-01
+   4.99330637e-01   3.14450753e-01   2.86003584e-01  -1.45008823e-02
+   7.90240442e-03   2.20904606e-01  -4.52116226e-01   3.54377875e-01
+  -2.95933199e-01   5.81016342e-01  -4.60273751e-01   9.67016554e-02
+   1.19613255e-01   6.38103428e-03  -4.20193573e-01  -1.11853401e-01
+   3.92315967e-01   3.97842167e-01  -2.20520465e-02  -3.41317728e-01
+   1.31300348e-01   2.23692852e-02   2.92796922e-01   1.86117411e-02
+   7.66054302e-02   1.29025651e-01  -2.68889077e-01   2.52901369e-01
+   1.44315707e-01   1.59009349e-01  -1.84784816e-01   8.26030350e-02
+  -5.42011773e-01   8.03396906e-02   7.17331173e-02  -2.09077350e-01
+   1.92947725e-03   3.49131763e-01  -6.80829382e-02   3.27345092e-02
+   5.19167376e-01   8.43768367e-02  -2.22980707e-01  -3.21352269e-01
+   3.58468437e-01  -2.26009990e-01   3.43778408e-01   2.83491125e-01
+   2.68565557e-01  -3.13712007e-01  -1.49909655e-01   1.22148945e-01
+  -3.32892126e-01   1.19735587e-01  -3.99733330e-01  -5.49916822e-01
+   3.77919756e-02   4.00886932e-01  -2.86574167e-01   1.92333063e-03
+  -1.49472524e-01  -2.97290728e-01   1.66824016e-01   3.20401649e-02
+   3.51007139e-01  -1.66512755e-02  -1.97741574e-01   2.94256949e-02
+  -3.93838320e-01   6.82343955e-02   2.88353429e-01   1.71619379e-01
+  -1.12455321e-01  -1.76458047e-01   4.05667387e-02  -1.29558082e-01
+  -1.84141488e-01  -3.16558673e-01   2.26494748e-01   2.33382550e-02
+  -1.31929254e-01  -1.80976809e-01   2.34040463e-01   2.98087997e-01
+  -4.57058652e-01   2.24040156e-01   8.95655777e-03   8.29807380e-02
+   4.91553920e-02   4.62595417e-02  -8.68955284e-02   1.32885574e-02
+   6.42163183e-02   8.11848210e-02  -1.43517288e-01  -4.04987177e-01
+   7.45059652e-02  -4.48960207e-01   9.78155176e-02   1.75218719e-01
+  -2.89980925e-01   3.30182242e-02   9.65686827e-02   3.11786016e-01
+  -3.03839722e-02  -2.69396961e-01   2.67344338e-01   2.99556023e-01
+  -3.59732230e-01  -3.87640094e-01   1.41868148e-01   5.05763392e-01
+  -3.46578842e-01   2.64593885e-02  -4.17572226e-01  -1.40200952e-01
+  -2.46123593e-01   1.84108184e-01  -2.50943804e-01  -4.03985723e-01
+   1.54598055e-03  -1.93356894e-01   1.62745009e-01  -2.24676297e-02
+  -2.91712584e-01  -2.71834154e-01   4.14957610e-01  -3.37197639e-01
+  -2.80904984e-02  -2.96051910e-01  -1.89916380e-01   2.66052735e-01
+   2.24821358e-01   6.44896617e-02  -2.18499870e-01  -4.49844577e-01
+  -2.71372221e-01  -3.72348505e-01  -1.60292282e-01  -1.16564609e-02
+   2.44629255e-01   3.22675237e-01  -1.87287639e-01  -9.02691954e-02
+  -1.70525819e-01  -3.78638652e-01  -1.62651386e-02  -2.15352752e-01
+  -2.26514110e-01  -1.48648359e-01  -1.59643279e-01   1.05297759e-01
+  -1.15738818e-01  -6.66776423e-02  -3.41812313e-01  -6.25206243e-01
+  -8.33912490e-02  -1.62535672e-01   1.06123621e-03  -6.23834688e-01
+  -5.08624159e-01   3.01202710e-01  -1.81916863e-01   4.35180488e-01
+  -2.93361704e-01  -4.07072360e-01   1.12969409e-01  -7.55227450e-04
+   2.32097399e-01   8.38131422e-02   5.15763455e-01   5.38887535e-01
+   7.96292441e-02   3.35404610e-02  -3.79596152e-01  -4.42891159e-02
+  -3.81709537e-02   1.92227302e-01   5.49088348e-01  -4.93342450e-01
+   3.49368870e-01   3.84010573e-01   3.37895198e-01   4.08810601e-01
+  -6.93581082e-02  -3.47499109e-01  -1.59760430e-01   2.09269876e-01
+  -1.53951514e-01  -5.28680909e-01  -7.18594137e-02  -1.77462787e-01
+  -1.90042408e-01   2.86842612e-01   2.31055970e-01  -2.84828859e-01
+   4.73926703e-01  -8.47230728e-03   3.30473826e-03   2.71260590e-01
+  -3.12910037e-01  -1.63455491e-01   4.32664168e-01   4.40819037e-01
+   1.71679805e-01  -4.18047034e-02   4.22258468e-02  -3.38928365e-01
+   1.12567360e-01  -2.31755210e-01   1.32946228e-01   3.37210422e-01
+  -2.58414846e-02   1.41970208e-01   2.42586118e-01  -6.31079990e-02
+  -2.42192269e-01   2.73475830e-01  -2.86747564e-02   4.31565142e-01
+  -3.01411486e-01   1.07595165e-01   2.85244753e-01   1.01709366e-01
+  -2.63791450e-01   1.02000893e-01  -2.14824044e-01   2.91687122e-02
+  -2.95645862e-01  -9.75607940e-02  -9.12796039e-03  -1.06334250e-01
+  -5.44355361e-02  -1.71179259e-01  -1.08472788e-01  -3.03379593e-01
+  -3.07776348e-02  -1.07581507e-01   9.61737788e-02  -2.89612470e-01
+  -3.35496780e-01  -7.96401522e-02  -5.59201157e-01  -1.93412148e-01
+  -3.65283559e-02   3.86482217e-01   1.02778427e-01   6.67594100e-02
+   1.55319208e-01  -2.21820383e-01  -4.13420947e-01   1.21995537e-01
+  -4.75758418e-02   7.54180316e-02  -1.94938879e-01   7.34145771e-02
+  -3.62554064e-01  -1.63031103e-01  -7.45981218e-02   2.10867933e-01
+   2.46562301e-01  -3.42471113e-01  -1.59083317e-04   1.34882481e-01
+  -2.91495969e-01  -3.86995239e-01   5.58700377e-02   3.46274284e-01
+  -3.41379883e-02   8.14820717e-02   6.92264370e-02  -1.44648982e-01
+   4.07697146e-03  -1.31123896e-01  -2.77286876e-01   1.67369844e-01
+  -1.08969245e-01  -6.77009012e-02   2.87264440e-01   3.27856444e-01
+  -2.77410405e-01   4.45858139e-02  -1.48428555e-01  -5.18632691e-02
+  -8.64298623e-02  -2.84718344e-01   2.68037813e-01  -3.75612403e-01
+   1.99315353e-02   3.54856249e-02   3.65595489e-01   7.64805405e-03
+  -1.02065922e-01   5.89124388e-02  -2.51763878e-01   1.25926637e-01
+   2.60833115e-01   1.54236524e-01   3.38065529e-01  -4.57950354e-01
+   2.11118943e-01  -2.61554959e-02   1.64162355e-01   2.38924983e-02
+   7.15202709e-02  -2.23398378e-01  -2.99499400e-01   1.92611013e-01
+  -2.24917080e-01  -2.97490884e-02  -1.26801742e-01  -5.84500682e-02
+  -2.25666234e-01  -1.28560413e-01  -3.22563546e-01   9.55120679e-02
+   6.52976109e-02   4.40015050e-01  -7.56471762e-02  -5.91210651e-01
+   1.09819149e-02   2.92945887e-02   2.75931763e-02  -7.64657987e-02
+   1.08617050e-01   3.61685028e-01   1.46440451e-01   1.31790240e-01
+  -8.74528954e-02   5.55104336e-02  -1.40121003e-01   1.00232876e-01
+  -1.50235288e-01   3.65207173e-01  -8.29924060e-02  -1.41229927e-01
+  -1.81731303e-01   2.59099304e-01   1.26111128e-01   6.00302582e-02
+   3.47946552e-01  -9.51646324e-02  -3.50413331e-01   6.58361062e-02
+   8.45545248e-02   2.04171717e-01   3.92880104e-02   8.21033124e-02
+   1.45027710e-01  -1.30530190e-01  -1.29751950e-01  -1.09683292e-01
+  -9.96642878e-03  -1.94993442e-01  -3.41354584e-01   1.23857085e-01
+   3.01897615e-02   3.95333294e-01  -2.10755518e-01   9.38705823e-02
+   9.73948593e-02   1.11147448e-01   2.39953352e-01  -1.25176900e-02
+  -5.62593290e-02  -2.70993128e-01  -4.82868540e-01  -2.41945226e-01
+  -5.73138923e-01  -1.18463684e-01   2.33860141e-01  -7.44388820e-02
+  -3.58255407e-02   1.65036329e-01  -2.05561527e-01   1.94609929e-01
+  -3.96423787e-01  -4.80738013e-01  -1.99205663e-01   2.91579460e-01
+   8.60002107e-02  -4.35977944e-03   1.41526680e-01   1.98993444e-01
+  -4.02047028e-02  -1.61965204e-01   1.26858093e-01   2.67078710e-01
+  -2.54442158e-04  -2.80630600e-01   6.67659809e-02  -3.49669377e-01
+   1.45130132e-01  -7.43788962e-03   4.09845199e-01  -3.38010981e-01
+   1.52694920e-01  -6.74635250e-02  -7.27324350e-02   1.54448897e-01
+  -2.45555841e-01   2.59217384e-01   2.88770974e-01   1.24938593e-01
+   2.81784080e-01  -1.27785547e-01  -1.96724300e-01   1.82512788e-01
+  -1.16277583e-02  -2.20889086e-01  -4.16794466e-02  -2.54321288e-02
+  -3.32852768e-01   3.48007924e-01  -3.24440626e-01  -4.04592452e-01
+   9.45696021e-02   4.83457779e-01  -2.27789418e-01  -2.70026372e-01
+  -1.04598860e-01  -4.27058989e-02   3.39805070e-01  -1.86467288e-01
+  -2.18949930e-01  -1.43166917e-01   8.42068220e-02  -2.25471224e-01
+   5.03094976e-02  -2.54404412e-01  -2.28881666e-01   3.82107357e-01
+   1.32155312e-01   3.54567964e-01   8.03665112e-02  -6.73383687e-02
+  -2.42127863e-02  -2.87878817e-01   0.00000000e+00  -2.33737425e-01
+  -2.90989673e-01  -3.16395754e-01  -4.34116691e-01   3.94736624e-01
+  -8.29038457e-01  -4.09640434e-01  -7.21490455e-01   2.99231420e-02
+  -9.51854744e-01  -8.35996585e-01  -6.61087002e-01  -1.39706508e-01
+  -6.66099647e-01  -8.08615675e-01  -8.09119010e-01  -2.49054491e-01
+  -7.50495216e-01  -8.15249969e-01  -3.96053678e-01   2.32900929e-01
+   1.24206091e-01  -3.99873988e-02  -4.70437754e-03   1.72105464e-01
+   2.17171054e-01   7.08389469e-02   1.82906667e-01  -1.59874421e-01
+   1.33702351e-01  -3.04789477e-01   4.61405049e-01   9.58708614e-02
+   1.27942121e-01   1.95546658e-01   3.07962101e-02   1.78182185e-02
+  -8.54029723e-02   1.05711628e-01   1.15168091e-01   1.06812435e-01
+  -6.48566090e-03   3.97960505e-01   2.12987509e-01  -3.24026766e-01
+  -2.70167294e-01  -3.60046321e-01  -4.76268662e-01  -2.08686439e-02
+   3.35111850e-01  -3.96887515e-02   1.69049819e-01   1.77803103e-02
+  -7.97840197e-03   1.66300939e-02   3.76524540e-01  -5.57613706e-02
+   1.42707691e-01   1.97065295e-01   1.30199412e-01  -1.22243428e-01
+   7.51777331e-02  -2.36743285e-01  -5.86139334e-02  -5.91462324e-01
+  -2.21168313e-04  -8.86464972e-02  -9.42171142e-02   4.19820872e-01
+   2.20017668e-02   2.85265677e-01   1.22914714e-02  -1.33358474e-03
+   1.97929765e-01  -9.85960210e-02   2.79777321e-01  -8.22788188e-04
+   7.68272811e-02  -1.75180291e-01   1.53335827e-01  -1.98926220e-01
+   3.37385713e-01   2.32965483e-01  -6.67210946e-02   2.85265677e-01
+  -8.97958631e-02   4.12946477e-02  -2.56999749e-02  -9.44953496e-02
+  -8.94738358e-02   4.73183829e-02   2.82763500e-01  -2.54187331e-02
+   1.06074291e-02   3.53310877e-02  -8.29830156e-02   6.28828179e-02
+   2.22957204e-01  -2.59792048e-02   3.10953356e-01   1.03806199e-01
+   2.14961694e-01   5.03258803e-01  -2.40334734e-01  -1.12103488e-01
+   3.71412104e-02   2.44227969e-01   1.55842608e-01   1.32060132e-01
+  -4.52690368e-02   3.22286769e-01   2.48050572e-01  -1.62198824e-01
+  -1.09271438e-02   1.73279457e-01   2.29016124e-01  -4.68820808e-02
+  -1.13197036e-01  -2.74433555e-01   4.06344515e-02  -1.00000000e+00
+   1.30016075e-01  -3.10042113e-01]
+2017-01-19 21:59:48,094 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,108 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,120 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,125 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,144 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,162 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,165 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,177 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,195 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,218 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,240 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,245 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,254 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,260 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,278 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,290 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,319 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,326 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,358 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,377 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,395 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,419 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,897 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,921 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,933 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,947 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,970 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:48,990 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,001 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,013 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,026 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,051 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,076 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,100 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,104 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,114 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,127 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,148 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,160 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,169 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,183 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,199 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,205 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,229 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,235 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,242 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,251 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,273 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,276 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,282 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,287 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,307 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,311 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,322 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,330 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,334 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,339 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,342 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,365 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,380 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,397 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,415 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,419 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,431 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,437 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,443 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,448 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,460 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,470 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,486 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,490 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,497 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,509 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,525 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,544 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,558 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,567 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,593 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,597 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,613 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,618 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,647 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,654 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,658 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,679 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,696 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,703 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,707 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,735 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,740 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,763 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,767 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,778 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,816 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,839 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,859 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,885 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,892 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,897 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,912 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,918 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,932 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:49,938 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,191 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,196 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,713 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,730 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,734 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,738 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,778 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,783 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,803 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,832 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,835 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,848 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,866 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,912 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,919 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,942 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,946 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:50,984 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,011 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,021 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,045 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,054 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,061 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,086 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,094 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,121 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,128 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,142 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,171 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,198 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,205 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,228 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,233 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,254 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,271 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,286 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,299 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,331 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,338 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,347 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,363 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,367 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,373 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,417 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,425 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,447 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,464 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,472 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,492 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,504 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,512 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,531 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,539 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,579 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,586 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,589 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,601 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,616 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,634 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,660 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,679 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,701 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,730 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,746 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,783 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,801 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,833 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,856 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,877 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,883 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,895 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,931 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,964 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,975 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:51,993 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,009 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,020 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,031 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,048 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,063 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,077 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,081 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,084 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,091 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,108 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,125 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,141 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,155 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,159 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,171 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,194 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,204 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,210 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,217 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,230 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,249 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,265 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,276 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,319 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,334 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,357 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,371 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,385 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,403 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,409 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,416 [MainThread  ]: WARNING : direct access to syn0 will not be supported in future gensim releases, please use model.wv.syn0
+2017-01-19 21:59:52,428 [MainThread  ]: INFO : output file written:/usit/abel/u1/jimmycallin//outputs/logreg-seed-reproduce-2-conll15st-en-03-29-16-blind-test//output.json
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16387496.ba+   6138044K   5553495K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16387496     logreg-se+          4                         01:22:14      0:0 
+
+Job 16387496 ("logreg-seed-reproduce-2") completed on c16-27 at tor jan 19 21:59:55 CET 2017

@@ -1,0 +1,336 @@
+measure {
+ key: "All Parser precision" 
+ value: "0.36"
+}
+measure {
+ key: "All Parser recall" 
+ value: "0.36"
+}
+measure {
+ key: "All Parser f1" 
+ value: "0.36"
+}
+measure {
+ key: "All Explicit connective precision" 
+ value: "1.0"
+}
+measure {
+ key: "All Explicit connective recall" 
+ value: "1.0"
+}
+measure {
+ key: "All Explicit connective f1" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg1 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg1 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg1 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg2 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg 1 Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg 1 Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg 1 Arg2 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Parser precision" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Parser recall" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Parser f1" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Explicit connective precision" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Explicit connective recall" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Explicit connective f1" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg1 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg1 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg1 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg2 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg 1 Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg 1 Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg 1 Arg2 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Parser precision" 
+ value: "0.36"
+}
+measure {
+ key: "Non-explicit only Parser recall" 
+ value: "0.36"
+}
+measure {
+ key: "Non-explicit only Parser f1" 
+ value: "0.36"
+}
+measure {
+ key: "Non-explicit only Explicit connective precision" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Explicit connective recall" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Explicit connective f1" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg1 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg1 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg1 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg2 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg 1 Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg 1 Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg 1 Arg2 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction Precision"
+ value: "0.302631578947"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction Recall"
+ value: "0.158620689655"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction F1"
+ value: "0.20814479638"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation Precision"
+ value: "0.515625"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation Recall"
+ value: "0.485294117647"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation F1"
+ value: "0.5"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason Precision"
+ value: "0.303317535545"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason Recall"
+ value: "0.55652173913"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason F1"
+ value: "0.39263803681"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast Precision"
+ value: "0.3125"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast Recall"
+ value: "0.0806451612903"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast F1"
+ value: "0.128205128205"
+}
+measure {
+ key: "Non-explicit EntRel Precision"
+ value: "0.388235294118"
+}
+measure {
+ key: "Non-explicit EntRel Recall"
+ value: "0.760368663594"
+}
+measure {
+ key: "Non-explicit EntRel F1"
+ value: "0.514018691589"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement Precision"
+ value: "0.395348837209"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement Recall"
+ value: "0.269841269841"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement F1"
+ value: "0.320754716981"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Succession Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Succession Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Succession F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result Precision"
+ value: "0.1875"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result Recall"
+ value: "0.101123595506"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result F1"
+ value: "0.131386861314"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence Precision"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative.Chosen alternative Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative.Chosen alternative Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative.Chosen alternative F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Expansion Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion F1"
+ value: "0.0"
+}

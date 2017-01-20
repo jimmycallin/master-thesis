@@ -1,0 +1,21 @@
+Starting job 16387913 ("ffnn-seed-reproduce-2") on c16-20 at tor jan 19 21:50:26 CET 2017
+Python environment is set up
+Copying files to /work/jobs/16387913.d...
+We are now in nn_discourse_parser
+Start reading in the dictionary
+Skipped 0 out of 3000001 lines
+
+Currently Loaded Modulefiles:
+  1) intel/2017.0
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16387913.ba+   6438536K   5945638K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16387913     ffnn-seed+          1                         00:21:58      0:0 
+
+Job 16387913 ("ffnn-seed-reproduce-2") completed on c16-20 at tor jan 19 22:12:19 CET 2017

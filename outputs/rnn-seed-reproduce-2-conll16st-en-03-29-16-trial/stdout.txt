@@ -1,60 +1,60 @@
-Starting job 16385162 ("rnn-reproduce-2") on c12-19 at tor jan 19 13:21:00 CET 2017
+Starting job 16391442 ("rnn-seed-reproduce-2") on c16-4 at fre jan 20 10:21:29 CET 2017
 Python environment is set up
-Copying files to /work/jobs/16385162.d...
+Copying files to /work/jobs/16391442.d...
 We are now in conll16st-v34-focused-rnns
 CONFIG:
-INPUT_PATH: /work/jobs/16385162.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test/
-EMBEDDING_PATH: /work/jobs/16385162.d/resources/none-2
-MODEL_PATH: /work/jobs/16385162.d/models/rnn-reproduce-2/
-OUTPUT_PATH: /usit/abel/u1/jimmycallin//outputs/rnn-reproduce-2-conll15st-en-03-29-16-blind-test/
-CONFIG: --config={"words2vec_bin": null, "words_dim": 20.0, "filter_fn_name": "conn_gt_0", "focus_dim": 6.0, "random_per_sample": 24.0, "final_dropout": 0.01608656108471007, "epochs": 200, "words2vec_txt": null, "focus_dropout_W": 0.4850461135349744, "rnn_dim": 50.0, "focus_dropout_U": 0.18210894621865603, "epochs_len": -1, "final_dim": 40.0, "epochs_patience": 10, "rnn_dropout_W": 0.16649459724958682, "words_dropout": 0.3543889040084549, "rnn_dropout_U": 0.4899141021546136}
+INPUT_PATH: /work/jobs/16391442.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-trial/
+EMBEDDING_PATH: /work/jobs/16391442.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+MODEL_PATH: /work/jobs/16391442.d/models/rnn-seed-reproduce-2/
+OUTPUT_PATH: /usit/abel/u1/jimmycallin//outputs/rnn-seed-reproduce-2-conll16st-en-03-29-16-trial/
+CONFIG: --config={"words2vec_bin": null, "words_dim": 20.0, "filter_fn_name": "conn_gt_0", "focus_dim": 6.0, "random_per_sample": 24.0, "final_dropout": 0.01608656108471007, "epochs": 200, "words2vec_txt": "/work/jobs/16391442.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt", "focus_dropout_W": 0.4850461135349744, "rnn_dim": 50.0, "focus_dropout_U": 0.18210894621865603, "epochs_len": -1, "final_dim": 40.0, "epochs_patience": 10, "rnn_dropout_W": 0.16649459724958682, "words_dropout": 0.3543889040084549, "rnn_dropout_U": 0.4899141021546136}
 =========================
 Using Theano backend.
-[2017-01-19 13:29] configuration (/work/jobs/16385162.d/models/rnn-reproduce-2/)
-[2017-01-19 13:29]     config 'epochs': 200 (1000)
-[2017-01-19 13:29]     config 'epochs_len': -1 (-1)
-[2017-01-19 13:29]     config 'epochs_patience': 10 (20)
-[2017-01-19 13:29]     config 'batch_size':  (64)
-[2017-01-19 13:29]     config 'snapshot_size':  (2048)
-[2017-01-19 13:29]     config 'random_per_sample': 24.0 (32)
-[2017-01-19 13:29]     config 'words_dim': 20.0 (20)
-[2017-01-19 13:29]     config 'focus_dim': 6.0 (4)
-[2017-01-19 13:29]     config 'rnn_dim': 50.0 (20)
-[2017-01-19 13:29]     config 'final_dim': 40.0 (100)
-[2017-01-19 13:29]     config 'arg1_len':  (100)
-[2017-01-19 13:29]     config 'arg2_len':  (100)
-[2017-01-19 13:29]     config 'conn_len':  (10)
-[2017-01-19 13:29]     config 'punc_len':  (2)
-[2017-01-19 13:29]     config 'words_dropout': 0.354388904008 (0.1)
-[2017-01-19 13:29]     config 'focus_dropout_W': 0.485046113535 (0.33)
-[2017-01-19 13:29]     config 'focus_dropout_U': 0.182108946219 (0.66)
-[2017-01-19 13:29]     config 'rnn_dropout_W': 0.16649459725 (0.33)
-[2017-01-19 13:29]     config 'rnn_dropout_U': 0.489914102155 (0.33)
-[2017-01-19 13:29]     config 'final_dropout': 0.0160865610847 (0.5)
-[2017-01-19 13:29]     config 'filter_fn_name': conn_gt_0 (conn_eq_0)
-[2017-01-19 13:29]     config 'words2vec_bin': None (None)
-[2017-01-19 13:29]     config 'words2vec_txt': None (None)
-[2017-01-19 13:29]   args.lang: en
-[2017-01-19 13:29]   args.model_dir: /work/jobs/16385162.d/models/rnn-reproduce-2/
-[2017-01-19 13:29]   args.dataset_dir: /work/jobs/16385162.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test/
-[2017-01-19 13:29]   args.output_dir: /usit/abel/u1/jimmycallin//outputs/rnn-reproduce-2-conll15st-en-03-29-16-blind-test/
-[2017-01-19 13:29]   K._config: {u'image_dim_ordering': u'tf', u'backend': u'theano', u'floatx': u'float32', u'epsilon': 1e-07}
-[2017-01-19 13:29]   os.getenv("THEANO_FLAGS"): None
-[2017-01-19 13:29]   filter_types: None
-[2017-01-19 13:29]   filter_senses: None
-[2017-01-19 13:29]   filter_fn_name: conn_gt_0
-[2017-01-19 13:29]   config: {u'words_dim': 20.0, u'random_per_sample': 24.0, u'focus_dim': 6.0, u'filter_fn_name': u'conn_gt_0', u'final_dropout': 0.01608656108471007, u'rnn_dropout_W': 0.16649459724958682, u'epochs': 200, u'epochs_len': -1, u'focus_dropout_W': 0.4850461135349744, u'words2vec_txt': None, u'words2vec_bin': None, u'final_dim': 40.0, u'rnn_dropout_U': 0.4899141021546136, u'focus_dropout_U': 0.18210894621865603, u'rnn_dim': 50.0, u'words_dropout': 0.3543889040084549, u'epochs_patience': 10}
-[2017-01-19 13:29] load dataset for prediction (/work/jobs/16385162.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test/)
-[2017-01-19 13:29] lang: ?, doc_ids: 71, words: 34621, rel_ids: 625, relation tokens: 25754
-[2017-01-19 13:29]   rel_senses2id: 22, words2id: 43918
-[2017-01-19 13:29] build model
-[2017-01-19 13:30]     config 'rsenses_loss':  (categorical_crossentropy)
-[2017-01-19 13:30]     config 'optimizer':  (adam)
-[2017-01-19 13:30] previous weights (/work/jobs/16385162.d/models/rnn-reproduce-2/)
-[2017-01-19 13:30] convert from dataset (/work/jobs/16385162.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test/)
-[2017-01-19 13:30] make predictions
-[2017-01-19 13:36] convert predictions (/usit/abel/u1/jimmycallin//outputs/rnn-reproduce-2-conll15st-en-03-29-16-blind-test/)
-/work/jobs/16385162.d/conll16st-v34-focused-rnns/v34/data_utils.py:208: VisibleDeprecationWarning: using a boolean instead of an integer will result in an error in the future
+[2017-01-20 10:22] configuration (/work/jobs/16391442.d/models/rnn-seed-reproduce-2/)
+[2017-01-20 10:22]     config 'epochs': 200 (1000)
+[2017-01-20 10:22]     config 'epochs_len': -1 (-1)
+[2017-01-20 10:22]     config 'epochs_patience': 10 (20)
+[2017-01-20 10:22]     config 'batch_size':  (64)
+[2017-01-20 10:22]     config 'snapshot_size':  (2048)
+[2017-01-20 10:22]     config 'random_per_sample': 24.0 (32)
+[2017-01-20 10:22]     config 'words_dim': 20.0 (20)
+[2017-01-20 10:22]     config 'focus_dim': 6.0 (4)
+[2017-01-20 10:22]     config 'rnn_dim': 50.0 (20)
+[2017-01-20 10:22]     config 'final_dim': 40.0 (100)
+[2017-01-20 10:22]     config 'arg1_len':  (100)
+[2017-01-20 10:22]     config 'arg2_len':  (100)
+[2017-01-20 10:22]     config 'conn_len':  (10)
+[2017-01-20 10:22]     config 'punc_len':  (2)
+[2017-01-20 10:22]     config 'words_dropout': 0.354388904008 (0.1)
+[2017-01-20 10:22]     config 'focus_dropout_W': 0.485046113535 (0.33)
+[2017-01-20 10:22]     config 'focus_dropout_U': 0.182108946219 (0.66)
+[2017-01-20 10:22]     config 'rnn_dropout_W': 0.16649459725 (0.33)
+[2017-01-20 10:22]     config 'rnn_dropout_U': 0.489914102155 (0.33)
+[2017-01-20 10:22]     config 'final_dropout': 0.0160865610847 (0.5)
+[2017-01-20 10:22]     config 'filter_fn_name': conn_gt_0 (conn_eq_0)
+[2017-01-20 10:22]     config 'words2vec_bin': None (None)
+[2017-01-20 10:22]     config 'words2vec_txt': /work/jobs/16391442.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt (None)
+[2017-01-20 10:22]   args.lang: en
+[2017-01-20 10:22]   args.model_dir: /work/jobs/16391442.d/models/rnn-seed-reproduce-2/
+[2017-01-20 10:22]   args.dataset_dir: /work/jobs/16391442.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-trial/
+[2017-01-20 10:22]   args.output_dir: /usit/abel/u1/jimmycallin//outputs/rnn-seed-reproduce-2-conll16st-en-03-29-16-trial/
+[2017-01-20 10:22]   K._config: {u'image_dim_ordering': u'tf', u'backend': u'theano', u'floatx': u'float32', u'epsilon': 1e-07}
+[2017-01-20 10:22]   os.getenv("THEANO_FLAGS"): None
+[2017-01-20 10:22]   filter_types: None
+[2017-01-20 10:22]   filter_senses: None
+[2017-01-20 10:22]   filter_fn_name: conn_gt_0
+[2017-01-20 10:22]   config: {u'words_dim': 20.0, u'random_per_sample': 24.0, u'focus_dim': 6.0, u'filter_fn_name': u'conn_gt_0', u'final_dropout': 0.01608656108471007, u'rnn_dropout_W': 0.16649459724958682, u'epochs': 200, u'epochs_len': -1, u'focus_dropout_W': 0.4850461135349744, u'words2vec_txt': u'/work/jobs/16391442.d/resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt', u'words2vec_bin': None, u'final_dim': 40.0, u'rnn_dropout_U': 0.4899141021546136, u'focus_dropout_U': 0.18210894621865603, u'rnn_dim': 50.0, u'words_dropout': 0.3543889040084549, u'epochs_patience': 10}
+[2017-01-20 10:22] load dataset for prediction (/work/jobs/16391442.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-trial/)
+[2017-01-20 10:22] lang: ?, doc_ids: 1, words: 896, rel_ids: 16, relation tokens: 760
+[2017-01-20 10:22]   rel_senses2id: 22, words2id: 43918
+[2017-01-20 10:22] build model
+[2017-01-20 10:23]     config 'rsenses_loss':  (categorical_crossentropy)
+[2017-01-20 10:23]     config 'optimizer':  (adam)
+[2017-01-20 10:23] previous weights (/work/jobs/16391442.d/models/rnn-seed-reproduce-2/)
+[2017-01-20 10:23] convert from dataset (/work/jobs/16391442.d/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-trial/)
+[2017-01-20 10:23] make predictions
+[2017-01-20 10:24] convert predictions (/usit/abel/u1/jimmycallin//outputs/rnn-seed-reproduce-2-conll16st-en-03-29-16-trial/)
+/work/jobs/16391442.d/conll16st-v34-focused-rnns/v34/data_utils.py:208: VisibleDeprecationWarning: using a boolean instead of an integer will result in an error in the future
   totals[y_sum == 0.] = y_np[y_sum == 0.]  # prevent NaN
 ____________________________________________________________________________________________________
 Layer (type)                       Output Shape        Param #     Connected to                     
@@ -285,12 +285,6 @@ rsenses (Activation)               (None, 22)          0           dense_2[0][0]
 ====================================================================================================
 Total params: 1185006
 ____________________________________________________________________________________________________
-fallback 926 to 'Expansion.Conjunction' ([  1.07624317e-06   3.53902874e-01   2.46381237e-01   1.25165044e-01
-   1.05308867e-01   3.87126577e-02   3.86549046e-02   2.23441476e-02
-   1.89999192e-02   2.33049559e-02   5.21424596e-03   3.74742013e-03
-   4.45131023e-03   3.12798375e-03   6.34117840e-03   3.73109474e-03
-   4.86822243e-04   6.38746128e-05   8.30536732e-06   2.15403469e-05
-   2.42693257e-05   6.27126424e-06])
 
 Currently Loaded Modulefiles:
   1) intel/2017.0
@@ -298,11 +292,11 @@ Currently Loaded Modulefiles:
 Job script resource usage:
        JobID  MaxVMSize     MaxRSS 
 ------------ ---------- ---------- 
-16385162.ba+   2128732K    931451K 
+16391442.ba+   1473256K    653613K 
 
 Job step resource usage:
        JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
 ------------ ---------- ---------- ---------- ---------- ---------- -------- 
-16385162     rnn-repro+          2                         00:15:43      0:0 
+16391442     rnn-seed-+          2                         00:03:27      0:0 
 
-Job 16385162 ("rnn-reproduce-2") completed on c12-19 at tor jan 19 13:36:41 CET 2017
+Job 16391442 ("rnn-seed-reproduce-2") completed on c16-4 at fre jan 20 10:24:54 CET 2017

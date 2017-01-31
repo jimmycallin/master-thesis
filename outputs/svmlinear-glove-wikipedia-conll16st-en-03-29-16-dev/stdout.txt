@@ -1,0 +1,38 @@
+Starting job 16419583 ("svmlinear-glove-wikipedia") on c17-19 at tis jan 24 14:40:23 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 14:40:32,132 __main__     INFO     Setting up...
+2017-01-24 14:40:32,132 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/
+2017-01-24 14:40:32,337 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 14:40:33,182 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 14:40:33,295 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 14:40:33,741 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/glove/size=50.embeddings
+2017-01-24 14:40:33,854 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 14:40:33,855 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 14:41:27,017 gensim.models.word2vec INFO     loaded (840347, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/glove/size=50.embeddings
+2017-01-24 14:41:27,017 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 14:41:27,017 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 14:41:27,017 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 14:41:27,483 model        INFO     Loading model...
+2017-01-24 14:41:27,483 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svmlinear-glove-wikipedia/
+2017-01-24 14:41:27,508 model        INFO     Testing model...
+2017-01-24 14:41:29,394 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svmlinear-glove-wikipedia-conll16st-en-03-29-16-dev/
+2017-01-24 14:41:29,394 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16419583.ba+   1188284K    497520K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16419583     svmlinear+          4                         00:01:10      0:0 
+
+Job 16419583 ("svmlinear-glove-wikipedia") completed on c17-19 at tis jan 24 14:41:29 CET 2017

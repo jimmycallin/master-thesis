@@ -1,4 +1,0 @@
-past
-future
-NULL
-present

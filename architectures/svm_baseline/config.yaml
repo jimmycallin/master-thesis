@@ -1,0 +1,111 @@
+
+description: "An SVM baseline using averaged centroid with arg1 and arg2"
+test_output_path: /Users/jimmy/dev/edu/master-thesis/results/svm_baseline/
+
+train: false
+test: false
+
+model:
+    name: svm
+    kernel: rbf
+    store_path: /Users/jimmy/dev/edu/master-thesis/models/svm_baseline/
+
+experiment_name: "SVM baseline"
+
+# Each extractor has a name from main.extractor_handlers, which points to a class
+# where any additional params are used to initiate the extractor class.
+
+extractors:
+     -
+         name: cbow
+         path: /Users/jimmy/dev/edu/master-thesis/resources/word_embeddings/precompiled/cbow/size=50.embeddings
+         is_binary: false
+         argument: arg1_text
+     -
+         name: cbow
+         path: /Users/jimmy/dev/edu/master-thesis/resources/word_embeddings/precompiled/cbow/size=50.embeddings
+         is_binary: false
+         argument: arg2_text
+
+resources:
+    training_data:
+        path: /Users/jimmy/dev/edu/master-thesis/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/
+        classes: ["Temporal.Asynchronous.Precedence",
+                  "Temporal.Asynchronous.Succession",
+                  "Temporal.Synchrony",
+                  "Contingency.Cause.Reason",
+                  "Contingency.Cause.Result",
+                  "Contingency.Condition",
+                  "Comparison.Contrast",
+                  "Comparison.Concession",
+                  "Expansion.Conjunction",
+                  "Expansion.Instantiation",
+                  "Expansion.Restatement",
+                  "Expansion.Alternative",
+                  "Expansion.Alternative.Chosen alternative",
+                  "Expansion.Exception",
+                  "EntRel"]
+        separate_dual_classes: true
+        filter_type: ["Implicit", "EntRel"]
+        skip_missing_classes: true
+    dev_data:
+        path: /Users/jimmy/dev/edu/master-thesis/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/
+        classes: ["Temporal.Asynchronous.Precedence",
+                  "Temporal.Asynchronous.Succession",
+                  "Temporal.Synchrony",
+                  "Contingency.Cause.Reason",
+                  "Contingency.Cause.Result",
+                  "Contingency.Condition",
+                  "Comparison.Contrast",
+                  "Comparison.Concession",
+                  "Expansion.Conjunction",
+                  "Expansion.Instantiation",
+                  "Expansion.Restatement",
+                  "Expansion.Alternative",
+                  "Expansion.Alternative.Chosen alternative",
+                  "Expansion.Exception",
+                  "EntRel"]
+        separate_dual_classes: false
+        filter_type: ["Implicit", "EntRel"]
+        skip_missing_classes: false
+    test_data:
+        path: /Users/jimmy/dev/edu/master-thesis/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-test/
+        classes: ["Temporal.Asynchronous.Precedence",
+                  "Temporal.Asynchronous.Succession",
+                  "Temporal.Synchrony",
+                  "Contingency.Cause.Reason",
+                  "Contingency.Cause.Result",
+                  "Contingency.Condition",
+                  "Comparison.Contrast",
+                  "Comparison.Concession",
+                  "Expansion.Conjunction",
+                  "Expansion.Instantiation",
+                  "Expansion.Restatement",
+                  "Expansion.Alternative",
+                  "Expansion.Alternative.Chosen alternative",
+                  "Expansion.Exception",
+                  "EntRel"]
+        separate_dual_classes: false
+        filter_type: ["Implicit", "EntRel"]
+        skip_missing_classes: false
+
+logging:
+    version: 1
+    disable_existing_loggers: false
+    formatters:
+        default:
+            format: '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+    handlers:
+        console:
+            class: logging.StreamHandler
+            stream: ext://sys.stdout
+            formatter: default
+            level: DEBUG
+        file:
+            class: logging.FileHandler
+            filename: main.log
+            formatter: default
+            level: DEBUG
+    root:
+        handlers: [console, file]
+        level: DEBUG

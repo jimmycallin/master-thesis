@@ -1,0 +1,38 @@
+Starting job 16418900 ("svm-linear-random-vectors") on c15-19 at tis jan 24 13:12:24 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 13:12:35,218 __main__     INFO     Setting up...
+2017-01-24 13:12:35,218 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-test/
+2017-01-24 13:12:35,330 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 13:12:35,869 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 13:12:35,901 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 13:12:36,301 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/random_vectors/random_vectors.50d.txt
+2017-01-24 13:12:36,303 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 13:12:36,303 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 13:12:39,498 gensim.models.word2vec INFO     loaded (48829, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/random_vectors/random_vectors.50d.txt
+2017-01-24 13:12:39,498 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:12:39,498 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:12:39,498 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 13:12:40,075 model        INFO     Loading model...
+2017-01-24 13:12:40,075 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-linear-random-vectors/
+2017-01-24 13:12:40,152 model        INFO     Testing model...
+2017-01-24 13:12:42,704 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-linear-random-vectors-conll16st-en-03-29-16-test/
+2017-01-24 13:12:42,705 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418900.ba+    212572K      2440K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418900     svm-linea+          4                         00:00:23      0:0 
+
+Job 16418900 ("svm-linear-random-vectors") completed on c15-19 at tis jan 24 13:12:42 CET 2017

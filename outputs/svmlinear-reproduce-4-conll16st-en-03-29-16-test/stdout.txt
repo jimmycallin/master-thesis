@@ -1,0 +1,37 @@
+Starting job 16418904 ("svm-linear-reproduce-4") on c16-5 at tis jan 24 13:13:31 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 13:13:35,900 __main__     INFO     Setting up...
+2017-01-24 13:13:35,900 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-test/
+2017-01-24 13:13:36,010 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 13:13:36,512 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 13:13:36,540 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 13:13:36,899 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-01-24 13:13:36,901 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 13:28:20,516 gensim.models.word2vec INFO     loaded (3000000, 300) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-01-24 13:28:20,516 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:28:20,516 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:28:20,516 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 13:28:21,165 model        INFO     Loading model...
+2017-01-24 13:28:21,165 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-linear-reproduce-4/
+2017-01-24 13:28:21,356 model        INFO     Testing model...
+2017-01-24 13:28:33,210 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-linear-reproduce-4-conll16st-en-03-29-16-test/
+2017-01-24 13:28:33,211 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418904.ba+   5442196K   4773560K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418904     svm-linea+          4                         00:15:09      0:0 
+
+Job 16418904 ("svm-linear-reproduce-4") completed on c16-5 at tis jan 24 13:28:35 CET 2017

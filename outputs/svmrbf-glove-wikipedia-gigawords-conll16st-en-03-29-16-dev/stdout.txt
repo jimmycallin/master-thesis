@@ -1,0 +1,38 @@
+Starting job 16418787 ("svm-rbf-glove-wikipedia-gigawords") on c13-25 at tis jan 24 11:32:56 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 11:33:02,037 __main__     INFO     Setting up...
+2017-01-24 11:33:02,037 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/
+2017-01-24 11:33:02,123 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 11:33:02,663 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 11:33:02,699 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 11:33:03,147 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/glove/glove.6B.50d.txt
+2017-01-24 11:33:03,149 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 11:33:03,149 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 11:33:29,374 gensim.models.word2vec INFO     loaded (400000, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/glove/glove.6B.50d.txt
+2017-01-24 11:33:29,374 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 11:33:29,375 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 11:33:29,375 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 11:33:29,857 model        INFO     Loading model...
+2017-01-24 11:33:29,857 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-rbf-glove-wikipedia-gigawords/
+2017-01-24 11:33:29,887 model        INFO     Testing model...
+2017-01-24 11:33:31,830 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-rbf-glove-wikipedia-gigawords-conll16st-en-03-29-16-dev/
+2017-01-24 11:33:31,831 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418787.ba+    950120K    271021K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418787     svm-rbf-g+          4                         00:00:39      0:0 
+
+Job 16418787 ("svm-rbf-glove-wikipedia-gigawords") completed on c13-25 at tis jan 24 11:33:32 CET 2017

@@ -1,0 +1,37 @@
+Starting job 16418911 ("svm-linear-skipgram-googlenews") on c13-12 at tis jan 24 13:17:02 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 13:17:07,675 __main__     INFO     Setting up...
+2017-01-24 13:17:07,676 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-trial/
+2017-01-24 13:17:07,679 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 13:17:08,176 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 13:17:08,206 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 13:17:08,623 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-01-24 13:17:08,625 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 13:32:36,476 gensim.models.word2vec INFO     loaded (3000000, 300) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-01-24 13:32:36,476 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:32:36,476 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:32:36,477 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 13:32:36,556 model        INFO     Loading model...
+2017-01-24 13:32:36,556 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-linear-skipgram-googlenews/
+2017-01-24 13:32:36,672 model        INFO     Testing model...
+2017-01-24 13:32:36,883 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-linear-skipgram-googlenews-conll16st-en-03-29-16-trial/
+2017-01-24 13:32:36,883 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418911.ba+   5333000K   4637918K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418911     svm-linea+          4                         00:15:41      0:0 
+
+Job 16418911 ("svm-linear-skipgram-googlenews") completed on c13-12 at tis jan 24 13:32:39 CET 2017

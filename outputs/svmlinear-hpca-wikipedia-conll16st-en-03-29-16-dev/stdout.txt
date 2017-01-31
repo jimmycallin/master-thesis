@@ -1,0 +1,38 @@
+Starting job 16419403 ("svmlinear-hpca-wikipedia") on c16-5 at tis jan 24 13:58:31 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 13:58:37,162 __main__     INFO     Setting up...
+2017-01-24 13:58:37,162 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/
+2017-01-24 13:58:37,245 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 13:58:37,718 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 13:58:37,749 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 13:58:38,141 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/hpca/size=50.merged
+2017-01-24 13:58:38,157 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 13:58:38,157 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 13:59:58,537 gensim.models.word2vec INFO     loaded (840297, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/hpca/size=50.merged
+2017-01-24 13:59:58,538 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:59:58,538 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:59:58,538 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 13:59:59,004 model        INFO     Loading model...
+2017-01-24 13:59:59,004 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svmlinear-hpca-wikipedia/
+2017-01-24 13:59:59,071 model        INFO     Testing model...
+2017-01-24 14:00:00,967 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svmlinear-hpca-wikipedia-conll16st-en-03-29-16-dev/
+2017-01-24 14:00:00,968 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16419403.ba+   1222596K    555181K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16419403     svmlinear+          4                         00:01:35      0:0 
+
+Job 16419403 ("svmlinear-hpca-wikipedia") completed on c16-5 at tis jan 24 14:00:01 CET 2017

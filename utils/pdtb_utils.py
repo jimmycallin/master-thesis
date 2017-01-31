@@ -1,8 +1,7 @@
 from os.path import join
-from .misc_utils import get_config
-from .conll16st import conn_head_mapper
+from misc_utils import get_config
 
-config = get_config('config.yaml')
+config = get_config('../config.yaml')
 
 class DiscourseRelation():
     def __init__(self, dict_relation):

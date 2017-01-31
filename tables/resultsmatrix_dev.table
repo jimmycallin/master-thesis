@@ -1,0 +1,16 @@
+\begin{tabular}{lrrrr}
+\toprule
+{} &            ffnn &  logreg &            rnn &          svmrbf \\
+\midrule
+cbow-wikipedia             &          0.3501 &    0.38 &         0.2469 & \textbf{0.3677} \\
+cw-wikipedia               &          0.3691 &    0.40 &         0.2931 &          0.3528 \\
+glove-wikipedia            &          0.3528 &    0.37 &         0.2999 &          0.3582 \\
+glove-wikipedia-gigawords  &          0.3772 &    0.39 &          0.289 &          0.3609 \\
+hpca-wikipedia             &          0.3297 &    0.35 & \textbf{0.308} &          0.2917 \\
+random-vectors             &          0.3059 &    0.29 &         0.2958 &          0.3066 \\
+randomprojection-wikipedia &           0.327 &    0.36 &          0.175 &          0.2917 \\
+rsv50-wikipedia            &           0.346 &    0.38 &         0.2931 &          0.3297 \\
+skipgram-googlenews        & \textbf{0.3948} &    0.41 &          0.289 &          0.3039 \\
+tscca-wikipedia            &          0.3474 &    0.38 &         0.2754 &          0.3338 \\
+\bottomrule
+\end{tabular}

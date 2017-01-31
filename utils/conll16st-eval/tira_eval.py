@@ -8,6 +8,7 @@ import sys
 from scorer import evaluate
 from partial_scorer import partial_evaluate
 from validator import validate_relation_list, identify_language
+import confusion_matrix
 
 def write_proto_text(key, value, f):
     f.write('measure {\n key: "%s" \n value: "%s"\n}\n' % (key ,round(value, 4)))
@@ -37,6 +38,21 @@ def write_results(prefix, result_tuple, output_file):
     write_proto_text('%s Arg 1 Arg2 extraction precision' % prefix, p, output_file)
     write_proto_text('%s Arg 1 Arg2 extraction recall' % prefix, r, output_file)
     write_proto_text('%s Arg 1 Arg2 extraction f1' % prefix, f, output_file)
+
+
+    output_file.write("%s confusion matrix \{\n" % prefix)
+    num_classes = sense_cm.alphabet.size()
+    #header for the confusion matrix
+    header = [sense_cm.alphabet.get_label(i) for i in xrange(num_classes) if sense_cm.alphabet.get_label(i) != '__NEGATIVE_CLASS__']
+    output_file.write(",".join(header) + "\n")
+    #putting labels to the first column of rhw matrix
+    for i in xrange(num_classes):
+        if sense_cm.alphabet.get_label(i) == '__NEGATIVE_CLASS__':
+            continue
+        output_file.write(sense_cm.alphabet.get_label(i) + ',')
+        output_file.write(",".join([str(sense_cm.matrix[i,j]) for j in xrange(num_classes) if sense_cm.alphabet.get_label(j) != '__NEGATIVE_CLASS__']))
+        output_file.write("\n")
+    output_file.write("}\n")
 
 def write_partial_match_results(prefix, result_tuple, output_file):
     arg1_match_prf, arg2_match_prf, entire_relation_match_prf, parser_prf = result_tuple

@@ -1,0 +1,38 @@
+Starting job 16418835 ("svm-rbf-rsv50-wikipedia") on c16-5 at tis jan 24 12:17:17 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 12:17:22,369 __main__     INFO     Setting up...
+2017-01-24 12:17:22,369 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-trial/
+2017-01-24 12:17:22,372 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 12:17:22,856 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 12:17:22,884 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 12:17:23,249 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/rsv/wiki_2008_d50_w1_ncntx100000.wembed
+2017-01-24 12:17:23,251 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 12:17:23,251 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 12:17:30,821 gensim.models.word2vec INFO     loaded (110134, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/rsv/wiki_2008_d50_w1_ncntx100000.wembed
+2017-01-24 12:17:30,822 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 12:17:30,822 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 12:17:30,822 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 12:17:30,912 model        INFO     Loading model...
+2017-01-24 12:17:30,912 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-rbf-rsv50-wikipedia/
+2017-01-24 12:17:31,005 model        INFO     Testing model...
+2017-01-24 12:17:31,047 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-rbf-rsv50-wikipedia-conll16st-en-03-29-16-trial/
+2017-01-24 12:17:31,048 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418835.ba+    212572K      2775K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418835     svm-rbf-r+          4                         00:00:18      0:0 
+
+Job 16418835 ("svm-rbf-rsv50-wikipedia") completed on c16-5 at tis jan 24 12:17:32 CET 2017

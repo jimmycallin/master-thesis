@@ -1,0 +1,19 @@
+\begin{tabular}{lrrrrrrrr}
+\toprule
+{} &  train &       &   dev &       &  test &       & blind\_test &       \\
+{} &  count & ratio & count & ratio & count & ratio &      count & ratio \\
+\midrule
+Total                            &  17577 &  1.00 &   763 &  1.00 &   996 &  1.00 &        633 &  1.00 \\
+EntRel                           &   4133 &  0.24 &   215 &  0.28 &   217 &  0.22 &        200 &  0.32 \\
+Expansion.Conjunction            &   3308 &  0.19 &   122 &  0.16 &   147 &  0.15 &        106 &  0.17 \\
+Expansion.Restatement            &   2514 &  0.14 &   103 &  0.13 &   190 &  0.19 &        141 &  0.22 \\
+Contingency.Cause.Reason         &   2092 &  0.12 &    73 &  0.10 &   116 &  0.12 &         42 &  0.07 \\
+Comparison.Contrast              &   1657 &  0.09 &    88 &  0.12 &   127 &  0.13 &         27 &  0.04 \\
+Contingency.Cause.Result         &   1389 &  0.08 &    52 &  0.07 &    89 &  0.09 &         33 &  0.05 \\
+Expansion.Instantiation          &   1134 &  0.06 &    48 &  0.06 &    69 &  0.07 &         37 &  0.06 \\
+Temporal.Asynchronous.Precedence &    433 &  0.02 &    26 &  0.03 &     8 &  0.01 &         10 &  0.02 \\
+Temporal.Synchrony               &    212 &  0.01 &    19 &  0.02 &     5 &  0.01 &          3 &  0.00 \\
+Comparison.Concession            &    196 &  0.01 &     5 &  0.01 &     5 &  0.01 &         30 &  0.05 \\
+Entropy                          &      0 &  2.86 &     0 &  2.87 &     0 &  2.79 &          0 &  2.69 \\
+\bottomrule
+\end{tabular}

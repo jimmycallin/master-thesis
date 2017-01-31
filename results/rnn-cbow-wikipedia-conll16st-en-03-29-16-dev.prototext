@@ -58,6 +58,23 @@ measure {
  key: "All Arg 1 Arg2 extraction f1" 
  value: "1.0"
 }
+All confusion matrix \{
+Expansion.Restatement,EntRel,Temporal.Asynchronous.Precedence,Contingency.Cause.Reason,Expansion.Conjunction,Comparison.Contrast,Contingency.Cause.Result,Expansion.Instantiation,Temporal.Asynchronous.Succession,Comparison.Concession,Expansion,Temporal.Synchrony,Expansion.Alternative.Chosen alternative,Comparison
+Expansion.Restatement,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+EntRel,58.0,121.0,8.0,29.0,59.0,38.0,20.0,36.0,2.0,3.0,2.0,6.0,1.0,0.0
+Temporal.Asynchronous.Precedence,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Contingency.Cause.Reason,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion.Conjunction,43.0,94.0,17.0,44.0,61.0,44.0,29.0,11.0,1.0,2.0,4.0,2.0,1.0,1.0
+Comparison.Contrast,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Contingency.Cause.Result,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion.Instantiation,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Temporal.Asynchronous.Succession,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Comparison.Concession,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Temporal.Synchrony,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion.Alternative.Chosen alternative,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Comparison,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+}
 measure {
  key: "Explicit only Parser precision" 
  value: "1.0"
@@ -118,6 +135,9 @@ measure {
  key: "Explicit only Arg 1 Arg2 extraction f1" 
  value: "1.0"
 }
+Explicit only confusion matrix \{
+
+}
 measure {
  key: "Non-explicit only Parser precision" 
  value: "0.2469"
@@ -177,6 +197,23 @@ measure {
 measure {
  key: "Non-explicit only Arg 1 Arg2 extraction f1" 
  value: "1.0"
+}
+Non-explicit only confusion matrix \{
+Expansion.Restatement,EntRel,Temporal.Asynchronous.Precedence,Contingency.Cause.Reason,Expansion.Conjunction,Comparison.Contrast,Contingency.Cause.Result,Expansion.Instantiation,Temporal.Asynchronous.Succession,Comparison.Concession,Expansion,Temporal.Synchrony,Expansion.Alternative.Chosen alternative,Comparison
+Expansion.Restatement,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+EntRel,58.0,121.0,8.0,29.0,59.0,38.0,20.0,36.0,2.0,3.0,2.0,6.0,1.0,0.0
+Temporal.Asynchronous.Precedence,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Contingency.Cause.Reason,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion.Conjunction,43.0,94.0,17.0,44.0,61.0,44.0,29.0,11.0,1.0,2.0,4.0,2.0,1.0,1.0
+Comparison.Contrast,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Contingency.Cause.Result,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion.Instantiation,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Temporal.Asynchronous.Succession,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Comparison.Concession,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Temporal.Synchrony,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion.Alternative.Chosen alternative,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Comparison,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 }
 measure {
  key: "Non-explicit Expansion.Restatement Precision"

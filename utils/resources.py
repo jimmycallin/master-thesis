@@ -1,5 +1,5 @@
-from .misc_utils import get_config, get_logger, tokenize
-from .pdtb_utils import DiscourseRelation
+from misc_utils import get_config, get_logger, tokenize
+from pdtb_utils import DiscourseRelation
 from collections import Counter, defaultdict
 import json
 import abc

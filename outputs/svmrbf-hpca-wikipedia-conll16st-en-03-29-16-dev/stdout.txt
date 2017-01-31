@@ -1,0 +1,38 @@
+Starting job 16418789 ("svm-rbf-hpca-wikipedia") on c13-25 at tis jan 24 11:35:28 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 11:35:34,784 __main__     INFO     Setting up...
+2017-01-24 11:35:34,784 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/
+2017-01-24 11:35:34,869 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 11:35:35,360 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 11:35:35,389 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 11:35:35,803 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/hpca/size=50.merged
+2017-01-24 11:35:35,805 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 11:35:35,805 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 11:36:59,086 gensim.models.word2vec INFO     loaded (840297, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/hpca/size=50.merged
+2017-01-24 11:36:59,086 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 11:36:59,086 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 11:36:59,086 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 11:36:59,570 model        INFO     Loading model...
+2017-01-24 11:36:59,570 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-rbf-hpca-wikipedia/
+2017-01-24 11:36:59,598 model        INFO     Testing model...
+2017-01-24 11:37:01,618 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-rbf-hpca-wikipedia-conll16st-en-03-29-16-dev/
+2017-01-24 11:37:01,619 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418789.ba+   1201404K    530033K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418789     svm-rbf-h+          4                         00:01:39      0:0 
+
+Job 16418789 ("svm-rbf-hpca-wikipedia") completed on c13-25 at tis jan 24 11:37:02 CET 2017

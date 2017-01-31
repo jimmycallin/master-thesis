@@ -1,9 +1,9 @@
 import pandas as pd
-from sys import argv
 import os
 from os.path import join
 import sys
 import json
+from collections import defaultdict
 
 class Prototext():
     def __init__(self, prototext_filepath):
@@ -12,6 +12,7 @@ class Prototext():
             self._parse_prototext(f.readlines())
     def _parse_prototext(self, lines):
         self.prototext_dict = {}
+        self.conf_matrix = {}
         lines_iter = iter(lines)
         for line in lines_iter:
             if line.startswith("measure"):
@@ -21,6 +22,18 @@ class Prototext():
                 line = next(lines_iter)
                 value = float(line.strip()[8:-1])
                 self.prototext_dict[key] = value
+            elif "confusion matrix" in line:
+                res_type = line[:line.index("confusion matrix")].strip()
+                self.conf_matrix[res_type] = defaultdict(dict)
+                line = next(lines_iter)
+                header_dict = {i: x.strip() for i, x in enumerate(line.split(","))}
+
+                while line.strip() != "}":
+                    line = next(lines_iter)
+                    split = line.strip().split(",")
+                    for k, val in enumerate(split[1:]):
+                        self.conf_matrix[res_type][split[0]][header_dict[k]] = float(val)
+
     @property
     def non_explicit_f1(self):
         return self.prototext_dict["Non-explicit only Parser f1"]
@@ -33,6 +46,10 @@ class Prototext():
     def non_explicit_recall(self):
         return self.prototext_dict["Non-explicit only Parser recall"]
 
+    @property
+    def non_explicit_conf_matrix(self):
+        return pd.DataFrame.from_dict(self.conf_matrix['Non-explicit only'], orient='index')
+
     def __getitem__(self, val):
         return self.prototext_dict[val]
 
@@ -42,19 +59,21 @@ def proto2pandas(proto_objects, sense=None):
     for name, proto in proto_objects.items():
         if name.startswith("cnn"):
             continue
-        try:
-            if sense is None:
-                res_dict[name] = proto.non_explicit_f1
-            else:
-                res_dict[name] = proto[sense]
-        except KeyError:
-            print("KeyError")
-            print("name: " + name)
-            print("sense: " + sense)
-            print("filepath: " + proto.prototext_filepath)
-            sys.exit(1)
+        if sense is None:
+            res_dict[name] = proto.non_explicit_f1
+        else:
+            res_dict[name] = proto[sense]
     return pd.Series(res_dict)
 
+def proto2confs_grouped(proto_objects):
+    res_dict = defaultdict(dict)
+    for name, proto in proto_objects.items():
+        if name.startswith("cnn"):
+            continue
+        architecture = name.split("-")[0]
+        embedding_type = name[len(architecture)+1:name.index('conll1')-1]
+        res_dict[architecture][embedding_type] = proto.non_explicit_conf_matrix
+    return res_dict
 
 def get_senses():
     files = {"blind-test": "conll15st-en-03-29-16-blind-test", "dev": "conll16st-en-03-29-16-dev", "test": "conll16st-en-03-29-16-test", "trial": "conll16st-en-03-29-16-trial"}
@@ -85,6 +104,15 @@ def series2matrix(series):
     series.index = multiindex
     return series.unstack(level=0)
 
+
+def get_confusion_matrixes(test_type):
+    test_types = {'dev': 'dev', 'test': '6-test', 'trial': 'trial', 'blind-test': 'blind-test'}
+
+    proto_files = [x for x in os.listdir('../results') if x.endswith('.prototext')]
+    proto_objects = {f[:-10]: Prototext("../results/{}".format(f)) for f in proto_files}
+    results = set(filter(lambda x: x.endswith(test_types[test_type]), proto_objects))
+    res_series = proto2confs_grouped({k: v for k,v in proto_objects.items() if k in results})
+    return res_series
 
 def generate_matrix(test_type, sense=None):
     test_types = {'dev': 'dev', 'test': '6-test', 'trial': 'trial', 'blind-test': 'blind-test'}

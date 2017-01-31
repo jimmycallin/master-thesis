@@ -1,0 +1,38 @@
+Starting job 16418895 ("svm-linear-randomprojection-wikipedia") on c15-1 at tis jan 24 13:11:16 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 13:11:21,807 __main__     INFO     Setting up...
+2017-01-24 13:11:21,807 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-test/
+2017-01-24 13:11:21,919 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 13:11:22,443 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 13:11:22,475 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 13:11:22,857 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/random_projection/size=50.merged
+2017-01-24 13:11:22,859 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 13:11:22,859 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 13:12:22,335 gensim.models.word2vec INFO     loaded (840297, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/random_projection/size=50.merged
+2017-01-24 13:12:22,336 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:12:22,336 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:12:22,336 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 13:12:22,937 model        INFO     Loading model...
+2017-01-24 13:12:22,938 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-linear-randomprojection-wikipedia/
+2017-01-24 13:12:22,964 model        INFO     Testing model...
+2017-01-24 13:12:25,661 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-linear-randomprojection-wikipedia-conll16st-en-03-29-16-test/
+2017-01-24 13:12:25,662 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418895.ba+   1179912K    491839K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418895     svm-linea+          4                         00:01:16      0:0 
+
+Job 16418895 ("svm-linear-randomprojection-wikipedia") completed on c15-1 at tis jan 24 13:12:27 CET 2017

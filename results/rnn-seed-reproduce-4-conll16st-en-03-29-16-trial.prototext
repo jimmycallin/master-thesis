@@ -58,6 +58,15 @@ measure {
  key: "All Arg 1 Arg2 extraction f1" 
  value: "1.0"
 }
+All confusion matrix \{
+Expansion.Restatement,EntRel,Expansion.Conjunction,Comparison.Contrast,Contingency.Cause.Reason,Contingency.Cause.Result
+Expansion.Restatement,1.0,0.0,0.0,0.0,0.0,0.0
+EntRel,1.0,2.0,2.0,0.0,0.0,0.0
+Expansion.Conjunction,0.0,0.0,0.0,2.0,1.0,0.0
+Comparison.Contrast,0.0,0.0,0.0,0.0,0.0,0.0
+Contingency.Cause.Reason,1.0,0.0,0.0,1.0,1.0,2.0
+Contingency.Cause.Result,0.0,0.0,0.0,0.0,0.0,0.0
+}
 measure {
  key: "Explicit only Parser precision" 
  value: "1.0"
@@ -118,6 +127,9 @@ measure {
  key: "Explicit only Arg 1 Arg2 extraction f1" 
  value: "1.0"
 }
+Explicit only confusion matrix \{
+
+}
 measure {
  key: "Non-explicit only Parser precision" 
  value: "0.2857"
@@ -177,6 +189,15 @@ measure {
 measure {
  key: "Non-explicit only Arg 1 Arg2 extraction f1" 
  value: "1.0"
+}
+Non-explicit only confusion matrix \{
+Expansion.Restatement,EntRel,Expansion.Conjunction,Comparison.Contrast,Contingency.Cause.Reason,Contingency.Cause.Result
+Expansion.Restatement,1.0,0.0,0.0,0.0,0.0,0.0
+EntRel,1.0,2.0,2.0,0.0,0.0,0.0
+Expansion.Conjunction,0.0,0.0,0.0,2.0,1.0,0.0
+Comparison.Contrast,0.0,0.0,0.0,0.0,0.0,0.0
+Contingency.Cause.Reason,1.0,0.0,0.0,1.0,1.0,2.0
+Contingency.Cause.Result,0.0,0.0,0.0,0.0,0.0,0.0
 }
 measure {
  key: "Non-explicit Expansion.Restatement Precision"

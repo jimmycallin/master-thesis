@@ -1,0 +1,37 @@
+Starting job 16418775 ("svm-rbf-reproduce-3") on c16-19 at tis jan 24 11:27:42 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 11:27:47,347 __main__     INFO     Setting up...
+2017-01-24 11:27:47,347 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test/
+2017-01-24 11:27:47,419 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 11:27:47,885 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 11:27:47,912 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 11:27:48,289 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-01-24 11:27:48,291 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 11:42:42,836 gensim.models.word2vec INFO     loaded (3000000, 300) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-01-24 11:42:42,836 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 11:42:42,836 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 11:42:42,836 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 11:42:43,298 model        INFO     Loading model...
+2017-01-24 11:42:43,298 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-rbf-reproduce-3/
+2017-01-24 11:42:43,600 model        INFO     Testing model...
+2017-01-24 11:42:51,302 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-rbf-reproduce-3-conll15st-en-03-29-16-blind-test/
+2017-01-24 11:42:51,302 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418775.ba+   5344528K   4666383K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418775     svm-rbf-r+          4                         00:15:16      0:0 
+
+Job 16418775 ("svm-rbf-reproduce-3") completed on c16-19 at tis jan 24 11:42:53 CET 2017

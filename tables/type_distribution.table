@@ -1,0 +1,11 @@
+\begin{tabular}{lrr}
+\toprule
+{} &  count &     ratio \\
+\midrule
+Total    &  32535 &  1.000000 \\
+Explicit &  14722 &  0.452497 \\
+Implicit &  13156 &  0.404365 \\
+EntRel   &   4133 &  0.127032 \\
+AltLex   &    524 &  0.016106 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,38 @@
+Starting job 16418871 ("svm-linear-cw-wikipedia") on c17-31 at tis jan 24 12:41:47 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 12:41:53,562 __main__     INFO     Setting up...
+2017-01-24 12:41:53,562 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/
+2017-01-24 12:41:53,709 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 12:41:54,200 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 12:41:54,228 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 12:41:54,634 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/c&w/size=50.merged
+2017-01-24 12:41:54,636 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 12:41:54,636 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 12:42:02,785 gensim.models.word2vec INFO     loaded (130000, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/c&w/size=50.merged
+2017-01-24 12:42:02,785 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 12:42:02,785 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 12:42:02,785 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 12:42:03,276 model        INFO     Loading model...
+2017-01-24 12:42:03,276 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-linear-cw-wikipedia/
+2017-01-24 12:42:03,303 model        INFO     Testing model...
+2017-01-24 12:42:05,279 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-linear-cw-wikipedia-conll16st-en-03-29-16-dev/
+2017-01-24 12:42:05,280 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418871.ba+    212572K      2473K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418871     svm-linea+          4                         00:00:20      0:0 
+
+Job 16418871 ("svm-linear-cw-wikipedia") completed on c17-31 at tis jan 24 12:42:05 CET 2017

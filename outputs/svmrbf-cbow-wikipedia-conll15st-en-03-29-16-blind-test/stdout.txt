@@ -1,0 +1,38 @@
+Starting job 16418763 ("svm-rbf-cbow-wikipedia") on c15-7 at tis jan 24 11:24:26 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 11:25:21,791 __main__     INFO     Setting up...
+2017-01-24 11:25:21,803 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test/
+2017-01-24 11:25:22,170 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 11:25:32,470 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 11:25:33,328 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 11:25:35,627 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/size=50.embeddings
+2017-01-24 11:25:35,703 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 11:25:35,704 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 11:26:07,521 gensim.models.word2vec INFO     loaded (518914, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/size=50.embeddings
+2017-01-24 11:26:07,521 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 11:26:07,521 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 11:26:07,522 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 11:26:07,937 model        INFO     Loading model...
+2017-01-24 11:26:07,937 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-rbf-cbow-wikipedia/
+2017-01-24 11:26:08,140 model        INFO     Testing model...
+2017-01-24 11:26:09,615 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-rbf-cbow-wikipedia-conll15st-en-03-29-16-blind-test/
+2017-01-24 11:26:09,616 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418763.ba+    958020K    253162K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418763     svm-rbf-c+          4                         00:01:49      0:0 
+
+Job 16418763 ("svm-rbf-cbow-wikipedia") completed on c15-7 at tis jan 24 11:26:10 CET 2017

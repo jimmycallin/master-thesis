@@ -1,0 +1,38 @@
+Starting job 16419406 ("svmlinear-rsv50-wikipedia") on c15-3 at tis jan 24 13:58:31 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 13:58:37,642 __main__     INFO     Setting up...
+2017-01-24 13:58:37,642 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-test/
+2017-01-24 13:58:37,749 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 13:58:38,265 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 13:58:38,294 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 13:58:38,675 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/rsv/wiki_2008_d50_w1_ncntx100000.wembed
+2017-01-24 13:58:38,676 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 13:58:38,676 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 13:58:45,770 gensim.models.word2vec INFO     loaded (110134, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/rsv/wiki_2008_d50_w1_ncntx100000.wembed
+2017-01-24 13:58:45,771 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:58:45,771 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 13:58:45,771 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 13:58:46,347 model        INFO     Loading model...
+2017-01-24 13:58:46,347 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svmlinear-rsv50-wikipedia/
+2017-01-24 13:58:46,501 model        INFO     Testing model...
+2017-01-24 13:58:48,903 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svmlinear-rsv50-wikipedia-conll16st-en-03-29-16-test/
+2017-01-24 13:58:48,904 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16419406.ba+    212572K      2254K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16419406     svmlinear+          4                         00:00:23      0:0 
+
+Job 16419406 ("svmlinear-rsv50-wikipedia") completed on c15-3 at tis jan 24 13:58:49 CET 2017

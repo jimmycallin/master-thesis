@@ -1,0 +1,38 @@
+Starting job 16418857 ("svm-linear-rsv50-wikipedia") on c16-5 at tis jan 24 12:34:40 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-01-24 12:34:45,544 __main__     INFO     Setting up...
+2017-01-24 12:34:45,544 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll15st-en-03-29-16-blind-test/
+2017-01-24 12:34:45,620 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-01-24 12:34:46,099 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-01-24 12:34:46,128 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-01-24 12:34:46,530 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/rsv/wiki_2008_d50_w1_ncntx100000.wembed
+2017-01-24 12:34:46,532 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-01-24 12:34:46,532 gensim.models.word2vec WARNING  consider setting layer size to a multiple of 4 for greater performance
+2017-01-24 12:34:53,936 gensim.models.word2vec INFO     loaded (110134, 50) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/rsv/wiki_2008_d50_w1_ncntx100000.wembed
+2017-01-24 12:34:53,936 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 12:34:53,936 extractors   DEBUG    WordEmbedding matrix loaded
+2017-01-24 12:34:53,936 misc_utils   DEBUG    Loading spacy English model...
+2017-01-24 12:34:54,390 model        INFO     Loading model...
+2017-01-24 12:34:54,391 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svm-linear-rsv50-wikipedia/
+2017-01-24 12:34:54,551 model        INFO     Testing model...
+2017-01-24 12:34:56,301 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svm-linear-rsv50-wikipedia-conll15st-en-03-29-16-blind-test/
+2017-01-24 12:34:56,302 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16418857.ba+    212572K      2248K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16418857     svm-linea+          4                         00:00:21      0:0 
+
+Job 16418857 ("svm-linear-rsv50-wikipedia") completed on c16-5 at tis jan 24 12:34:58 CET 2017

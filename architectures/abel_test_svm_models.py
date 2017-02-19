@@ -15,4 +15,4 @@ for test_type in test_types:
             continue
         print("Testing " + name + " with " + test_type)
         call(["sbatch", "--job-name", name, "--output=" + output_dir + "/stdout.txt",
-              "/usit/abel/u1/jimmycallin/architectures/abel_test_svm.sh", name, test_type, embedding["path"]])
+              "/usit/abel/u1/jimmycallin/architectures/abel_test_c05svm.sh", name, test_type, embedding["path"]])

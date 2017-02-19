@@ -9,9 +9,10 @@ import os
 logger = get_logger(__name__)
 
 class SVM():
-    def __init__(self, n_features, n_classes, kernel, store_path):
+    def __init__(self, n_features, n_classes, kernel, c, store_path):
         self.is_trained = False
         self.kernel = kernel
+        self.c = c
         self.n_features = n_features
         self.n_classes = n_classes
         self.store_path = store_path
@@ -30,7 +31,7 @@ class SVM():
     def train(self, feature_tensor, correct):
         logger.info("Training model...")
         squeezed = feature_tensor.squeeze(axis=1)
-        clf = svm.SVC(kernel=self.kernel)
+        clf = svm.SVC(kernel=self.kernel, C=self.c)
         model = clf.fit(squeezed, correct)
         if self.store_path:
             self.store(model, self.store_path)

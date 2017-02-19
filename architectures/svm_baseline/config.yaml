@@ -8,6 +8,7 @@ test: false
 model:
     name: svm
     kernel: rbf
+    c: 1.0
     store_path: /Users/jimmy/dev/edu/master-thesis/models/svm_baseline/
 
 experiment_name: "SVM baseline"

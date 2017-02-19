@@ -102,6 +102,7 @@ if __name__ == '__main__':
     parser.add_argument('--model-store-path', type=str, required=False)
     parser.add_argument('--test-output-path', type=str, required=False)
     parser.add_argument('--svm-kernel', type=str, required=False)
+    parser.add_argument('-c', type=float, required=False)
 
     args = parser.parse_args()
 
@@ -119,11 +120,13 @@ if __name__ == '__main__':
         config['test_output_path'] = args.test_output_path
     if args.svm_kernel:
         config['model']['kernel'] = args.svm_kernel
+    if args.c:
+        config['model']['c'] = args.c
 
     if args.embedding_path:
         for extractor in config['extractors']:
             extractor['path'] = args.embedding_path
 
     logger = get_logger(__name__, config=config['logging'])
-
+    logger.info("Config: {}".format(config))
     run_experiment(config)

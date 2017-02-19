@@ -1,0 +1,371 @@
+measure {
+ key: "All Parser precision" 
+ value: "0.2404"
+}
+measure {
+ key: "All Parser recall" 
+ value: "0.2404"
+}
+measure {
+ key: "All Parser f1" 
+ value: "0.2404"
+}
+measure {
+ key: "All Explicit connective precision" 
+ value: "1.0"
+}
+measure {
+ key: "All Explicit connective recall" 
+ value: "1.0"
+}
+measure {
+ key: "All Explicit connective f1" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg1 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg1 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg1 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg2 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg 1 Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg 1 Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "All Arg 1 Arg2 extraction f1" 
+ value: "1.0"
+}
+All confusion matrix \{
+Expansion.Conjunction,Expansion.Instantiation,Contingency.Cause.Reason,Comparison.Contrast,EntRel,Expansion.Restatement,Temporal.Asynchronous.Succession,Contingency.Cause.Result,Temporal.Asynchronous.Precedence,Expansion.Alternative.Chosen alternative,Temporal.Synchrony,Comparison.Concession,Expansion
+Expansion.Conjunction,5.0,2.0,3.0,6.0,1.0,2.0,0.0,6.0,0.0,1.0,0.0,0.0,0.0
+Expansion.Instantiation,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Contingency.Cause.Reason,7.0,3.0,17.0,7.0,1.0,5.0,0.0,2.0,0.0,2.0,0.0,0.0,0.0
+Comparison.Contrast,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+EntRel,127.0,64.0,91.0,114.0,214.0,182.0,5.0,78.0,7.0,12.0,5.0,5.0,3.0
+Expansion.Restatement,2.0,0.0,2.0,0.0,1.0,1.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0
+Temporal.Asynchronous.Succession,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Contingency.Cause.Result,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Temporal.Asynchronous.Precedence,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion.Alternative.Chosen alternative,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Temporal.Synchrony,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Comparison.Concession,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+}
+measure {
+ key: "Explicit only Parser precision" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Parser recall" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Parser f1" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Explicit connective precision" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Explicit connective recall" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Explicit connective f1" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg1 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg1 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg1 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg2 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg 1 Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg 1 Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Explicit only Arg 1 Arg2 extraction f1" 
+ value: "1.0"
+}
+Explicit only confusion matrix \{
+
+}
+measure {
+ key: "Non-explicit only Parser precision" 
+ value: "0.2404"
+}
+measure {
+ key: "Non-explicit only Parser recall" 
+ value: "0.2404"
+}
+measure {
+ key: "Non-explicit only Parser f1" 
+ value: "0.2404"
+}
+measure {
+ key: "Non-explicit only Explicit connective precision" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Explicit connective recall" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Explicit connective f1" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg1 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg1 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg1 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg2 extraction f1" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg 1 Arg2 extraction precision" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg 1 Arg2 extraction recall" 
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit only Arg 1 Arg2 extraction f1" 
+ value: "1.0"
+}
+Non-explicit only confusion matrix \{
+Expansion.Conjunction,Expansion.Instantiation,Contingency.Cause.Reason,Comparison.Contrast,EntRel,Expansion.Restatement,Temporal.Asynchronous.Succession,Contingency.Cause.Result,Temporal.Asynchronous.Precedence,Expansion.Alternative.Chosen alternative,Temporal.Synchrony,Comparison.Concession,Expansion
+Expansion.Conjunction,5.0,2.0,3.0,6.0,1.0,2.0,0.0,6.0,0.0,1.0,0.0,0.0,0.0
+Expansion.Instantiation,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Contingency.Cause.Reason,7.0,3.0,17.0,7.0,1.0,5.0,0.0,2.0,0.0,2.0,0.0,0.0,0.0
+Comparison.Contrast,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+EntRel,127.0,64.0,91.0,114.0,214.0,182.0,5.0,78.0,7.0,12.0,5.0,5.0,3.0
+Expansion.Restatement,2.0,0.0,2.0,0.0,1.0,1.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0
+Temporal.Asynchronous.Succession,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Contingency.Cause.Result,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Temporal.Asynchronous.Precedence,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion.Alternative.Chosen alternative,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Temporal.Synchrony,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Comparison.Concession,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Expansion,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction Precision"
+ value: "0.192307692308"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction Recall"
+ value: "0.0354609929078"
+}
+measure {
+ key: "Non-explicit Expansion.Conjunction F1"
+ value: "0.059880239521"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion.Instantiation F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason Precision"
+ value: "0.386363636364"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason Recall"
+ value: "0.150442477876"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Reason F1"
+ value: "0.216560509554"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Contrast F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit EntRel Precision"
+ value: "0.235942668137"
+}
+measure {
+ key: "Non-explicit EntRel Recall"
+ value: "0.986175115207"
+}
+measure {
+ key: "Non-explicit EntRel F1"
+ value: "0.380782918149"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement Precision"
+ value: "0.111111111111"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement Recall"
+ value: "0.00526315789474"
+}
+measure {
+ key: "Non-explicit Expansion.Restatement F1"
+ value: "0.0100502512563"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Succession Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Succession Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Succession F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Contingency.Cause.Result F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Asynchronous.Precedence F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative.Chosen alternative Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative.Chosen alternative Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion.Alternative.Chosen alternative F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Temporal.Synchrony F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Comparison.Concession F1"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion Precision"
+ value: "1.0"
+}
+measure {
+ key: "Non-explicit Expansion Recall"
+ value: "0.0"
+}
+measure {
+ key: "Non-explicit Expansion F1"
+ value: "0.0"
+}

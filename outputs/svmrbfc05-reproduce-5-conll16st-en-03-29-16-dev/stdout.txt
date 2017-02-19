@@ -1,0 +1,38 @@
+Starting job 16475830 ("svmrbfc05-reproduce-5") on c13-5 at ons feb 1 17:44:15 CET 2017
+Python environment is set up
+We are now in svm_baseline
+==========================================
+==============TRAIN=======================
+==========================================
+2017-02-01 17:44:22,215 __main__     INFO     Config: {'description': 'An SVM baseline using averaged centroid with arg1 and arg2', 'test_output_path': '/usit/abel/u1/jimmycallin//outputs/svmrbfc05-reproduce-5-conll16st-en-03-29-16-dev/', 'train': False, 'test': True, 'model': {'name': 'svm', 'kernel': 'rbf', 'c': 0.5, 'store_path': '/usit/abel/u1/jimmycallin//models/svmrbfc05-reproduce-5/'}, 'experiment_name': 'SVM baseline', 'extractors': [{'name': 'cbow', 'path': '/usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt', 'is_binary': False, 'argument': 'arg1_text'}, {'name': 'cbow', 'path': '/usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt', 'is_binary': False, 'argument': 'arg2_text'}], 'resources': {'training_data': {'path': '/Users/jimmy/dev/edu/master-thesis/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/', 'classes': ['Temporal.Asynchronous.Precedence', 'Temporal.Asynchronous.Succession', 'Temporal.Synchrony', 'Contingency.Cause.Reason', 'Contingency.Cause.Result', 'Contingency.Condition', 'Comparison.Contrast', 'Comparison.Concession', 'Expansion.Conjunction', 'Expansion.Instantiation', 'Expansion.Restatement', 'Expansion.Alternative', 'Expansion.Alternative.Chosen alternative', 'Expansion.Exception', 'EntRel'], 'separate_dual_classes': True, 'filter_type': ['Implicit', 'EntRel'], 'skip_missing_classes': True}, 'dev_data': {'path': '/Users/jimmy/dev/edu/master-thesis/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/', 'classes': ['Temporal.Asynchronous.Precedence', 'Temporal.Asynchronous.Succession', 'Temporal.Synchrony', 'Contingency.Cause.Reason', 'Contingency.Cause.Result', 'Contingency.Condition', 'Comparison.Contrast', 'Comparison.Concession', 'Expansion.Conjunction', 'Expansion.Instantiation', 'Expansion.Restatement', 'Expansion.Alternative', 'Expansion.Alternative.Chosen alternative', 'Expansion.Exception', 'EntRel'], 'separate_dual_classes': False, 'filter_type': ['Implicit', 'EntRel'], 'skip_missing_classes': False}, 'test_data': {'path': '/usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/', 'classes': ['Temporal.Asynchronous.Precedence', 'Temporal.Asynchronous.Succession', 'Temporal.Synchrony', 'Contingency.Cause.Reason', 'Contingency.Cause.Result', 'Contingency.Condition', 'Comparison.Contrast', 'Comparison.Concession', 'Expansion.Conjunction', 'Expansion.Instantiation', 'Expansion.Restatement', 'Expansion.Alternative', 'Expansion.Alternative.Chosen alternative', 'Expansion.Exception', 'EntRel'], 'separate_dual_classes': False, 'filter_type': ['Implicit', 'EntRel'], 'skip_missing_classes': False}}, 'logging': {'version': 1, 'disable_existing_loggers': False, 'formatters': {'default': {'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'stream': 'ext://sys.stdout', 'formatter': 'default', 'level': 'DEBUG'}, 'file': {'class': 'logging.FileHandler', 'filename': 'main.log', 'formatter': 'default', 'level': 'DEBUG'}}, 'root': {'handlers': ['console', 'file'], 'level': 'DEBUG'}}}
+2017-02-01 17:44:22,216 __main__     INFO     Setting up...
+2017-02-01 17:44:22,216 __main__     DEBUG    Loading data from /usit/abel/u1/jimmycallin//resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16-dev/
+2017-02-01 17:44:22,299 extractors   INFO     Loading WordEmbedding matrix, this will take a while...
+2017-02-01 17:44:22,841 gensim.models.doc2vec DEBUG    Fast version of gensim.models.doc2vec is being used
+2017-02-01 17:44:22,877 summa.preprocessing.cleaner INFO     'pattern' package not found; tag filters are not available for English
+2017-02-01 17:44:23,333 gensim.models.word2vec INFO     loading projection weights from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-02-01 17:44:23,335 gensim.models.word2vec DEBUG    Fast version of gensim.models.word2vec is being used
+2017-02-01 17:59:18,404 gensim.models.word2vec INFO     loaded (3000000, 300) matrix from /usit/abel/u1/jimmycallin//resources//word_embeddings/precompiled/cbow/GoogleNews-vectors-negative300.txt
+2017-02-01 17:59:18,404 extractors   DEBUG    WordEmbedding matrix loaded
+2017-02-01 17:59:18,404 extractors   DEBUG    WordEmbedding matrix loaded
+2017-02-01 17:59:18,405 misc_utils   DEBUG    Loading spacy English model...
+2017-02-01 17:59:18,915 model        INFO     Loading model...
+2017-02-01 17:59:18,915 model        INFO     Restoring model from /usit/abel/u1/jimmycallin//models/svmrbfc05-reproduce-5/
+2017-02-01 17:59:19,032 model        INFO     Testing model...
+2017-02-01 17:59:28,120 resources    INFO     Stored predicted output at /usit/abel/u1/jimmycallin//outputs/svmrbfc05-reproduce-5-conll16st-en-03-29-16-dev/
+2017-02-01 17:59:28,120 __main__     INFO     Finished testing!
+
+Currently Loaded Modulefiles:
+  1) intel/2017.1
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+16475830.ba+   5342712K   4653750K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+16475830     svmrbfc05+          4                         00:15:20      0:0 
+
+Job 16475830 ("svmrbfc05-reproduce-5") completed on c13-5 at ons feb 1 17:59:30 CET 2017

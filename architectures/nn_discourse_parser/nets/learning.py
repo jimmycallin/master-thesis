@@ -192,7 +192,7 @@ class AdagradTrainer(Trainer):
         self.sum_gradient_squareds = [
                 theano.shared(value=np.zeros(param.get_value().shape).\
                         astype(config.floatX), borrow=True)
-                for param in self.model.params]
+                for param in train_layers]
 
         adagrad_rates = [learning_rate / (lr_smoother + T.sqrt(sgs))
                 for sgs in self.sum_gradient_squareds]
@@ -203,7 +203,7 @@ class AdagradTrainer(Trainer):
 
         self.param_updates = [(param, param - adagrad_rate * gparam)
                 for param, gparam, adagrad_rate in
-                zip(self.model.params, self.gparams, adagrad_rates)]
+                zip(train_layers, self.gparams, adagrad_rates)]
         self.train_function = None
         self.dev_eval_function = None
         self.test_eval_function = None

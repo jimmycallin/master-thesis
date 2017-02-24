@@ -37,11 +37,11 @@ class DataTriplet(object):
         assert(all(x == num_rows[0] for x in num_rows))
 
     def assert_data_same_length(self):
-        assert(len(self.training_data) == len(self.dev_data))    
-        assert(len(self.test_data) == len(self.dev_data))    
+        assert(len(self.training_data) == len(self.dev_data))
+        assert(len(self.test_data) == len(self.dev_data))
 
-        assert(len(self.training_data_label) == len(self.dev_data_label))    
-        assert(len(self.test_data_label) == len(self.dev_data_label))    
+        assert(len(self.training_data_label) == len(self.dev_data_label))
+        assert(len(self.test_data_label) == len(self.dev_data_label))
 
         #self._check_num_rows(self.training_data)
         #self._check_num_rows(self.dev_data)
@@ -77,7 +77,7 @@ class DataTriplet(object):
 
 class Trainer(object):
 
-    def train_minibatch(self, minibatch_size, n_epochs, 
+    def train_minibatch(self, minibatch_size, n_epochs,
             training_data, dev_data, test_data):
         """Train minibatch with one output
 
@@ -102,7 +102,7 @@ class Trainer(object):
         """Train with minibatch
 
         The early stoping is on the last output variable accuracy only.
-        This is crazy stupid ugly solution but it should be ok. 
+        This is crazy stupid ugly solution but it should be ok.
         """
 
         patience = 5000
@@ -112,7 +112,7 @@ class Trainer(object):
         n_train_batches = self.num_training_data / minibatch_size
         validation_frequency = min(n_train_batches / 4, patience / 2)
         #validation_frequency = 10
-    
+
         done_looping = False
         epoch = 0
         best_dev_acc = 0.0
@@ -160,11 +160,11 @@ class Trainer(object):
                     if dev_accuracy > best_dev_acc:
                         if dev_accuracy * improvement_threshold >\
                                 best_dev_acc:
-                            patience = max(patience, 
+                            patience = max(patience,
                                     iteration * patience_increase)
                         best_dev_acc = dev_accuracy
                         best_dev_iteration = iteration
-                        best_test_acc = test_accuracy    
+                        best_test_acc = test_accuracy
                         best_parameters = [x.get_value() for x in self.model.params]
                 if patience <= iteration:
                     done_looping = True
@@ -174,33 +174,35 @@ class Trainer(object):
 
 class AdagradTrainer(Trainer):
 
-    def __init__(self, model, cost_function, learning_rate, lr_smoother, 
-            data_triplet, make_givens_fn=None, misc_function=None):
+    def __init__(self, model, cost_function, learning_rate, lr_smoother,
+            data_triplet, make_givens_fn=None, misc_function=None, train_input_layer=True):
         self.model = model
-        self.cost_function = cost_function 
+        self.cost_function = cost_function
         self.learning_rate = learning_rate
         self.lr_smoother = lr_smoother
         self.data_triplet = data_triplet
 
         print 'Taking gradient...'
-        self.gparams = T.grad(cost_function, self.model.params)
+        start_layer = 0 if train_input_layer else 1
+        train_layers = self.model.params[start_layer:]
+        self.gparams = T.grad(cost_function, train_layers)
 
         #self.gparams = [T.maximum(-5, T.minimum(5, x)) for x in self.gparams]
         #        for x in self.model.params]
         self.sum_gradient_squareds = [
                 theano.shared(value=np.zeros(param.get_value().shape).\
-                        astype(config.floatX), borrow=True) 
+                        astype(config.floatX), borrow=True)
                 for param in self.model.params]
 
-        adagrad_rates = [learning_rate / (lr_smoother + T.sqrt(sgs)) 
+        adagrad_rates = [learning_rate / (lr_smoother + T.sqrt(sgs))
                 for sgs in self.sum_gradient_squareds]
 
-        self.sgs_updates = [(sgs, sgs + T.square(gparam)) 
+        self.sgs_updates = [(sgs, sgs + T.square(gparam))
             for sgs, gparam in zip(self.sum_gradient_squareds, self.gparams)]
 
 
-        self.param_updates = [(param, param - adagrad_rate * gparam) 
-                for param, gparam, adagrad_rate in 
+        self.param_updates = [(param, param - adagrad_rate * gparam)
+                for param, gparam, adagrad_rate in
                 zip(self.model.params, self.gparams, adagrad_rates)]
         self.train_function = None
         self.dev_eval_function = None
@@ -212,9 +214,9 @@ class AdagradTrainer(Trainer):
 
         index = T.lscalar() # index to minibatch
         minibatch_size = T.lscalar() # index to minibatch
-        T_training_data = [theano.shared(x, borrow=True) 
+        T_training_data = [theano.shared(x, borrow=True)
                 for x in data_triplet.training_data]
-        T_training_data_label = [theano.shared(x, borrow=True) 
+        T_training_data_label = [theano.shared(x, borrow=True)
                 for x in data_triplet.training_data_label]
         self.num_training_data = len(data_triplet.training_data_label[-1])
 
@@ -222,8 +224,8 @@ class AdagradTrainer(Trainer):
         start_idx = index * minibatch_size
         end_idx = (index + 1) * minibatch_size
         if make_givens_fn is not None:
-            make_givens_fn(givens, self.model.input, T_training_data, 
-                    self.model.output, T_training_data_label, 
+            make_givens_fn(givens, self.model.input, T_training_data,
+                    self.model.output, T_training_data_label,
                     start_idx, end_idx)
         else:
             for i, input_var in enumerate(self.model.input):
@@ -243,7 +245,7 @@ class AdagradTrainer(Trainer):
         #WARNING: compute accuracy on the last output variable only
         accuracy = T.mean(T.eq(self.model.output[-1], self.model.predict[-1]))
         self.eval_function_dev = \
-                theano.function(inputs=self.model.input + self.model.output, 
+                theano.function(inputs=self.model.input + self.model.output,
                         outputs=[accuracy, self.cost_function],
                         on_unused_input='warn')
         self.eval_function_test = self.eval_function_dev
@@ -253,7 +255,7 @@ class AdagradTrainer(Trainer):
             self.misc_function = theano.function(
                     inputs=[index, minibatch_size],
                     outputs=misc_function,
-                    givens=givens, 
+                    givens=givens,
                     on_unused_input='warn')
         else:
             self.misc_function = None
@@ -262,4 +264,3 @@ class AdagradTrainer(Trainer):
         for sgs in self.sum_gradient_squareds:
             value = np.zeros(sgs.get_value().shape, dtype=config.floatX)
             sgs.set_value(value)
-

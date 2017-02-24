@@ -47,4 +47,4 @@ echo "LOCAL_BASE_DIR: $LOCAL_BASE_DIR"
 echo "EMBEDDING_PATH: $EMBEDDING_PATH"
 echo "DATA_BASE_PATH: $DATA_BASE_PATH"
 echo "MODEL_STORE_PATH: $MODEL_STORE_PATH"
-python ./train_models.py implicit_conll_ff_train $EMBEDDING_PATH $DATA_BASE_PATH $MODEL_STORE_PATH train_input_layer
+python ./train_models.py implicit_conll_ff_train $EMBEDDING_PATH $DATA_BASE_PATH $MODEL_STORE_PATH static_input_layer

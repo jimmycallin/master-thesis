@@ -43,6 +43,8 @@ argp.add_argument('--clean', action='store_true',
     help="clean previous experiment")
 argp.add_argument('--config', type=json.loads,
     help="override default experiment configuration (dict as string)")
+argp.add_argument('--static_input_embedding', action='store_true')
+
 args = argp.parse_args()
 
 # experiment files
@@ -57,6 +59,7 @@ metrics_csv = "{}/metrics.csv".format(args.experiment_dir)
 metrics_png = "{}/metrics.png".format(args.experiment_dir)
 weights_hdf5 = "{}/weights.hdf5".format(args.experiment_dir)
 weights_val_hdf5 = "{}/weights_val.hdf5".format(args.experiment_dir)
+static_input_embedding = args.static_input_embedding
 
 # experiment initialization
 if args.clean and os.path.isdir(args.experiment_dir):
@@ -157,7 +160,7 @@ log.info("build model")
 words2id_size = indexes_size['words2id']
 rel_senses2id_size = indexes_size['rel_senses2id']
 
-shared_emb = Embedding(input_dim=words2id_size, output_dim=words_dim, weights=init_weights, dropout=words_dropout, mask_zero=True, name="shared_emb")
+shared_emb = Embedding(input_dim=words2id_size, output_dim=words_dim, weights=init_weights, dropout=words_dropout, mask_zero=True, name="shared_emb", trainable=not static_input_embedding)
 
 # input: arg1 word/token ids
 arg1_ids = Input(shape=(arg1_len,), dtype='int32', name="arg1_ids")

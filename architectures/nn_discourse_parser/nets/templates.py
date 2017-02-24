@@ -7,7 +7,7 @@ from learning import AdagradTrainer
 from lstm import SerialLSTM
 
 def build_ff_network(data_triplet, num_hidden_layers, num_hidden_units,
-        learning_rate=0.001, lr_smoother = 0.01, dropout=False):
+        learning_rate=0.001, lr_smoother = 0.01, dropout=False, train_input_layer=True):
     rng = np.random.RandomState(100)
     X_list = [T.matrix(), T.matrix()]
     input_layers = [InputLayer(rng, data_triplet.input_dimensions()[0], False, X_list[0]),
@@ -20,7 +20,8 @@ def build_ff_network(data_triplet, num_hidden_layers, num_hidden_units,
             output_activation_fn=T.nnet.softmax,
             dropout=dropout)
     trainer = AdagradTrainer(net, net.crossentropy,
-            learning_rate, lr_smoother, data_triplet, ff_make_givens)
+            learning_rate, lr_smoother, data_triplet, ff_make_givens,
+            train_input_layer=train_input_layer)
     return net, trainer
 
 def ff_make_givens(givens, input_vec, T_training_data,
@@ -54,4 +55,3 @@ def build_lstm_network(data_triplet, num_hidden_layers, num_hidden_units, proj_t
     trainer = AdagradTrainer(net, net.crossentropy,
             learning_rate, lr_smoother, data_triplet, SerialLSTM.make_givens)
     return net, trainer
-

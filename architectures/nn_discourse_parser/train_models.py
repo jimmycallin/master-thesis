@@ -69,7 +69,7 @@ def implicit_conll_zh_ff_train(args):
     net.save('/model/%s_test.pkl' % model_name, best_test_model)
 
 
-def implicit_conll_ff_train(experiment_name, data_base_path, embedding_path, model_store_path):
+def implicit_conll_ff_train(experiment_name, data_base_path, embedding_path, model_store_path, train_input_layer=True):
     dir_list = [data_base_path + '-train',
                 data_base_path + '-dev',
                 data_base_path + '-test']
@@ -84,7 +84,8 @@ def implicit_conll_ff_train(experiment_name, data_base_path, embedding_path, mod
     net, best_dev_model, best_test_model = \
             train(num_hidden_layers=num_hidden_layers, num_hidden_units=num_hidden_units,
                     model_name=model_name, data_triplet=data_triplet,
-                    minibatch_size=None)
+                    minibatch_size=None,
+                    train_input_layer=train_input_layer)
     net.label_alphabet = data_triplet.label_alphabet_list[0]
 
     eval_model(net, data_triplet.dev_data, data_triplet.dev_data_label[0], best_dev_model)
@@ -104,7 +105,7 @@ def eval_model(net, data, label, params=None):
 
 
 def train(num_hidden_layers, num_hidden_units, model_name, data_triplet,
-        minibatch_size=None, dry=False):
+        minibatch_size=None, dry=False, train_input_layer=True):
     if dry:
         num_reps = 2
         n_epochs = 2
@@ -124,7 +125,8 @@ def train(num_hidden_layers, num_hidden_units, model_name, data_triplet,
     best_test_model = None
     random_batch_size = minibatch_size == None
 
-    net, trainer = build_ff_network(data_triplet, num_hidden_layers, num_hidden_units)
+    net, trainer = build_ff_network(data_triplet, num_hidden_layers, num_hidden_units,
+                   train_input_layer=train_input_layer)
     for rep in xrange(num_reps):
         random_seed = rep + 10
         rng = np.random.RandomState(random_seed)
@@ -180,5 +182,10 @@ if __name__ == '__main__':
     embedding_path = sys.argv[2]
     data_base_path = sys.argv[3]
     model_store_path = sys.argv[4]
-    globals()[experiment_name](experiment_name, data_base_path, embedding_path, model_store_path)
-
+    if sys.argv[5] == "train_input_layer":
+        train_input_layer = True
+    elif sys.argv[5] == 'static_input_layer':
+        train_input_layer = False
+    else:
+        raise ValueError("Must set input layer either to train or static.")
+    globals()[experiment_name](experiment_name, data_base_path, embedding_path, model_store_path, train_input_layer)

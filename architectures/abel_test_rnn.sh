@@ -21,7 +21,7 @@ cd /usit/abel/u1/jimmycallin/
 module purge   # clear any inherited modules
 source /usit/abel/u1/jimmycallin/.bashrc
 
-module load intel
+module load intel/2017.0
 
 source activate rnn
 

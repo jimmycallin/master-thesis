@@ -28,16 +28,16 @@ set -o errexit # exit on errors
 
 echo "Copying files to $SCRATCH..."
 
-cp -r resources $SCRATCH
-cp -r architectures $SCRATCH
-cd $SCRATCH/architectures/nn_discourse_parser
-
-echo "We are now in nn_discourse_parser"
 
 NAME=$1
 LOCAL_BASE_DIR="/usit/abel/u1/jimmycallin/"
-EMBEDDING_PATH="$SCRATCH/resources/$2"
-DATA_BASE_PATH="$SCRATCH/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16"
+
+cd $LOCAL_BASE_DIR/architectures/nn_discourse_parser
+echo "We are now in nn_discourse_parser"
+
+
+EMBEDDING_PATH="$LOCAL_BASE_DIR/resources/$2"
+DATA_BASE_PATH="$LOCAL_BASE_DIR/resources/conll16st-en-zh-dev-train-test_LDC2016E50/conll16st-en-03-29-16"
 MODEL_STORE_PATH="$LOCAL_BASE_DIR/models/$NAME"
 mkdir -p $MODEL_STORE_PATH
 
